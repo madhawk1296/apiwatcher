@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.wrangler/
+.dev.vars
+
+# Staged into the package at pack time by scripts/stage-package-data.mjs.
+packages/apimigrate/changesets/

@@ -1,0 +1,16 @@
+{
+  "api": "stripe",
+  "latest": "2026-08-26.dahlia",
+  "generatedAt": "2026-09-11T06:06:27.233Z",
+  "entries": [
+    {
+      "from": "2025-09-30.clover",
+      "to": "2026-08-26.dahlia",
+      "file": "2025-09-30.clover__2026-08-26.dahlia.json",
+      "breaking": 163,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "30d3391cc09a0f67ad29bee002f570811b19e1da"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "apimigrate",
+  "version": "0.1.0",
+  "description": "Find every call site a breaking API change affects. Stripe + TypeScript.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "apimigrate": "./dist/cli/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "changesets"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test \"dist/**/*.test.js\"",
+    "prepack": "node ../../scripts/stage-package-data.mjs"
+  },
+  "dependencies": {
+    "typescript": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "stripe": "^22.6.2"
+  }
+}

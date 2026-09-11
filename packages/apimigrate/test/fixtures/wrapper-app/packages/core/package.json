@@ -1,0 +1,7 @@
+{
+  "name": "@wrapper/core",
+  "version": "1.0.0",
+  "dependencies": {
+    "stripe": "^22.0.0"
+  }
+}

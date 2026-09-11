@@ -1,0 +1,21 @@
+{
+  "name": "@apimigrate/github-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Report-only GitHub App: keeps the repo index and triggers scans on the customer's runner.",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"dist/**/*.test.js\"",
+    "build:test": "tsc -p tsconfig.test.json",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240909.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

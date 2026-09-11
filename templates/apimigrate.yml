@@ -1,0 +1,62 @@
+### Copy this file to .github/workflows/apimigrate.yml in your repository.
+#
+# It does three things:
+#   - scans on pushes that touch your code, so breakage shows up in the PR
+#   - scans on a weekly schedule, as a backstop
+#   - listens for `repository_dispatch`, which is how the apimigrate GitHub App
+#     asks this repo to re-scan when Stripe ships a new API version
+#
+# `repository_dispatch` only triggers workflows on the default branch, so this
+# file has to live in your repo — the App cannot inject it.
+name: apimigrate
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.js'
+      - '**/*.jsx'
+      - '**/*.mjs'
+      - '**/*.cjs'
+      - package.json
+      - .apimigrate.json
+  pull_request:
+    paths:
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.js'
+      - '**/*.jsx'
+      - package.json
+      - .apimigrate.json
+  schedule:
+    # Weekly, so a missed dispatch still surfaces eventually.
+    - cron: '23 7 * * 1'
+  repository_dispatch:
+    types: [apimigrate-scan]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Stripe API version to check against, or "latest".'
+        required: false
+        default: latest
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  scan:
+    uses: apimigrate/apimigrate/.github/workflows/apimigrate-scan.yml@main
+    with:
+      # The App passes the new version through the dispatch payload; everything
+      # else falls back to whatever your config says.
+      target: >-
+        ${{ github.event.client_payload.targetVersion
+            || github.event.inputs.target
+            || 'latest' }}
+      fail-on: breaking
+      # Pull requests get a failing check and a summary, but no issue — an issue
+      # per branch would be noise.
+      open-issue: ${{ github.event_name != 'pull_request' }}

@@ -1,0 +1,16 @@
+name = "apimigrate-github-app"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+# Scale-to-zero: the worker costs nothing while idle and only wakes for
+# webhooks and the daily version check.
+[[kv_namespaces]]
+binding = "STATE"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Check for a new Stripe API version once a day.
+[triggers]
+crons = ["17 6 * * *"]
+
+# Secrets are set with `wrangler secret put`, never committed:
+#   APP_ID, APP_PRIVATE_KEY, WEBHOOK_SECRET, ADMIN_TOKEN

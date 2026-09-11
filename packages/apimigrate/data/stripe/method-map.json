@@ -1,0 +1,5718 @@
+{
+  "sdkVersion": "22.6.2",
+  "generatedAt": "2026-09-11T05:47:30.946Z",
+  "byEndpoint": {
+    "post /v1/account_links": [
+      {
+        "namespace": "accountLinks",
+        "method": "create"
+      }
+    ],
+    "post /v1/accounts": [
+      {
+        "namespace": "accounts",
+        "method": "create"
+      }
+    ],
+    "post /v1/accounts/{id}/external_accounts": [
+      {
+        "namespace": "accounts",
+        "method": "createExternalAccount"
+      }
+    ],
+    "post /v1/accounts/{id}/login_links": [
+      {
+        "namespace": "accounts",
+        "method": "createLoginLink"
+      }
+    ],
+    "post /v1/accounts/{id}/persons": [
+      {
+        "namespace": "accounts",
+        "method": "createPerson"
+      }
+    ],
+    "delete /v1/accounts/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "del"
+      }
+    ],
+    "delete /v1/accounts/{accountId}/external_accounts/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "deleteExternalAccount"
+      }
+    ],
+    "delete /v1/accounts/{accountId}/persons/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "deletePerson"
+      }
+    ],
+    "get /v1/accounts": [
+      {
+        "namespace": "accounts",
+        "method": "list"
+      }
+    ],
+    "get /v1/accounts/{id}/capabilities": [
+      {
+        "namespace": "accounts",
+        "method": "listCapabilities"
+      }
+    ],
+    "get /v1/accounts/{id}/external_accounts": [
+      {
+        "namespace": "accounts",
+        "method": "listExternalAccounts"
+      }
+    ],
+    "get /v1/accounts/{id}/persons": [
+      {
+        "namespace": "accounts",
+        "method": "listPersons"
+      }
+    ],
+    "post /v1/accounts/{id}/reject": [
+      {
+        "namespace": "accounts",
+        "method": "reject"
+      }
+    ],
+    "get /v1/accounts/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/accounts/{accountId}/capabilities/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "retrieveCapability"
+      }
+    ],
+    "get /v1/account": [
+      {
+        "namespace": "accounts",
+        "method": "retrieveCurrent"
+      }
+    ],
+    "get /v1/accounts/{accountId}/external_accounts/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "retrieveExternalAccount"
+      }
+    ],
+    "get /v1/accounts/{accountId}/persons/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "retrievePerson"
+      }
+    ],
+    "post /v1/accounts/{id}/unreject": [
+      {
+        "namespace": "accounts",
+        "method": "unreject"
+      }
+    ],
+    "post /v1/accounts/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "update"
+      }
+    ],
+    "post /v1/accounts/{accountId}/capabilities/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "updateCapability"
+      }
+    ],
+    "post /v1/accounts/{accountId}/external_accounts/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "updateExternalAccount"
+      }
+    ],
+    "post /v1/accounts/{accountId}/persons/{id}": [
+      {
+        "namespace": "accounts",
+        "method": "updatePerson"
+      }
+    ],
+    "post /v1/account_sessions": [
+      {
+        "namespace": "accountSessions",
+        "method": "create"
+      }
+    ],
+    "post /v1/apple_pay/domains": [
+      {
+        "namespace": "applePayDomains",
+        "method": "create"
+      }
+    ],
+    "delete /v1/apple_pay/domains/{id}": [
+      {
+        "namespace": "applePayDomains",
+        "method": "del"
+      }
+    ],
+    "get /v1/apple_pay/domains": [
+      {
+        "namespace": "applePayDomains",
+        "method": "list"
+      }
+    ],
+    "get /v1/apple_pay/domains/{id}": [
+      {
+        "namespace": "applePayDomains",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/application_fees/{id}/refunds": [
+      {
+        "namespace": "applicationFees",
+        "method": "createRefund"
+      }
+    ],
+    "get /v1/application_fees": [
+      {
+        "namespace": "applicationFees",
+        "method": "list"
+      }
+    ],
+    "get /v1/application_fees/{id}/refunds": [
+      {
+        "namespace": "applicationFees",
+        "method": "listRefunds"
+      }
+    ],
+    "get /v1/application_fees/{id}": [
+      {
+        "namespace": "applicationFees",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/application_fees/{feeId}/refunds/{id}": [
+      {
+        "namespace": "applicationFees",
+        "method": "retrieveRefund"
+      }
+    ],
+    "post /v1/application_fees/{feeId}/refunds/{id}": [
+      {
+        "namespace": "applicationFees",
+        "method": "updateRefund"
+      }
+    ],
+    "post /v1/apps/secrets": [
+      {
+        "namespace": "apps.secrets",
+        "method": "create"
+      }
+    ],
+    "post /v1/apps/secrets/delete": [
+      {
+        "namespace": "apps.secrets",
+        "method": "deleteWhere"
+      }
+    ],
+    "get /v1/apps/secrets/find": [
+      {
+        "namespace": "apps.secrets",
+        "method": "find"
+      }
+    ],
+    "get /v1/apps/secrets": [
+      {
+        "namespace": "apps.secrets",
+        "method": "list"
+      }
+    ],
+    "get /v1/balance": [
+      {
+        "namespace": "balance",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/balance_settings": [
+      {
+        "namespace": "balanceSettings",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/balance_settings": [
+      {
+        "namespace": "balanceSettings",
+        "method": "update"
+      }
+    ],
+    "get /v1/balance_transactions": [
+      {
+        "namespace": "balanceTransactions",
+        "method": "list"
+      }
+    ],
+    "get /v1/balance_transactions/{id}": [
+      {
+        "namespace": "balanceTransactions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/billing/alerts/{id}/activate": [
+      {
+        "namespace": "billing.alerts",
+        "method": "activate"
+      }
+    ],
+    "post /v1/billing/alerts/{id}/archive": [
+      {
+        "namespace": "billing.alerts",
+        "method": "archive"
+      }
+    ],
+    "post /v1/billing/alerts": [
+      {
+        "namespace": "billing.alerts",
+        "method": "create"
+      }
+    ],
+    "post /v1/billing/alerts/{id}/deactivate": [
+      {
+        "namespace": "billing.alerts",
+        "method": "deactivate"
+      }
+    ],
+    "get /v1/billing/alerts": [
+      {
+        "namespace": "billing.alerts",
+        "method": "list"
+      }
+    ],
+    "get /v1/billing/alerts/{id}": [
+      {
+        "namespace": "billing.alerts",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/billing/credit_balance_summary": [
+      {
+        "namespace": "billing.creditBalanceSummaries",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/billing/credit_balance_transactions": [
+      {
+        "namespace": "billing.creditBalanceTransactions",
+        "method": "list"
+      }
+    ],
+    "get /v1/billing/credit_balance_transactions/{id}": [
+      {
+        "namespace": "billing.creditBalanceTransactions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/billing/credit_grants": [
+      {
+        "namespace": "billing.creditGrants",
+        "method": "create"
+      }
+    ],
+    "post /v1/billing/credit_grants/{id}/expire": [
+      {
+        "namespace": "billing.creditGrants",
+        "method": "expire"
+      }
+    ],
+    "get /v1/billing/credit_grants": [
+      {
+        "namespace": "billing.creditGrants",
+        "method": "list"
+      }
+    ],
+    "get /v1/billing/credit_grants/{id}": [
+      {
+        "namespace": "billing.creditGrants",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/billing/credit_grants/{id}": [
+      {
+        "namespace": "billing.creditGrants",
+        "method": "update"
+      }
+    ],
+    "post /v1/billing/credit_grants/{id}/void": [
+      {
+        "namespace": "billing.creditGrants",
+        "method": "voidGrant"
+      }
+    ],
+    "post /v1/billing/feedback_options": [
+      {
+        "namespace": "billing.feedbackOptions",
+        "method": "create"
+      }
+    ],
+    "post /v1/billing/feedback_options/{id}/deactivate": [
+      {
+        "namespace": "billing.feedbackOptions",
+        "method": "deactivate"
+      }
+    ],
+    "get /v1/billing/feedback_options": [
+      {
+        "namespace": "billing.feedbackOptions",
+        "method": "list"
+      }
+    ],
+    "get /v1/billing/feedback_options/{id}": [
+      {
+        "namespace": "billing.feedbackOptions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/billing/feedback_options/{id}": [
+      {
+        "namespace": "billing.feedbackOptions",
+        "method": "update"
+      }
+    ],
+    "post /v1/billing/meter_event_adjustments": [
+      {
+        "namespace": "billing.meterEventAdjustments",
+        "method": "create"
+      }
+    ],
+    "post /v1/billing/meter_events": [
+      {
+        "namespace": "billing.meterEvents",
+        "method": "create"
+      }
+    ],
+    "post /v1/billing/meters": [
+      {
+        "namespace": "billing.meters",
+        "method": "create"
+      }
+    ],
+    "post /v1/billing/meters/{id}/deactivate": [
+      {
+        "namespace": "billing.meters",
+        "method": "deactivate"
+      }
+    ],
+    "get /v1/billing/meters": [
+      {
+        "namespace": "billing.meters",
+        "method": "list"
+      }
+    ],
+    "get /v1/billing/meters/{id}/event_summaries": [
+      {
+        "namespace": "billing.meters",
+        "method": "listEventSummaries"
+      }
+    ],
+    "post /v1/billing/meters/{id}/reactivate": [
+      {
+        "namespace": "billing.meters",
+        "method": "reactivate"
+      }
+    ],
+    "get /v1/billing/meters/{id}": [
+      {
+        "namespace": "billing.meters",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/billing/meters/{id}": [
+      {
+        "namespace": "billing.meters",
+        "method": "update"
+      }
+    ],
+    "post /v1/billing_portal/configurations": [
+      {
+        "namespace": "billingPortal.configurations",
+        "method": "create"
+      }
+    ],
+    "get /v1/billing_portal/configurations": [
+      {
+        "namespace": "billingPortal.configurations",
+        "method": "list"
+      }
+    ],
+    "get /v1/billing_portal/configurations/{id}": [
+      {
+        "namespace": "billingPortal.configurations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/billing_portal/configurations/{id}": [
+      {
+        "namespace": "billingPortal.configurations",
+        "method": "update"
+      }
+    ],
+    "post /v1/billing_portal/sessions": [
+      {
+        "namespace": "billingPortal.sessions",
+        "method": "create"
+      }
+    ],
+    "post /v1/charges/{id}/capture": [
+      {
+        "namespace": "charges",
+        "method": "capture"
+      }
+    ],
+    "post /v1/charges": [
+      {
+        "namespace": "charges",
+        "method": "create"
+      }
+    ],
+    "get /v1/charges": [
+      {
+        "namespace": "charges",
+        "method": "list"
+      }
+    ],
+    "get /v1/charges/{id}": [
+      {
+        "namespace": "charges",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/charges/search": [
+      {
+        "namespace": "charges",
+        "method": "search"
+      }
+    ],
+    "post /v1/charges/{id}": [
+      {
+        "namespace": "charges",
+        "method": "update"
+      }
+    ],
+    "post /v1/checkout/sessions": [
+      {
+        "namespace": "checkout.sessions",
+        "method": "create"
+      }
+    ],
+    "post /v1/checkout/sessions/{id}/expire": [
+      {
+        "namespace": "checkout.sessions",
+        "method": "expire"
+      }
+    ],
+    "get /v1/checkout/sessions": [
+      {
+        "namespace": "checkout.sessions",
+        "method": "list"
+      }
+    ],
+    "get /v1/checkout/sessions/{id}/line_items": [
+      {
+        "namespace": "checkout.sessions",
+        "method": "listLineItems"
+      }
+    ],
+    "get /v1/checkout/sessions/{id}": [
+      {
+        "namespace": "checkout.sessions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/checkout/sessions/{id}": [
+      {
+        "namespace": "checkout.sessions",
+        "method": "update"
+      }
+    ],
+    "post /v1/climate/orders/{id}/cancel": [
+      {
+        "namespace": "climate.orders",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/climate/orders": [
+      {
+        "namespace": "climate.orders",
+        "method": "create"
+      }
+    ],
+    "get /v1/climate/orders": [
+      {
+        "namespace": "climate.orders",
+        "method": "list"
+      }
+    ],
+    "get /v1/climate/orders/{id}": [
+      {
+        "namespace": "climate.orders",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/climate/orders/{id}": [
+      {
+        "namespace": "climate.orders",
+        "method": "update"
+      }
+    ],
+    "get /v1/climate/products": [
+      {
+        "namespace": "climate.products",
+        "method": "list"
+      }
+    ],
+    "get /v1/climate/products/{id}": [
+      {
+        "namespace": "climate.products",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/climate/suppliers": [
+      {
+        "namespace": "climate.suppliers",
+        "method": "list"
+      }
+    ],
+    "get /v1/climate/suppliers/{id}": [
+      {
+        "namespace": "climate.suppliers",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/confirmation_tokens/{id}": [
+      {
+        "namespace": "confirmationTokens",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/country_specs": [
+      {
+        "namespace": "countrySpecs",
+        "method": "list"
+      }
+    ],
+    "get /v1/country_specs/{id}": [
+      {
+        "namespace": "countrySpecs",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/coupons": [
+      {
+        "namespace": "coupons",
+        "method": "create"
+      }
+    ],
+    "delete /v1/coupons/{id}": [
+      {
+        "namespace": "coupons",
+        "method": "del"
+      }
+    ],
+    "get /v1/coupons": [
+      {
+        "namespace": "coupons",
+        "method": "list"
+      }
+    ],
+    "get /v1/coupons/{id}": [
+      {
+        "namespace": "coupons",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/coupons/{id}": [
+      {
+        "namespace": "coupons",
+        "method": "update"
+      }
+    ],
+    "post /v1/credit_notes": [
+      {
+        "namespace": "creditNotes",
+        "method": "create"
+      }
+    ],
+    "get /v1/credit_notes": [
+      {
+        "namespace": "creditNotes",
+        "method": "list"
+      }
+    ],
+    "get /v1/credit_notes/{id}/lines": [
+      {
+        "namespace": "creditNotes",
+        "method": "listLineItems"
+      }
+    ],
+    "get /v1/credit_notes/preview/lines": [
+      {
+        "namespace": "creditNotes",
+        "method": "listPreviewLineItems"
+      }
+    ],
+    "get /v1/credit_notes/preview": [
+      {
+        "namespace": "creditNotes",
+        "method": "preview"
+      }
+    ],
+    "get /v1/credit_notes/{id}": [
+      {
+        "namespace": "creditNotes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/credit_notes/{id}": [
+      {
+        "namespace": "creditNotes",
+        "method": "update"
+      }
+    ],
+    "post /v1/credit_notes/{id}/void": [
+      {
+        "namespace": "creditNotes",
+        "method": "voidCreditNote"
+      }
+    ],
+    "post /v1/customers": [
+      {
+        "namespace": "customers",
+        "method": "create"
+      }
+    ],
+    "post /v1/customers/{id}/balance_transactions": [
+      {
+        "namespace": "customers",
+        "method": "createBalanceTransaction"
+      }
+    ],
+    "post /v1/customers/{id}/funding_instructions": [
+      {
+        "namespace": "customers",
+        "method": "createFundingInstructions"
+      }
+    ],
+    "post /v1/customers/{id}/sources": [
+      {
+        "namespace": "customers",
+        "method": "createSource"
+      }
+    ],
+    "post /v1/customers/{id}/tax_ids": [
+      {
+        "namespace": "customers",
+        "method": "createTaxId"
+      }
+    ],
+    "delete /v1/customers/{id}": [
+      {
+        "namespace": "customers",
+        "method": "del"
+      }
+    ],
+    "delete /v1/customers/{id}/discount": [
+      {
+        "namespace": "customers",
+        "method": "deleteDiscount"
+      }
+    ],
+    "delete /v1/customers/{customerId}/sources/{id}": [
+      {
+        "namespace": "customers",
+        "method": "deleteSource"
+      }
+    ],
+    "delete /v1/customers/{customerId}/tax_ids/{id}": [
+      {
+        "namespace": "customers",
+        "method": "deleteTaxId"
+      }
+    ],
+    "get /v1/customers": [
+      {
+        "namespace": "customers",
+        "method": "list"
+      }
+    ],
+    "get /v1/customers/{id}/balance_transactions": [
+      {
+        "namespace": "customers",
+        "method": "listBalanceTransactions"
+      }
+    ],
+    "get /v1/customers/{id}/cash_balance_transactions": [
+      {
+        "namespace": "customers",
+        "method": "listCashBalanceTransactions"
+      }
+    ],
+    "get /v1/customers/{id}/payment_methods": [
+      {
+        "namespace": "customers",
+        "method": "listPaymentMethods"
+      }
+    ],
+    "get /v1/customers/{id}/sources": [
+      {
+        "namespace": "customers",
+        "method": "listSources"
+      }
+    ],
+    "get /v1/customers/{id}/tax_ids": [
+      {
+        "namespace": "customers",
+        "method": "listTaxIds"
+      }
+    ],
+    "get /v1/customers/{id}": [
+      {
+        "namespace": "customers",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/customers/{customerId}/balance_transactions/{id}": [
+      {
+        "namespace": "customers",
+        "method": "retrieveBalanceTransaction"
+      }
+    ],
+    "get /v1/customers/{id}/cash_balance": [
+      {
+        "namespace": "customers",
+        "method": "retrieveCashBalance"
+      }
+    ],
+    "get /v1/customers/{customerId}/cash_balance_transactions/{id}": [
+      {
+        "namespace": "customers",
+        "method": "retrieveCashBalanceTransaction"
+      }
+    ],
+    "get /v1/customers/{customerId}/payment_methods/{id}": [
+      {
+        "namespace": "customers",
+        "method": "retrievePaymentMethod"
+      }
+    ],
+    "get /v1/customers/{customerId}/sources/{id}": [
+      {
+        "namespace": "customers",
+        "method": "retrieveSource"
+      }
+    ],
+    "get /v1/customers/{customerId}/tax_ids/{id}": [
+      {
+        "namespace": "customers",
+        "method": "retrieveTaxId"
+      }
+    ],
+    "get /v1/customers/search": [
+      {
+        "namespace": "customers",
+        "method": "search"
+      }
+    ],
+    "post /v1/customers/{id}": [
+      {
+        "namespace": "customers",
+        "method": "update"
+      }
+    ],
+    "post /v1/customers/{customerId}/balance_transactions/{id}": [
+      {
+        "namespace": "customers",
+        "method": "updateBalanceTransaction"
+      }
+    ],
+    "post /v1/customers/{id}/cash_balance": [
+      {
+        "namespace": "customers",
+        "method": "updateCashBalance"
+      }
+    ],
+    "post /v1/customers/{customerId}/sources/{id}": [
+      {
+        "namespace": "customers",
+        "method": "updateSource"
+      }
+    ],
+    "post /v1/customers/{customerId}/sources/{id}/verify": [
+      {
+        "namespace": "customers",
+        "method": "verifySource"
+      }
+    ],
+    "post /v1/customer_sessions": [
+      {
+        "namespace": "customerSessions",
+        "method": "create"
+      }
+    ],
+    "post /v1/disputes/{id}/close": [
+      {
+        "namespace": "disputes",
+        "method": "close"
+      }
+    ],
+    "get /v1/disputes": [
+      {
+        "namespace": "disputes",
+        "method": "list"
+      }
+    ],
+    "get /v1/disputes/{id}": [
+      {
+        "namespace": "disputes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/disputes/{id}": [
+      {
+        "namespace": "disputes",
+        "method": "update"
+      }
+    ],
+    "get /v1/entitlements/active_entitlements": [
+      {
+        "namespace": "entitlements.activeEntitlements",
+        "method": "list"
+      }
+    ],
+    "get /v1/entitlements/active_entitlements/{id}": [
+      {
+        "namespace": "entitlements.activeEntitlements",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/entitlements/features": [
+      {
+        "namespace": "entitlements.features",
+        "method": "create"
+      }
+    ],
+    "get /v1/entitlements/features": [
+      {
+        "namespace": "entitlements.features",
+        "method": "list"
+      }
+    ],
+    "get /v1/entitlements/features/{id}": [
+      {
+        "namespace": "entitlements.features",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/entitlements/features/{id}": [
+      {
+        "namespace": "entitlements.features",
+        "method": "update"
+      }
+    ],
+    "post /v1/ephemeral_keys": [
+      {
+        "namespace": "ephemeralKeys",
+        "method": "create"
+      }
+    ],
+    "delete /v1/ephemeral_keys/{id}": [
+      {
+        "namespace": "ephemeralKeys",
+        "method": "del"
+      }
+    ],
+    "get /v1/events": [
+      {
+        "namespace": "events",
+        "method": "list"
+      }
+    ],
+    "get /v1/events/{id}": [
+      {
+        "namespace": "events",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/exchange_rates": [
+      {
+        "namespace": "exchangeRates",
+        "method": "list"
+      }
+    ],
+    "get /v1/exchange_rates/{id}": [
+      {
+        "namespace": "exchangeRates",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/file_links": [
+      {
+        "namespace": "fileLinks",
+        "method": "create"
+      }
+    ],
+    "get /v1/file_links": [
+      {
+        "namespace": "fileLinks",
+        "method": "list"
+      }
+    ],
+    "get /v1/file_links/{id}": [
+      {
+        "namespace": "fileLinks",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/file_links/{id}": [
+      {
+        "namespace": "fileLinks",
+        "method": "update"
+      }
+    ],
+    "post /v1/files": [
+      {
+        "namespace": "files",
+        "method": "create"
+      }
+    ],
+    "get /v1/files": [
+      {
+        "namespace": "files",
+        "method": "list"
+      }
+    ],
+    "get /v1/files/{id}": [
+      {
+        "namespace": "files",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/financial_connections/accounts/{id}/disconnect": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "disconnect"
+      }
+    ],
+    "get /v1/financial_connections/accounts": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "list"
+      }
+    ],
+    "get /v1/financial_connections/accounts/{id}/owners": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "listOwners"
+      }
+    ],
+    "post /v1/financial_connections/accounts/{id}/refresh": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "refresh"
+      }
+    ],
+    "get /v1/financial_connections/accounts/{id}": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/financial_connections/accounts/{id}/subscribe": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "subscribe"
+      }
+    ],
+    "post /v1/financial_connections/accounts/{id}/unsubscribe": [
+      {
+        "namespace": "financialConnections.accounts",
+        "method": "unsubscribe"
+      }
+    ],
+    "post /v1/financial_connections/sessions": [
+      {
+        "namespace": "financialConnections.sessions",
+        "method": "create"
+      }
+    ],
+    "get /v1/financial_connections/sessions/{id}": [
+      {
+        "namespace": "financialConnections.sessions",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/financial_connections/transactions": [
+      {
+        "namespace": "financialConnections.transactions",
+        "method": "list"
+      }
+    ],
+    "get /v1/financial_connections/transactions/{id}": [
+      {
+        "namespace": "financialConnections.transactions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/forwarding/requests": [
+      {
+        "namespace": "forwarding.requests",
+        "method": "create"
+      }
+    ],
+    "get /v1/forwarding/requests": [
+      {
+        "namespace": "forwarding.requests",
+        "method": "list"
+      }
+    ],
+    "get /v1/forwarding/requests/{id}": [
+      {
+        "namespace": "forwarding.requests",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/identity/verification_reports": [
+      {
+        "namespace": "identity.verificationReports",
+        "method": "list"
+      }
+    ],
+    "get /v1/identity/verification_reports/{id}": [
+      {
+        "namespace": "identity.verificationReports",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/identity/verification_sessions/{id}/cancel": [
+      {
+        "namespace": "identity.verificationSessions",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/identity/verification_sessions": [
+      {
+        "namespace": "identity.verificationSessions",
+        "method": "create"
+      }
+    ],
+    "get /v1/identity/verification_sessions": [
+      {
+        "namespace": "identity.verificationSessions",
+        "method": "list"
+      }
+    ],
+    "post /v1/identity/verification_sessions/{id}/redact": [
+      {
+        "namespace": "identity.verificationSessions",
+        "method": "redact"
+      }
+    ],
+    "get /v1/identity/verification_sessions/{id}": [
+      {
+        "namespace": "identity.verificationSessions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/identity/verification_sessions/{id}": [
+      {
+        "namespace": "identity.verificationSessions",
+        "method": "update"
+      }
+    ],
+    "post /v1/invoiceitems": [
+      {
+        "namespace": "invoiceItems",
+        "method": "create"
+      }
+    ],
+    "delete /v1/invoiceitems/{id}": [
+      {
+        "namespace": "invoiceItems",
+        "method": "del"
+      }
+    ],
+    "get /v1/invoiceitems": [
+      {
+        "namespace": "invoiceItems",
+        "method": "list"
+      }
+    ],
+    "get /v1/invoiceitems/{id}": [
+      {
+        "namespace": "invoiceItems",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/invoiceitems/{id}": [
+      {
+        "namespace": "invoiceItems",
+        "method": "update"
+      }
+    ],
+    "get /v1/invoice_payments": [
+      {
+        "namespace": "invoicePayments",
+        "method": "list"
+      }
+    ],
+    "get /v1/invoice_payments/{id}": [
+      {
+        "namespace": "invoicePayments",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/invoice_rendering_templates/{id}/archive": [
+      {
+        "namespace": "invoiceRenderingTemplates",
+        "method": "archive"
+      }
+    ],
+    "get /v1/invoice_rendering_templates": [
+      {
+        "namespace": "invoiceRenderingTemplates",
+        "method": "list"
+      }
+    ],
+    "get /v1/invoice_rendering_templates/{id}": [
+      {
+        "namespace": "invoiceRenderingTemplates",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/invoice_rendering_templates/{id}/unarchive": [
+      {
+        "namespace": "invoiceRenderingTemplates",
+        "method": "unarchive"
+      }
+    ],
+    "post /v1/invoices/{id}/add_lines": [
+      {
+        "namespace": "invoices",
+        "method": "addLines"
+      }
+    ],
+    "post /v1/invoices/{id}/attach_payment": [
+      {
+        "namespace": "invoices",
+        "method": "attachPayment"
+      }
+    ],
+    "post /v1/invoices": [
+      {
+        "namespace": "invoices",
+        "method": "create"
+      }
+    ],
+    "post /v1/invoices/create_preview": [
+      {
+        "namespace": "invoices",
+        "method": "createPreview"
+      }
+    ],
+    "delete /v1/invoices/{id}": [
+      {
+        "namespace": "invoices",
+        "method": "del"
+      }
+    ],
+    "post /v1/invoices/{id}/finalize": [
+      {
+        "namespace": "invoices",
+        "method": "finalizeInvoice"
+      }
+    ],
+    "get /v1/invoices": [
+      {
+        "namespace": "invoices",
+        "method": "list"
+      }
+    ],
+    "get /v1/invoices/{id}/lines": [
+      {
+        "namespace": "invoices",
+        "method": "listLineItems"
+      }
+    ],
+    "post /v1/invoices/{id}/mark_uncollectible": [
+      {
+        "namespace": "invoices",
+        "method": "markUncollectible"
+      }
+    ],
+    "post /v1/invoices/{id}/pay": [
+      {
+        "namespace": "invoices",
+        "method": "pay"
+      }
+    ],
+    "post /v1/invoices/{id}/remove_lines": [
+      {
+        "namespace": "invoices",
+        "method": "removeLines"
+      }
+    ],
+    "get /v1/invoices/{id}": [
+      {
+        "namespace": "invoices",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/invoices/search": [
+      {
+        "namespace": "invoices",
+        "method": "search"
+      }
+    ],
+    "post /v1/invoices/{id}/send": [
+      {
+        "namespace": "invoices",
+        "method": "sendInvoice"
+      }
+    ],
+    "post /v1/invoices/{id}": [
+      {
+        "namespace": "invoices",
+        "method": "update"
+      }
+    ],
+    "post /v1/invoices/{invoiceId}/lines/{id}": [
+      {
+        "namespace": "invoices",
+        "method": "updateLineItem"
+      }
+    ],
+    "post /v1/invoices/{id}/update_lines": [
+      {
+        "namespace": "invoices",
+        "method": "updateLines"
+      }
+    ],
+    "post /v1/invoices/{id}/void": [
+      {
+        "namespace": "invoices",
+        "method": "voidInvoice"
+      }
+    ],
+    "post /v1/issuing/authorizations/{id}/approve": [
+      {
+        "namespace": "issuing.authorizations",
+        "method": "approve"
+      }
+    ],
+    "post /v1/issuing/authorizations/{id}/decline": [
+      {
+        "namespace": "issuing.authorizations",
+        "method": "decline"
+      }
+    ],
+    "get /v1/issuing/authorizations": [
+      {
+        "namespace": "issuing.authorizations",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/authorizations/{id}": [
+      {
+        "namespace": "issuing.authorizations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/authorizations/{id}": [
+      {
+        "namespace": "issuing.authorizations",
+        "method": "update"
+      }
+    ],
+    "post /v1/issuing/cardholders": [
+      {
+        "namespace": "issuing.cardholders",
+        "method": "create"
+      }
+    ],
+    "get /v1/issuing/cardholders": [
+      {
+        "namespace": "issuing.cardholders",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/cardholders/{id}": [
+      {
+        "namespace": "issuing.cardholders",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/cardholders/{id}": [
+      {
+        "namespace": "issuing.cardholders",
+        "method": "update"
+      }
+    ],
+    "post /v1/issuing/cards": [
+      {
+        "namespace": "issuing.cards",
+        "method": "create"
+      }
+    ],
+    "get /v1/issuing/cards": [
+      {
+        "namespace": "issuing.cards",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/cards/{id}": [
+      {
+        "namespace": "issuing.cards",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/cards/{id}": [
+      {
+        "namespace": "issuing.cards",
+        "method": "update"
+      }
+    ],
+    "post /v1/issuing/disputes": [
+      {
+        "namespace": "issuing.disputes",
+        "method": "create"
+      }
+    ],
+    "get /v1/issuing/disputes": [
+      {
+        "namespace": "issuing.disputes",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/disputes/{id}": [
+      {
+        "namespace": "issuing.disputes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/disputes/{id}/submit": [
+      {
+        "namespace": "issuing.disputes",
+        "method": "submit"
+      }
+    ],
+    "post /v1/issuing/disputes/{id}": [
+      {
+        "namespace": "issuing.disputes",
+        "method": "update"
+      }
+    ],
+    "post /v1/issuing/personalization_designs": [
+      {
+        "namespace": "issuing.personalizationDesigns",
+        "method": "create"
+      }
+    ],
+    "get /v1/issuing/personalization_designs": [
+      {
+        "namespace": "issuing.personalizationDesigns",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/personalization_designs/{id}": [
+      {
+        "namespace": "issuing.personalizationDesigns",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/personalization_designs/{id}": [
+      {
+        "namespace": "issuing.personalizationDesigns",
+        "method": "update"
+      }
+    ],
+    "get /v1/issuing/physical_bundles": [
+      {
+        "namespace": "issuing.physicalBundles",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/physical_bundles/{id}": [
+      {
+        "namespace": "issuing.physicalBundles",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/issuing/tokens": [
+      {
+        "namespace": "issuing.tokens",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/tokens/{id}": [
+      {
+        "namespace": "issuing.tokens",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/tokens/{id}": [
+      {
+        "namespace": "issuing.tokens",
+        "method": "update"
+      }
+    ],
+    "get /v1/issuing/transactions": [
+      {
+        "namespace": "issuing.transactions",
+        "method": "list"
+      }
+    ],
+    "get /v1/issuing/transactions/{id}": [
+      {
+        "namespace": "issuing.transactions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/issuing/transactions/{id}": [
+      {
+        "namespace": "issuing.transactions",
+        "method": "update"
+      }
+    ],
+    "get /v1/mandates/{id}": [
+      {
+        "namespace": "mandates",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/payment_attempt_records": [
+      {
+        "namespace": "paymentAttemptRecords",
+        "method": "list"
+      }
+    ],
+    "get /v1/payment_attempt_records/{id}": [
+      {
+        "namespace": "paymentAttemptRecords",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payment_intents/{id}/apply_customer_balance": [
+      {
+        "namespace": "paymentIntents",
+        "method": "applyCustomerBalance"
+      }
+    ],
+    "post /v1/payment_intents/{id}/cancel": [
+      {
+        "namespace": "paymentIntents",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/payment_intents/{id}/capture": [
+      {
+        "namespace": "paymentIntents",
+        "method": "capture"
+      }
+    ],
+    "post /v1/payment_intents/{id}/confirm": [
+      {
+        "namespace": "paymentIntents",
+        "method": "confirm"
+      }
+    ],
+    "post /v1/payment_intents": [
+      {
+        "namespace": "paymentIntents",
+        "method": "create"
+      }
+    ],
+    "post /v1/payment_intents/{id}/increment_authorization": [
+      {
+        "namespace": "paymentIntents",
+        "method": "incrementAuthorization"
+      }
+    ],
+    "get /v1/payment_intents": [
+      {
+        "namespace": "paymentIntents",
+        "method": "list"
+      }
+    ],
+    "get /v1/payment_intents/{id}/amount_details_line_items": [
+      {
+        "namespace": "paymentIntents",
+        "method": "listAmountDetailsLineItems"
+      }
+    ],
+    "get /v1/payment_intents/{id}": [
+      {
+        "namespace": "paymentIntents",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/payment_intents/search": [
+      {
+        "namespace": "paymentIntents",
+        "method": "search"
+      }
+    ],
+    "post /v1/payment_intents/{id}": [
+      {
+        "namespace": "paymentIntents",
+        "method": "update"
+      }
+    ],
+    "post /v1/payment_intents/{id}/verify_microdeposits": [
+      {
+        "namespace": "paymentIntents",
+        "method": "verifyMicrodeposits"
+      }
+    ],
+    "post /v1/payment_links": [
+      {
+        "namespace": "paymentLinks",
+        "method": "create"
+      }
+    ],
+    "get /v1/payment_links": [
+      {
+        "namespace": "paymentLinks",
+        "method": "list"
+      }
+    ],
+    "get /v1/payment_links/{id}/line_items": [
+      {
+        "namespace": "paymentLinks",
+        "method": "listLineItems"
+      }
+    ],
+    "get /v1/payment_links/{id}": [
+      {
+        "namespace": "paymentLinks",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payment_links/{id}": [
+      {
+        "namespace": "paymentLinks",
+        "method": "update"
+      }
+    ],
+    "post /v1/payment_method_configurations": [
+      {
+        "namespace": "paymentMethodConfigurations",
+        "method": "create"
+      }
+    ],
+    "get /v1/payment_method_configurations": [
+      {
+        "namespace": "paymentMethodConfigurations",
+        "method": "list"
+      }
+    ],
+    "get /v1/payment_method_configurations/{id}": [
+      {
+        "namespace": "paymentMethodConfigurations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payment_method_configurations/{id}": [
+      {
+        "namespace": "paymentMethodConfigurations",
+        "method": "update"
+      }
+    ],
+    "post /v1/payment_method_domains": [
+      {
+        "namespace": "paymentMethodDomains",
+        "method": "create"
+      }
+    ],
+    "get /v1/payment_method_domains": [
+      {
+        "namespace": "paymentMethodDomains",
+        "method": "list"
+      }
+    ],
+    "get /v1/payment_method_domains/{id}": [
+      {
+        "namespace": "paymentMethodDomains",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payment_method_domains/{id}": [
+      {
+        "namespace": "paymentMethodDomains",
+        "method": "update"
+      }
+    ],
+    "post /v1/payment_method_domains/{id}/validate": [
+      {
+        "namespace": "paymentMethodDomains",
+        "method": "validate"
+      }
+    ],
+    "post /v1/payment_methods/{id}/attach": [
+      {
+        "namespace": "paymentMethods",
+        "method": "attach"
+      }
+    ],
+    "post /v1/payment_methods": [
+      {
+        "namespace": "paymentMethods",
+        "method": "create"
+      }
+    ],
+    "post /v1/payment_methods/{id}/detach": [
+      {
+        "namespace": "paymentMethods",
+        "method": "detach"
+      }
+    ],
+    "get /v1/payment_methods": [
+      {
+        "namespace": "paymentMethods",
+        "method": "list"
+      }
+    ],
+    "get /v1/payment_methods/{id}": [
+      {
+        "namespace": "paymentMethods",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payment_methods/{id}": [
+      {
+        "namespace": "paymentMethods",
+        "method": "update"
+      }
+    ],
+    "get /v1/payment_records": [
+      {
+        "namespace": "paymentRecords",
+        "method": "list"
+      }
+    ],
+    "post /v1/payment_records/report_payment": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportPayment"
+      }
+    ],
+    "post /v1/payment_records/{id}/report_payment_attempt": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportPaymentAttempt"
+      }
+    ],
+    "post /v1/payment_records/{id}/report_payment_attempt_canceled": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportPaymentAttemptCanceled"
+      }
+    ],
+    "post /v1/payment_records/{id}/report_payment_attempt_failed": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportPaymentAttemptFailed"
+      }
+    ],
+    "post /v1/payment_records/{id}/report_payment_attempt_guaranteed": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportPaymentAttemptGuaranteed"
+      }
+    ],
+    "post /v1/payment_records/{id}/report_payment_attempt_informational": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportPaymentAttemptInformational"
+      }
+    ],
+    "post /v1/payment_records/{id}/report_refund": [
+      {
+        "namespace": "paymentRecords",
+        "method": "reportRefund"
+      }
+    ],
+    "get /v1/payment_records/{id}": [
+      {
+        "namespace": "paymentRecords",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payouts/{id}/cancel": [
+      {
+        "namespace": "payouts",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/payouts": [
+      {
+        "namespace": "payouts",
+        "method": "create"
+      }
+    ],
+    "get /v1/payouts": [
+      {
+        "namespace": "payouts",
+        "method": "list"
+      }
+    ],
+    "get /v1/payouts/{id}": [
+      {
+        "namespace": "payouts",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/payouts/{id}/reverse": [
+      {
+        "namespace": "payouts",
+        "method": "reverse"
+      }
+    ],
+    "post /v1/payouts/{id}": [
+      {
+        "namespace": "payouts",
+        "method": "update"
+      }
+    ],
+    "post /v1/plans": [
+      {
+        "namespace": "plans",
+        "method": "create"
+      }
+    ],
+    "delete /v1/plans/{id}": [
+      {
+        "namespace": "plans",
+        "method": "del"
+      }
+    ],
+    "get /v1/plans": [
+      {
+        "namespace": "plans",
+        "method": "list"
+      }
+    ],
+    "get /v1/plans/{id}": [
+      {
+        "namespace": "plans",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/plans/{id}": [
+      {
+        "namespace": "plans",
+        "method": "update"
+      }
+    ],
+    "post /v1/prices": [
+      {
+        "namespace": "prices",
+        "method": "create"
+      }
+    ],
+    "get /v1/prices": [
+      {
+        "namespace": "prices",
+        "method": "list"
+      }
+    ],
+    "get /v1/prices/{id}": [
+      {
+        "namespace": "prices",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/prices/search": [
+      {
+        "namespace": "prices",
+        "method": "search"
+      }
+    ],
+    "post /v1/prices/{id}": [
+      {
+        "namespace": "prices",
+        "method": "update"
+      }
+    ],
+    "post /v1/products": [
+      {
+        "namespace": "products",
+        "method": "create"
+      }
+    ],
+    "post /v1/products/{id}/features": [
+      {
+        "namespace": "products",
+        "method": "createFeature"
+      }
+    ],
+    "delete /v1/products/{id}": [
+      {
+        "namespace": "products",
+        "method": "del"
+      }
+    ],
+    "delete /v1/products/{productId}/features/{id}": [
+      {
+        "namespace": "products",
+        "method": "deleteFeature"
+      }
+    ],
+    "get /v1/products": [
+      {
+        "namespace": "products",
+        "method": "list"
+      }
+    ],
+    "get /v1/products/{id}/features": [
+      {
+        "namespace": "products",
+        "method": "listFeatures"
+      }
+    ],
+    "get /v1/products/{id}": [
+      {
+        "namespace": "products",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/products/{productId}/features/{id}": [
+      {
+        "namespace": "products",
+        "method": "retrieveFeature"
+      }
+    ],
+    "get /v1/products/search": [
+      {
+        "namespace": "products",
+        "method": "search"
+      }
+    ],
+    "post /v1/products/{id}": [
+      {
+        "namespace": "products",
+        "method": "update"
+      }
+    ],
+    "post /v1/promotion_codes": [
+      {
+        "namespace": "promotionCodes",
+        "method": "create"
+      }
+    ],
+    "get /v1/promotion_codes": [
+      {
+        "namespace": "promotionCodes",
+        "method": "list"
+      }
+    ],
+    "get /v1/promotion_codes/{id}": [
+      {
+        "namespace": "promotionCodes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/promotion_codes/{id}": [
+      {
+        "namespace": "promotionCodes",
+        "method": "update"
+      }
+    ],
+    "post /v1/quotes/{id}/accept": [
+      {
+        "namespace": "quotes",
+        "method": "accept"
+      }
+    ],
+    "post /v1/quotes/{id}/cancel": [
+      {
+        "namespace": "quotes",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/quotes": [
+      {
+        "namespace": "quotes",
+        "method": "create"
+      }
+    ],
+    "post /v1/quotes/{id}/finalize": [
+      {
+        "namespace": "quotes",
+        "method": "finalizeQuote"
+      }
+    ],
+    "get /v1/quotes": [
+      {
+        "namespace": "quotes",
+        "method": "list"
+      }
+    ],
+    "get /v1/quotes/{id}/computed_upfront_line_items": [
+      {
+        "namespace": "quotes",
+        "method": "listComputedUpfrontLineItems"
+      }
+    ],
+    "get /v1/quotes/{id}/line_items": [
+      {
+        "namespace": "quotes",
+        "method": "listLineItems"
+      }
+    ],
+    "get /v1/quotes/{id}/pdf": [
+      {
+        "namespace": "quotes",
+        "method": "pdf"
+      }
+    ],
+    "get /v1/quotes/{id}": [
+      {
+        "namespace": "quotes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/quotes/{id}": [
+      {
+        "namespace": "quotes",
+        "method": "update"
+      }
+    ],
+    "get /v1/radar/early_fraud_warnings": [
+      {
+        "namespace": "radar.earlyFraudWarnings",
+        "method": "list"
+      }
+    ],
+    "get /v1/radar/early_fraud_warnings/{id}": [
+      {
+        "namespace": "radar.earlyFraudWarnings",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/radar/payment_evaluations": [
+      {
+        "namespace": "radar.paymentEvaluations",
+        "method": "create"
+      }
+    ],
+    "post /v1/radar/value_list_items": [
+      {
+        "namespace": "radar.valueListItems",
+        "method": "create"
+      }
+    ],
+    "delete /v1/radar/value_list_items/{id}": [
+      {
+        "namespace": "radar.valueListItems",
+        "method": "del"
+      }
+    ],
+    "get /v1/radar/value_list_items": [
+      {
+        "namespace": "radar.valueListItems",
+        "method": "list"
+      }
+    ],
+    "get /v1/radar/value_list_items/{id}": [
+      {
+        "namespace": "radar.valueListItems",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/radar/value_lists": [
+      {
+        "namespace": "radar.valueLists",
+        "method": "create"
+      }
+    ],
+    "delete /v1/radar/value_lists/{id}": [
+      {
+        "namespace": "radar.valueLists",
+        "method": "del"
+      }
+    ],
+    "get /v1/radar/value_lists": [
+      {
+        "namespace": "radar.valueLists",
+        "method": "list"
+      }
+    ],
+    "get /v1/radar/value_lists/{id}": [
+      {
+        "namespace": "radar.valueLists",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/radar/value_lists/{id}": [
+      {
+        "namespace": "radar.valueLists",
+        "method": "update"
+      }
+    ],
+    "post /v1/refunds/{id}/cancel": [
+      {
+        "namespace": "refunds",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/refunds": [
+      {
+        "namespace": "refunds",
+        "method": "create"
+      }
+    ],
+    "get /v1/refunds": [
+      {
+        "namespace": "refunds",
+        "method": "list"
+      }
+    ],
+    "get /v1/refunds/{id}": [
+      {
+        "namespace": "refunds",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/refunds/{id}": [
+      {
+        "namespace": "refunds",
+        "method": "update"
+      }
+    ],
+    "post /v1/reporting/report_runs": [
+      {
+        "namespace": "reporting.reportRuns",
+        "method": "create"
+      }
+    ],
+    "get /v1/reporting/report_runs": [
+      {
+        "namespace": "reporting.reportRuns",
+        "method": "list"
+      }
+    ],
+    "get /v1/reporting/report_runs/{id}": [
+      {
+        "namespace": "reporting.reportRuns",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/reporting/report_types": [
+      {
+        "namespace": "reporting.reportTypes",
+        "method": "list"
+      }
+    ],
+    "get /v1/reporting/report_types/{id}": [
+      {
+        "namespace": "reporting.reportTypes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/reviews/{id}/approve": [
+      {
+        "namespace": "reviews",
+        "method": "approve"
+      }
+    ],
+    "get /v1/reviews": [
+      {
+        "namespace": "reviews",
+        "method": "list"
+      }
+    ],
+    "get /v1/reviews/{id}": [
+      {
+        "namespace": "reviews",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/setup_attempts": [
+      {
+        "namespace": "setupAttempts",
+        "method": "list"
+      }
+    ],
+    "post /v1/setup_intents/{id}/cancel": [
+      {
+        "namespace": "setupIntents",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/setup_intents/{id}/confirm": [
+      {
+        "namespace": "setupIntents",
+        "method": "confirm"
+      }
+    ],
+    "post /v1/setup_intents": [
+      {
+        "namespace": "setupIntents",
+        "method": "create"
+      }
+    ],
+    "get /v1/setup_intents": [
+      {
+        "namespace": "setupIntents",
+        "method": "list"
+      }
+    ],
+    "get /v1/setup_intents/{id}": [
+      {
+        "namespace": "setupIntents",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/setup_intents/{id}": [
+      {
+        "namespace": "setupIntents",
+        "method": "update"
+      }
+    ],
+    "post /v1/setup_intents/{id}/verify_microdeposits": [
+      {
+        "namespace": "setupIntents",
+        "method": "verifyMicrodeposits"
+      }
+    ],
+    "post /v1/shipping_rates": [
+      {
+        "namespace": "shippingRates",
+        "method": "create"
+      }
+    ],
+    "get /v1/shipping_rates": [
+      {
+        "namespace": "shippingRates",
+        "method": "list"
+      }
+    ],
+    "get /v1/shipping_rates/{id}": [
+      {
+        "namespace": "shippingRates",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/shipping_rates/{id}": [
+      {
+        "namespace": "shippingRates",
+        "method": "update"
+      }
+    ],
+    "get /v1/sigma/scheduled_query_runs": [
+      {
+        "namespace": "sigma.scheduledQueryRuns",
+        "method": "list"
+      }
+    ],
+    "get /v1/sigma/scheduled_query_runs/{id}": [
+      {
+        "namespace": "sigma.scheduledQueryRuns",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/sources": [
+      {
+        "namespace": "sources",
+        "method": "create"
+      }
+    ],
+    "get /v1/sources/{id}/source_transactions": [
+      {
+        "namespace": "sources",
+        "method": "listSourceTransactions"
+      }
+    ],
+    "get /v1/sources/{id}": [
+      {
+        "namespace": "sources",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/sources/{id}": [
+      {
+        "namespace": "sources",
+        "method": "update"
+      }
+    ],
+    "post /v1/sources/{id}/verify": [
+      {
+        "namespace": "sources",
+        "method": "verify"
+      }
+    ],
+    "post /v1/subscription_items": [
+      {
+        "namespace": "subscriptionItems",
+        "method": "create"
+      }
+    ],
+    "delete /v1/subscription_items/{id}": [
+      {
+        "namespace": "subscriptionItems",
+        "method": "del"
+      }
+    ],
+    "get /v1/subscription_items": [
+      {
+        "namespace": "subscriptionItems",
+        "method": "list"
+      }
+    ],
+    "get /v1/subscription_items/{id}": [
+      {
+        "namespace": "subscriptionItems",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/subscription_items/{id}": [
+      {
+        "namespace": "subscriptionItems",
+        "method": "update"
+      }
+    ],
+    "delete /v1/subscriptions/{id}": [
+      {
+        "namespace": "subscriptions",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/subscriptions": [
+      {
+        "namespace": "subscriptions",
+        "method": "create"
+      }
+    ],
+    "delete /v1/subscriptions/{id}/discount": [
+      {
+        "namespace": "subscriptions",
+        "method": "deleteDiscount"
+      }
+    ],
+    "get /v1/subscriptions": [
+      {
+        "namespace": "subscriptions",
+        "method": "list"
+      }
+    ],
+    "post /v1/subscriptions/{id}/migrate": [
+      {
+        "namespace": "subscriptions",
+        "method": "migrate"
+      }
+    ],
+    "post /v1/subscriptions/{id}/resume": [
+      {
+        "namespace": "subscriptions",
+        "method": "resume"
+      }
+    ],
+    "get /v1/subscriptions/{id}": [
+      {
+        "namespace": "subscriptions",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/subscriptions/search": [
+      {
+        "namespace": "subscriptions",
+        "method": "search"
+      }
+    ],
+    "post /v1/subscriptions/{id}": [
+      {
+        "namespace": "subscriptions",
+        "method": "update"
+      }
+    ],
+    "post /v1/subscription_schedules/{id}/cancel": [
+      {
+        "namespace": "subscriptionSchedules",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/subscription_schedules": [
+      {
+        "namespace": "subscriptionSchedules",
+        "method": "create"
+      }
+    ],
+    "get /v1/subscription_schedules": [
+      {
+        "namespace": "subscriptionSchedules",
+        "method": "list"
+      }
+    ],
+    "post /v1/subscription_schedules/{id}/release": [
+      {
+        "namespace": "subscriptionSchedules",
+        "method": "release"
+      }
+    ],
+    "get /v1/subscription_schedules/{id}": [
+      {
+        "namespace": "subscriptionSchedules",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/subscription_schedules/{id}": [
+      {
+        "namespace": "subscriptionSchedules",
+        "method": "update"
+      }
+    ],
+    "get /v1/tax/associations/find": [
+      {
+        "namespace": "tax.associations",
+        "method": "find"
+      }
+    ],
+    "post /v1/tax/calculations": [
+      {
+        "namespace": "tax.calculations",
+        "method": "create"
+      }
+    ],
+    "get /v1/tax/calculations/{id}/line_items": [
+      {
+        "namespace": "tax.calculations",
+        "method": "listLineItems"
+      }
+    ],
+    "get /v1/tax/calculations/{id}": [
+      {
+        "namespace": "tax.calculations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/tax/registrations": [
+      {
+        "namespace": "tax.registrations",
+        "method": "create"
+      }
+    ],
+    "get /v1/tax/registrations": [
+      {
+        "namespace": "tax.registrations",
+        "method": "list"
+      }
+    ],
+    "get /v1/tax/registrations/{id}": [
+      {
+        "namespace": "tax.registrations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/tax/registrations/{id}": [
+      {
+        "namespace": "tax.registrations",
+        "method": "update"
+      }
+    ],
+    "get /v1/tax/settings": [
+      {
+        "namespace": "tax.settings",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/tax/settings": [
+      {
+        "namespace": "tax.settings",
+        "method": "update"
+      }
+    ],
+    "post /v1/tax/transactions/create_from_calculation": [
+      {
+        "namespace": "tax.transactions",
+        "method": "createFromCalculation"
+      }
+    ],
+    "post /v1/tax/transactions/create_reversal": [
+      {
+        "namespace": "tax.transactions",
+        "method": "createReversal"
+      }
+    ],
+    "get /v1/tax/transactions/{id}/line_items": [
+      {
+        "namespace": "tax.transactions",
+        "method": "listLineItems"
+      }
+    ],
+    "get /v1/tax/transactions/{id}": [
+      {
+        "namespace": "tax.transactions",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/tax_codes": [
+      {
+        "namespace": "taxCodes",
+        "method": "list"
+      }
+    ],
+    "get /v1/tax_codes/{id}": [
+      {
+        "namespace": "taxCodes",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/tax_ids": [
+      {
+        "namespace": "taxIds",
+        "method": "create"
+      }
+    ],
+    "delete /v1/tax_ids/{id}": [
+      {
+        "namespace": "taxIds",
+        "method": "del"
+      }
+    ],
+    "get /v1/tax_ids": [
+      {
+        "namespace": "taxIds",
+        "method": "list"
+      }
+    ],
+    "get /v1/tax_ids/{id}": [
+      {
+        "namespace": "taxIds",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/tax_rates": [
+      {
+        "namespace": "taxRates",
+        "method": "create"
+      }
+    ],
+    "get /v1/tax_rates": [
+      {
+        "namespace": "taxRates",
+        "method": "list"
+      }
+    ],
+    "get /v1/tax_rates/{id}": [
+      {
+        "namespace": "taxRates",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/tax_rates/{id}": [
+      {
+        "namespace": "taxRates",
+        "method": "update"
+      }
+    ],
+    "post /v1/terminal/configurations": [
+      {
+        "namespace": "terminal.configurations",
+        "method": "create"
+      }
+    ],
+    "delete /v1/terminal/configurations/{id}": [
+      {
+        "namespace": "terminal.configurations",
+        "method": "del"
+      }
+    ],
+    "get /v1/terminal/configurations": [
+      {
+        "namespace": "terminal.configurations",
+        "method": "list"
+      }
+    ],
+    "get /v1/terminal/configurations/{id}": [
+      {
+        "namespace": "terminal.configurations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/terminal/configurations/{id}": [
+      {
+        "namespace": "terminal.configurations",
+        "method": "update"
+      }
+    ],
+    "post /v1/terminal/connection_tokens": [
+      {
+        "namespace": "terminal.connectionTokens",
+        "method": "create"
+      }
+    ],
+    "post /v1/terminal/locations": [
+      {
+        "namespace": "terminal.locations",
+        "method": "create"
+      }
+    ],
+    "delete /v1/terminal/locations/{id}": [
+      {
+        "namespace": "terminal.locations",
+        "method": "del"
+      }
+    ],
+    "get /v1/terminal/locations": [
+      {
+        "namespace": "terminal.locations",
+        "method": "list"
+      }
+    ],
+    "get /v1/terminal/locations/{id}": [
+      {
+        "namespace": "terminal.locations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/terminal/locations/{id}": [
+      {
+        "namespace": "terminal.locations",
+        "method": "update"
+      }
+    ],
+    "post /v1/terminal/onboarding_links": [
+      {
+        "namespace": "terminal.onboardingLinks",
+        "method": "create"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/cancel_action": [
+      {
+        "namespace": "terminal.readers",
+        "method": "cancelAction"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/collect_inputs": [
+      {
+        "namespace": "terminal.readers",
+        "method": "collectInputs"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/collect_payment_method": [
+      {
+        "namespace": "terminal.readers",
+        "method": "collectPaymentMethod"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/confirm_payment_intent": [
+      {
+        "namespace": "terminal.readers",
+        "method": "confirmPaymentIntent"
+      }
+    ],
+    "post /v1/terminal/readers": [
+      {
+        "namespace": "terminal.readers",
+        "method": "create"
+      }
+    ],
+    "delete /v1/terminal/readers/{id}": [
+      {
+        "namespace": "terminal.readers",
+        "method": "del"
+      }
+    ],
+    "get /v1/terminal/readers": [
+      {
+        "namespace": "terminal.readers",
+        "method": "list"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/process_payment_intent": [
+      {
+        "namespace": "terminal.readers",
+        "method": "processPaymentIntent"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/process_setup_intent": [
+      {
+        "namespace": "terminal.readers",
+        "method": "processSetupIntent"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/refund_payment": [
+      {
+        "namespace": "terminal.readers",
+        "method": "refundPayment"
+      }
+    ],
+    "get /v1/terminal/readers/{id}": [
+      {
+        "namespace": "terminal.readers",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/terminal/readers/{id}/set_reader_display": [
+      {
+        "namespace": "terminal.readers",
+        "method": "setReaderDisplay"
+      }
+    ],
+    "post /v1/terminal/readers/{id}": [
+      {
+        "namespace": "terminal.readers",
+        "method": "update"
+      }
+    ],
+    "post /v1/test_helpers/confirmation_tokens": [
+      {
+        "namespace": "testHelpers.confirmationTokens",
+        "method": "create"
+      }
+    ],
+    "post /v1/test_helpers/customers/{id}/fund_cash_balance": [
+      {
+        "namespace": "testHelpers.customers",
+        "method": "fundCashBalance"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations/{id}/capture": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "capture"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "create"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations/{id}/expire": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "expire"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations/{id}/finalize_amount": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "finalizeAmount"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations/{id}/increment": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "increment"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations/{id}/fraud_challenges/respond": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "respond"
+      }
+    ],
+    "post /v1/test_helpers/issuing/authorizations/{id}/reverse": [
+      {
+        "namespace": "testHelpers.issuing.authorizations",
+        "method": "reverse"
+      }
+    ],
+    "post /v1/test_helpers/issuing/cards/{id}/shipping/deliver": [
+      {
+        "namespace": "testHelpers.issuing.cards",
+        "method": "deliverCard"
+      }
+    ],
+    "post /v1/test_helpers/issuing/cards/{id}/shipping/fail": [
+      {
+        "namespace": "testHelpers.issuing.cards",
+        "method": "failCard"
+      }
+    ],
+    "post /v1/test_helpers/issuing/cards/{id}/shipping/return": [
+      {
+        "namespace": "testHelpers.issuing.cards",
+        "method": "returnCard"
+      }
+    ],
+    "post /v1/test_helpers/issuing/cards/{id}/shipping/ship": [
+      {
+        "namespace": "testHelpers.issuing.cards",
+        "method": "shipCard"
+      }
+    ],
+    "post /v1/test_helpers/issuing/cards/{id}/shipping/submit": [
+      {
+        "namespace": "testHelpers.issuing.cards",
+        "method": "submitCard"
+      }
+    ],
+    "post /v1/test_helpers/issuing/personalization_designs/{id}/activate": [
+      {
+        "namespace": "testHelpers.issuing.personalizationDesigns",
+        "method": "activate"
+      }
+    ],
+    "post /v1/test_helpers/issuing/personalization_designs/{id}/deactivate": [
+      {
+        "namespace": "testHelpers.issuing.personalizationDesigns",
+        "method": "deactivate"
+      }
+    ],
+    "post /v1/test_helpers/issuing/personalization_designs/{id}/reject": [
+      {
+        "namespace": "testHelpers.issuing.personalizationDesigns",
+        "method": "reject"
+      }
+    ],
+    "post /v1/test_helpers/issuing/transactions/create_force_capture": [
+      {
+        "namespace": "testHelpers.issuing.transactions",
+        "method": "createForceCapture"
+      }
+    ],
+    "post /v1/test_helpers/issuing/transactions/create_unlinked_refund": [
+      {
+        "namespace": "testHelpers.issuing.transactions",
+        "method": "createUnlinkedRefund"
+      }
+    ],
+    "post /v1/test_helpers/issuing/transactions/{id}/refund": [
+      {
+        "namespace": "testHelpers.issuing.transactions",
+        "method": "refund"
+      }
+    ],
+    "post /v1/test_helpers/refunds/{id}/expire": [
+      {
+        "namespace": "testHelpers.refunds",
+        "method": "expire"
+      }
+    ],
+    "post /v1/test_helpers/terminal/readers/{id}/present_payment_method": [
+      {
+        "namespace": "testHelpers.terminal.readers",
+        "method": "presentPaymentMethod"
+      }
+    ],
+    "post /v1/test_helpers/terminal/readers/{id}/succeed_input_collection": [
+      {
+        "namespace": "testHelpers.terminal.readers",
+        "method": "succeedInputCollection"
+      }
+    ],
+    "post /v1/test_helpers/terminal/readers/{id}/timeout_input_collection": [
+      {
+        "namespace": "testHelpers.terminal.readers",
+        "method": "timeoutInputCollection"
+      }
+    ],
+    "post /v1/test_helpers/test_clocks/{id}/advance": [
+      {
+        "namespace": "testHelpers.testClocks",
+        "method": "advance"
+      }
+    ],
+    "post /v1/test_helpers/test_clocks": [
+      {
+        "namespace": "testHelpers.testClocks",
+        "method": "create"
+      }
+    ],
+    "delete /v1/test_helpers/test_clocks/{id}": [
+      {
+        "namespace": "testHelpers.testClocks",
+        "method": "del"
+      }
+    ],
+    "get /v1/test_helpers/test_clocks": [
+      {
+        "namespace": "testHelpers.testClocks",
+        "method": "list"
+      }
+    ],
+    "get /v1/test_helpers/test_clocks/{id}": [
+      {
+        "namespace": "testHelpers.testClocks",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/test_helpers/treasury/inbound_transfers/{id}/fail": [
+      {
+        "namespace": "testHelpers.treasury.inboundTransfers",
+        "method": "fail"
+      }
+    ],
+    "post /v1/test_helpers/treasury/inbound_transfers/{id}/return": [
+      {
+        "namespace": "testHelpers.treasury.inboundTransfers",
+        "method": "returnInboundTransfer"
+      }
+    ],
+    "post /v1/test_helpers/treasury/inbound_transfers/{id}/succeed": [
+      {
+        "namespace": "testHelpers.treasury.inboundTransfers",
+        "method": "succeed"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_payments/{id}/fail": [
+      {
+        "namespace": "testHelpers.treasury.outboundPayments",
+        "method": "fail"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_payments/{id}/post": [
+      {
+        "namespace": "testHelpers.treasury.outboundPayments",
+        "method": "post"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_payments/{id}/return": [
+      {
+        "namespace": "testHelpers.treasury.outboundPayments",
+        "method": "returnOutboundPayment"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_payments/{id}": [
+      {
+        "namespace": "testHelpers.treasury.outboundPayments",
+        "method": "update"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_transfers/{id}/fail": [
+      {
+        "namespace": "testHelpers.treasury.outboundTransfers",
+        "method": "fail"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_transfers/{id}/post": [
+      {
+        "namespace": "testHelpers.treasury.outboundTransfers",
+        "method": "post"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_transfers/{id}/return": [
+      {
+        "namespace": "testHelpers.treasury.outboundTransfers",
+        "method": "returnOutboundTransfer"
+      }
+    ],
+    "post /v1/test_helpers/treasury/outbound_transfers/{id}": [
+      {
+        "namespace": "testHelpers.treasury.outboundTransfers",
+        "method": "update"
+      }
+    ],
+    "post /v1/test_helpers/treasury/received_credits": [
+      {
+        "namespace": "testHelpers.treasury.receivedCredits",
+        "method": "create"
+      }
+    ],
+    "post /v1/test_helpers/treasury/received_debits": [
+      {
+        "namespace": "testHelpers.treasury.receivedDebits",
+        "method": "create"
+      }
+    ],
+    "post /v1/tokens": [
+      {
+        "namespace": "tokens",
+        "method": "create"
+      }
+    ],
+    "get /v1/tokens/{id}": [
+      {
+        "namespace": "tokens",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/topups/{id}/cancel": [
+      {
+        "namespace": "topups",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/topups": [
+      {
+        "namespace": "topups",
+        "method": "create"
+      }
+    ],
+    "get /v1/topups": [
+      {
+        "namespace": "topups",
+        "method": "list"
+      }
+    ],
+    "get /v1/topups/{id}": [
+      {
+        "namespace": "topups",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/topups/{id}": [
+      {
+        "namespace": "topups",
+        "method": "update"
+      }
+    ],
+    "post /v1/transfers": [
+      {
+        "namespace": "transfers",
+        "method": "create"
+      }
+    ],
+    "post /v1/transfers/{id}/reversals": [
+      {
+        "namespace": "transfers",
+        "method": "createReversal"
+      }
+    ],
+    "get /v1/transfers": [
+      {
+        "namespace": "transfers",
+        "method": "list"
+      }
+    ],
+    "get /v1/transfers/{id}/reversals": [
+      {
+        "namespace": "transfers",
+        "method": "listReversals"
+      }
+    ],
+    "get /v1/transfers/{id}": [
+      {
+        "namespace": "transfers",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/transfers/{transferId}/reversals/{id}": [
+      {
+        "namespace": "transfers",
+        "method": "retrieveReversal"
+      }
+    ],
+    "post /v1/transfers/{id}": [
+      {
+        "namespace": "transfers",
+        "method": "update"
+      }
+    ],
+    "post /v1/transfers/{transferId}/reversals/{id}": [
+      {
+        "namespace": "transfers",
+        "method": "updateReversal"
+      }
+    ],
+    "post /v1/treasury/credit_reversals": [
+      {
+        "namespace": "treasury.creditReversals",
+        "method": "create"
+      }
+    ],
+    "get /v1/treasury/credit_reversals": [
+      {
+        "namespace": "treasury.creditReversals",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/credit_reversals/{id}": [
+      {
+        "namespace": "treasury.creditReversals",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/treasury/debit_reversals": [
+      {
+        "namespace": "treasury.debitReversals",
+        "method": "create"
+      }
+    ],
+    "get /v1/treasury/debit_reversals": [
+      {
+        "namespace": "treasury.debitReversals",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/debit_reversals/{id}": [
+      {
+        "namespace": "treasury.debitReversals",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/treasury/financial_accounts/{id}/close": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "close"
+      }
+    ],
+    "post /v1/treasury/financial_accounts": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "create"
+      }
+    ],
+    "get /v1/treasury/financial_accounts": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/financial_accounts/{id}": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/treasury/financial_accounts/{id}/features": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "retrieveFeatures"
+      }
+    ],
+    "post /v1/treasury/financial_accounts/{id}": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "update"
+      }
+    ],
+    "post /v1/treasury/financial_accounts/{id}/features": [
+      {
+        "namespace": "treasury.financialAccounts",
+        "method": "updateFeatures"
+      }
+    ],
+    "post /v1/treasury/inbound_transfers/{id}/cancel": [
+      {
+        "namespace": "treasury.inboundTransfers",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/treasury/inbound_transfers": [
+      {
+        "namespace": "treasury.inboundTransfers",
+        "method": "create"
+      }
+    ],
+    "get /v1/treasury/inbound_transfers": [
+      {
+        "namespace": "treasury.inboundTransfers",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/inbound_transfers/{id}": [
+      {
+        "namespace": "treasury.inboundTransfers",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/treasury/outbound_payments/{id}/cancel": [
+      {
+        "namespace": "treasury.outboundPayments",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/treasury/outbound_payments": [
+      {
+        "namespace": "treasury.outboundPayments",
+        "method": "create"
+      }
+    ],
+    "get /v1/treasury/outbound_payments": [
+      {
+        "namespace": "treasury.outboundPayments",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/outbound_payments/{id}": [
+      {
+        "namespace": "treasury.outboundPayments",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/treasury/outbound_transfers/{id}/cancel": [
+      {
+        "namespace": "treasury.outboundTransfers",
+        "method": "cancel"
+      }
+    ],
+    "post /v1/treasury/outbound_transfers": [
+      {
+        "namespace": "treasury.outboundTransfers",
+        "method": "create"
+      }
+    ],
+    "get /v1/treasury/outbound_transfers": [
+      {
+        "namespace": "treasury.outboundTransfers",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/outbound_transfers/{id}": [
+      {
+        "namespace": "treasury.outboundTransfers",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/treasury/received_credits": [
+      {
+        "namespace": "treasury.receivedCredits",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/received_credits/{id}": [
+      {
+        "namespace": "treasury.receivedCredits",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/treasury/received_debits": [
+      {
+        "namespace": "treasury.receivedDebits",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/received_debits/{id}": [
+      {
+        "namespace": "treasury.receivedDebits",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/treasury/transaction_entries": [
+      {
+        "namespace": "treasury.transactionEntries",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/transaction_entries/{id}": [
+      {
+        "namespace": "treasury.transactionEntries",
+        "method": "retrieve"
+      }
+    ],
+    "get /v1/treasury/transactions": [
+      {
+        "namespace": "treasury.transactions",
+        "method": "list"
+      }
+    ],
+    "get /v1/treasury/transactions/{id}": [
+      {
+        "namespace": "treasury.transactions",
+        "method": "retrieve"
+      }
+    ],
+    "post /v2/billing/meter_event_adjustments": [
+      {
+        "namespace": "v2.billing.meterEventAdjustments",
+        "method": "create"
+      }
+    ],
+    "post /v2/billing/meter_events": [
+      {
+        "namespace": "v2.billing.meterEvents",
+        "method": "create"
+      }
+    ],
+    "post /v2/billing/meter_event_session": [
+      {
+        "namespace": "v2.billing.meterEventSession",
+        "method": "create"
+      }
+    ],
+    "post /v2/billing/meter_event_stream": [
+      {
+        "namespace": "v2.billing.meterEventStream",
+        "method": "create"
+      }
+    ],
+    "post /v2/commerce/product_catalog/imports": [
+      {
+        "namespace": "v2.commerce.productCatalog.imports",
+        "method": "create"
+      }
+    ],
+    "get /v2/commerce/product_catalog/imports": [
+      {
+        "namespace": "v2.commerce.productCatalog.imports",
+        "method": "list"
+      }
+    ],
+    "get /v2/commerce/product_catalog/imports/{id}": [
+      {
+        "namespace": "v2.commerce.productCatalog.imports",
+        "method": "retrieve"
+      }
+    ],
+    "post /v2/core/account_links": [
+      {
+        "namespace": "v2.core.accountLinks",
+        "method": "create"
+      }
+    ],
+    "post /v2/core/accounts/{id}/close": [
+      {
+        "namespace": "v2.core.accounts",
+        "method": "close"
+      }
+    ],
+    "post /v2/core/accounts": [
+      {
+        "namespace": "v2.core.accounts",
+        "method": "create"
+      }
+    ],
+    "get /v2/core/accounts": [
+      {
+        "namespace": "v2.core.accounts",
+        "method": "list"
+      }
+    ],
+    "post /v2/core/accounts/{accountId}/persons": [
+      {
+        "namespace": "v2.core.accounts.persons",
+        "method": "create"
+      }
+    ],
+    "delete /v2/core/accounts/{accountId}/persons/{id}": [
+      {
+        "namespace": "v2.core.accounts.persons",
+        "method": "del"
+      }
+    ],
+    "get /v2/core/accounts/{accountId}/persons": [
+      {
+        "namespace": "v2.core.accounts.persons",
+        "method": "list"
+      }
+    ],
+    "get /v2/core/accounts/{accountId}/persons/{id}": [
+      {
+        "namespace": "v2.core.accounts.persons",
+        "method": "retrieve"
+      }
+    ],
+    "post /v2/core/accounts/{accountId}/persons/{id}": [
+      {
+        "namespace": "v2.core.accounts.persons",
+        "method": "update"
+      }
+    ],
+    "post /v2/core/accounts/{accountId}/person_tokens": [
+      {
+        "namespace": "v2.core.accounts.personTokens",
+        "method": "create"
+      }
+    ],
+    "get /v2/core/accounts/{accountId}/person_tokens/{id}": [
+      {
+        "namespace": "v2.core.accounts.personTokens",
+        "method": "retrieve"
+      }
+    ],
+    "get /v2/core/accounts/{id}": [
+      {
+        "namespace": "v2.core.accounts",
+        "method": "retrieve"
+      }
+    ],
+    "post /v2/core/accounts/{id}": [
+      {
+        "namespace": "v2.core.accounts",
+        "method": "update"
+      }
+    ],
+    "post /v2/core/account_tokens": [
+      {
+        "namespace": "v2.core.accountTokens",
+        "method": "create"
+      }
+    ],
+    "get /v2/core/account_tokens/{id}": [
+      {
+        "namespace": "v2.core.accountTokens",
+        "method": "retrieve"
+      }
+    ],
+    "post /v2/core/event_destinations": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "create"
+      }
+    ],
+    "delete /v2/core/event_destinations/{id}": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "del"
+      }
+    ],
+    "post /v2/core/event_destinations/{id}/disable": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "disable"
+      }
+    ],
+    "post /v2/core/event_destinations/{id}/enable": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "enable"
+      }
+    ],
+    "get /v2/core/event_destinations": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "list"
+      }
+    ],
+    "post /v2/core/event_destinations/{id}/ping": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "ping"
+      }
+    ],
+    "get /v2/core/event_destinations/{id}": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "retrieve"
+      }
+    ],
+    "post /v2/core/event_destinations/{id}": [
+      {
+        "namespace": "v2.core.eventDestinations",
+        "method": "update"
+      }
+    ],
+    "get /v2/core/events": [
+      {
+        "namespace": "v2.core.events",
+        "method": "list"
+      }
+    ],
+    "get /v2/core/events/{id}": [
+      {
+        "namespace": "v2.core.events",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/webhook_endpoints": [
+      {
+        "namespace": "webhookEndpoints",
+        "method": "create"
+      }
+    ],
+    "delete /v1/webhook_endpoints/{id}": [
+      {
+        "namespace": "webhookEndpoints",
+        "method": "del"
+      }
+    ],
+    "get /v1/webhook_endpoints": [
+      {
+        "namespace": "webhookEndpoints",
+        "method": "list"
+      }
+    ],
+    "get /v1/webhook_endpoints/{id}": [
+      {
+        "namespace": "webhookEndpoints",
+        "method": "retrieve"
+      }
+    ],
+    "post /v1/webhook_endpoints/{id}": [
+      {
+        "namespace": "webhookEndpoints",
+        "method": "update"
+      }
+    ]
+  },
+  "byCall": {
+    "accountLinks.create": {
+      "method": "post",
+      "path": "/v1/account_links"
+    },
+    "accounts.create": {
+      "method": "post",
+      "path": "/v1/accounts"
+    },
+    "accounts.createExternalAccount": {
+      "method": "post",
+      "path": "/v1/accounts/{id}/external_accounts"
+    },
+    "accounts.createLoginLink": {
+      "method": "post",
+      "path": "/v1/accounts/{id}/login_links"
+    },
+    "accounts.createPerson": {
+      "method": "post",
+      "path": "/v1/accounts/{id}/persons"
+    },
+    "accounts.del": {
+      "method": "delete",
+      "path": "/v1/accounts/{id}"
+    },
+    "accounts.deleteExternalAccount": {
+      "method": "delete",
+      "path": "/v1/accounts/{accountId}/external_accounts/{id}"
+    },
+    "accounts.deletePerson": {
+      "method": "delete",
+      "path": "/v1/accounts/{accountId}/persons/{id}"
+    },
+    "accounts.list": {
+      "method": "get",
+      "path": "/v1/accounts"
+    },
+    "accounts.listCapabilities": {
+      "method": "get",
+      "path": "/v1/accounts/{id}/capabilities"
+    },
+    "accounts.listExternalAccounts": {
+      "method": "get",
+      "path": "/v1/accounts/{id}/external_accounts"
+    },
+    "accounts.listPersons": {
+      "method": "get",
+      "path": "/v1/accounts/{id}/persons"
+    },
+    "accounts.reject": {
+      "method": "post",
+      "path": "/v1/accounts/{id}/reject"
+    },
+    "accounts.retrieve": {
+      "method": "get",
+      "path": "/v1/accounts/{id}"
+    },
+    "accounts.retrieveCapability": {
+      "method": "get",
+      "path": "/v1/accounts/{accountId}/capabilities/{id}"
+    },
+    "accounts.retrieveCurrent": {
+      "method": "get",
+      "path": "/v1/account"
+    },
+    "accounts.retrieveExternalAccount": {
+      "method": "get",
+      "path": "/v1/accounts/{accountId}/external_accounts/{id}"
+    },
+    "accounts.retrievePerson": {
+      "method": "get",
+      "path": "/v1/accounts/{accountId}/persons/{id}"
+    },
+    "accounts.unreject": {
+      "method": "post",
+      "path": "/v1/accounts/{id}/unreject"
+    },
+    "accounts.update": {
+      "method": "post",
+      "path": "/v1/accounts/{id}"
+    },
+    "accounts.updateCapability": {
+      "method": "post",
+      "path": "/v1/accounts/{accountId}/capabilities/{id}"
+    },
+    "accounts.updateExternalAccount": {
+      "method": "post",
+      "path": "/v1/accounts/{accountId}/external_accounts/{id}"
+    },
+    "accounts.updatePerson": {
+      "method": "post",
+      "path": "/v1/accounts/{accountId}/persons/{id}"
+    },
+    "accountSessions.create": {
+      "method": "post",
+      "path": "/v1/account_sessions"
+    },
+    "applePayDomains.create": {
+      "method": "post",
+      "path": "/v1/apple_pay/domains"
+    },
+    "applePayDomains.del": {
+      "method": "delete",
+      "path": "/v1/apple_pay/domains/{id}"
+    },
+    "applePayDomains.list": {
+      "method": "get",
+      "path": "/v1/apple_pay/domains"
+    },
+    "applePayDomains.retrieve": {
+      "method": "get",
+      "path": "/v1/apple_pay/domains/{id}"
+    },
+    "applicationFees.createRefund": {
+      "method": "post",
+      "path": "/v1/application_fees/{id}/refunds"
+    },
+    "applicationFees.list": {
+      "method": "get",
+      "path": "/v1/application_fees"
+    },
+    "applicationFees.listRefunds": {
+      "method": "get",
+      "path": "/v1/application_fees/{id}/refunds"
+    },
+    "applicationFees.retrieve": {
+      "method": "get",
+      "path": "/v1/application_fees/{id}"
+    },
+    "applicationFees.retrieveRefund": {
+      "method": "get",
+      "path": "/v1/application_fees/{feeId}/refunds/{id}"
+    },
+    "applicationFees.updateRefund": {
+      "method": "post",
+      "path": "/v1/application_fees/{feeId}/refunds/{id}"
+    },
+    "apps.secrets.create": {
+      "method": "post",
+      "path": "/v1/apps/secrets"
+    },
+    "apps.secrets.deleteWhere": {
+      "method": "post",
+      "path": "/v1/apps/secrets/delete"
+    },
+    "apps.secrets.find": {
+      "method": "get",
+      "path": "/v1/apps/secrets/find"
+    },
+    "apps.secrets.list": {
+      "method": "get",
+      "path": "/v1/apps/secrets"
+    },
+    "balance.retrieve": {
+      "method": "get",
+      "path": "/v1/balance"
+    },
+    "balanceSettings.retrieve": {
+      "method": "get",
+      "path": "/v1/balance_settings"
+    },
+    "balanceSettings.update": {
+      "method": "post",
+      "path": "/v1/balance_settings"
+    },
+    "balanceTransactions.list": {
+      "method": "get",
+      "path": "/v1/balance_transactions"
+    },
+    "balanceTransactions.retrieve": {
+      "method": "get",
+      "path": "/v1/balance_transactions/{id}"
+    },
+    "billing.alerts.activate": {
+      "method": "post",
+      "path": "/v1/billing/alerts/{id}/activate"
+    },
+    "billing.alerts.archive": {
+      "method": "post",
+      "path": "/v1/billing/alerts/{id}/archive"
+    },
+    "billing.alerts.create": {
+      "method": "post",
+      "path": "/v1/billing/alerts"
+    },
+    "billing.alerts.deactivate": {
+      "method": "post",
+      "path": "/v1/billing/alerts/{id}/deactivate"
+    },
+    "billing.alerts.list": {
+      "method": "get",
+      "path": "/v1/billing/alerts"
+    },
+    "billing.alerts.retrieve": {
+      "method": "get",
+      "path": "/v1/billing/alerts/{id}"
+    },
+    "billing.creditBalanceSummaries.retrieve": {
+      "method": "get",
+      "path": "/v1/billing/credit_balance_summary"
+    },
+    "billing.creditBalanceTransactions.list": {
+      "method": "get",
+      "path": "/v1/billing/credit_balance_transactions"
+    },
+    "billing.creditBalanceTransactions.retrieve": {
+      "method": "get",
+      "path": "/v1/billing/credit_balance_transactions/{id}"
+    },
+    "billing.creditGrants.create": {
+      "method": "post",
+      "path": "/v1/billing/credit_grants"
+    },
+    "billing.creditGrants.expire": {
+      "method": "post",
+      "path": "/v1/billing/credit_grants/{id}/expire"
+    },
+    "billing.creditGrants.list": {
+      "method": "get",
+      "path": "/v1/billing/credit_grants"
+    },
+    "billing.creditGrants.retrieve": {
+      "method": "get",
+      "path": "/v1/billing/credit_grants/{id}"
+    },
+    "billing.creditGrants.update": {
+      "method": "post",
+      "path": "/v1/billing/credit_grants/{id}"
+    },
+    "billing.creditGrants.voidGrant": {
+      "method": "post",
+      "path": "/v1/billing/credit_grants/{id}/void"
+    },
+    "billing.feedbackOptions.create": {
+      "method": "post",
+      "path": "/v1/billing/feedback_options"
+    },
+    "billing.feedbackOptions.deactivate": {
+      "method": "post",
+      "path": "/v1/billing/feedback_options/{id}/deactivate"
+    },
+    "billing.feedbackOptions.list": {
+      "method": "get",
+      "path": "/v1/billing/feedback_options"
+    },
+    "billing.feedbackOptions.retrieve": {
+      "method": "get",
+      "path": "/v1/billing/feedback_options/{id}"
+    },
+    "billing.feedbackOptions.update": {
+      "method": "post",
+      "path": "/v1/billing/feedback_options/{id}"
+    },
+    "billing.meterEventAdjustments.create": {
+      "method": "post",
+      "path": "/v1/billing/meter_event_adjustments"
+    },
+    "billing.meterEvents.create": {
+      "method": "post",
+      "path": "/v1/billing/meter_events"
+    },
+    "billing.meters.create": {
+      "method": "post",
+      "path": "/v1/billing/meters"
+    },
+    "billing.meters.deactivate": {
+      "method": "post",
+      "path": "/v1/billing/meters/{id}/deactivate"
+    },
+    "billing.meters.list": {
+      "method": "get",
+      "path": "/v1/billing/meters"
+    },
+    "billing.meters.listEventSummaries": {
+      "method": "get",
+      "path": "/v1/billing/meters/{id}/event_summaries"
+    },
+    "billing.meters.reactivate": {
+      "method": "post",
+      "path": "/v1/billing/meters/{id}/reactivate"
+    },
+    "billing.meters.retrieve": {
+      "method": "get",
+      "path": "/v1/billing/meters/{id}"
+    },
+    "billing.meters.update": {
+      "method": "post",
+      "path": "/v1/billing/meters/{id}"
+    },
+    "billingPortal.configurations.create": {
+      "method": "post",
+      "path": "/v1/billing_portal/configurations"
+    },
+    "billingPortal.configurations.list": {
+      "method": "get",
+      "path": "/v1/billing_portal/configurations"
+    },
+    "billingPortal.configurations.retrieve": {
+      "method": "get",
+      "path": "/v1/billing_portal/configurations/{id}"
+    },
+    "billingPortal.configurations.update": {
+      "method": "post",
+      "path": "/v1/billing_portal/configurations/{id}"
+    },
+    "billingPortal.sessions.create": {
+      "method": "post",
+      "path": "/v1/billing_portal/sessions"
+    },
+    "charges.capture": {
+      "method": "post",
+      "path": "/v1/charges/{id}/capture"
+    },
+    "charges.create": {
+      "method": "post",
+      "path": "/v1/charges"
+    },
+    "charges.list": {
+      "method": "get",
+      "path": "/v1/charges"
+    },
+    "charges.retrieve": {
+      "method": "get",
+      "path": "/v1/charges/{id}"
+    },
+    "charges.search": {
+      "method": "get",
+      "path": "/v1/charges/search"
+    },
+    "charges.update": {
+      "method": "post",
+      "path": "/v1/charges/{id}"
+    },
+    "checkout.sessions.create": {
+      "method": "post",
+      "path": "/v1/checkout/sessions"
+    },
+    "checkout.sessions.expire": {
+      "method": "post",
+      "path": "/v1/checkout/sessions/{id}/expire"
+    },
+    "checkout.sessions.list": {
+      "method": "get",
+      "path": "/v1/checkout/sessions"
+    },
+    "checkout.sessions.listLineItems": {
+      "method": "get",
+      "path": "/v1/checkout/sessions/{id}/line_items"
+    },
+    "checkout.sessions.retrieve": {
+      "method": "get",
+      "path": "/v1/checkout/sessions/{id}"
+    },
+    "checkout.sessions.update": {
+      "method": "post",
+      "path": "/v1/checkout/sessions/{id}"
+    },
+    "climate.orders.cancel": {
+      "method": "post",
+      "path": "/v1/climate/orders/{id}/cancel"
+    },
+    "climate.orders.create": {
+      "method": "post",
+      "path": "/v1/climate/orders"
+    },
+    "climate.orders.list": {
+      "method": "get",
+      "path": "/v1/climate/orders"
+    },
+    "climate.orders.retrieve": {
+      "method": "get",
+      "path": "/v1/climate/orders/{id}"
+    },
+    "climate.orders.update": {
+      "method": "post",
+      "path": "/v1/climate/orders/{id}"
+    },
+    "climate.products.list": {
+      "method": "get",
+      "path": "/v1/climate/products"
+    },
+    "climate.products.retrieve": {
+      "method": "get",
+      "path": "/v1/climate/products/{id}"
+    },
+    "climate.suppliers.list": {
+      "method": "get",
+      "path": "/v1/climate/suppliers"
+    },
+    "climate.suppliers.retrieve": {
+      "method": "get",
+      "path": "/v1/climate/suppliers/{id}"
+    },
+    "confirmationTokens.retrieve": {
+      "method": "get",
+      "path": "/v1/confirmation_tokens/{id}"
+    },
+    "countrySpecs.list": {
+      "method": "get",
+      "path": "/v1/country_specs"
+    },
+    "countrySpecs.retrieve": {
+      "method": "get",
+      "path": "/v1/country_specs/{id}"
+    },
+    "coupons.create": {
+      "method": "post",
+      "path": "/v1/coupons"
+    },
+    "coupons.del": {
+      "method": "delete",
+      "path": "/v1/coupons/{id}"
+    },
+    "coupons.list": {
+      "method": "get",
+      "path": "/v1/coupons"
+    },
+    "coupons.retrieve": {
+      "method": "get",
+      "path": "/v1/coupons/{id}"
+    },
+    "coupons.update": {
+      "method": "post",
+      "path": "/v1/coupons/{id}"
+    },
+    "creditNotes.create": {
+      "method": "post",
+      "path": "/v1/credit_notes"
+    },
+    "creditNotes.list": {
+      "method": "get",
+      "path": "/v1/credit_notes"
+    },
+    "creditNotes.listLineItems": {
+      "method": "get",
+      "path": "/v1/credit_notes/{id}/lines"
+    },
+    "creditNotes.listPreviewLineItems": {
+      "method": "get",
+      "path": "/v1/credit_notes/preview/lines"
+    },
+    "creditNotes.preview": {
+      "method": "get",
+      "path": "/v1/credit_notes/preview"
+    },
+    "creditNotes.retrieve": {
+      "method": "get",
+      "path": "/v1/credit_notes/{id}"
+    },
+    "creditNotes.update": {
+      "method": "post",
+      "path": "/v1/credit_notes/{id}"
+    },
+    "creditNotes.voidCreditNote": {
+      "method": "post",
+      "path": "/v1/credit_notes/{id}/void"
+    },
+    "customers.create": {
+      "method": "post",
+      "path": "/v1/customers"
+    },
+    "customers.createBalanceTransaction": {
+      "method": "post",
+      "path": "/v1/customers/{id}/balance_transactions"
+    },
+    "customers.createFundingInstructions": {
+      "method": "post",
+      "path": "/v1/customers/{id}/funding_instructions"
+    },
+    "customers.createSource": {
+      "method": "post",
+      "path": "/v1/customers/{id}/sources"
+    },
+    "customers.createTaxId": {
+      "method": "post",
+      "path": "/v1/customers/{id}/tax_ids"
+    },
+    "customers.del": {
+      "method": "delete",
+      "path": "/v1/customers/{id}"
+    },
+    "customers.deleteDiscount": {
+      "method": "delete",
+      "path": "/v1/customers/{id}/discount"
+    },
+    "customers.deleteSource": {
+      "method": "delete",
+      "path": "/v1/customers/{customerId}/sources/{id}"
+    },
+    "customers.deleteTaxId": {
+      "method": "delete",
+      "path": "/v1/customers/{customerId}/tax_ids/{id}"
+    },
+    "customers.list": {
+      "method": "get",
+      "path": "/v1/customers"
+    },
+    "customers.listBalanceTransactions": {
+      "method": "get",
+      "path": "/v1/customers/{id}/balance_transactions"
+    },
+    "customers.listCashBalanceTransactions": {
+      "method": "get",
+      "path": "/v1/customers/{id}/cash_balance_transactions"
+    },
+    "customers.listPaymentMethods": {
+      "method": "get",
+      "path": "/v1/customers/{id}/payment_methods"
+    },
+    "customers.listSources": {
+      "method": "get",
+      "path": "/v1/customers/{id}/sources"
+    },
+    "customers.listTaxIds": {
+      "method": "get",
+      "path": "/v1/customers/{id}/tax_ids"
+    },
+    "customers.retrieve": {
+      "method": "get",
+      "path": "/v1/customers/{id}"
+    },
+    "customers.retrieveBalanceTransaction": {
+      "method": "get",
+      "path": "/v1/customers/{customerId}/balance_transactions/{id}"
+    },
+    "customers.retrieveCashBalance": {
+      "method": "get",
+      "path": "/v1/customers/{id}/cash_balance"
+    },
+    "customers.retrieveCashBalanceTransaction": {
+      "method": "get",
+      "path": "/v1/customers/{customerId}/cash_balance_transactions/{id}"
+    },
+    "customers.retrievePaymentMethod": {
+      "method": "get",
+      "path": "/v1/customers/{customerId}/payment_methods/{id}"
+    },
+    "customers.retrieveSource": {
+      "method": "get",
+      "path": "/v1/customers/{customerId}/sources/{id}"
+    },
+    "customers.retrieveTaxId": {
+      "method": "get",
+      "path": "/v1/customers/{customerId}/tax_ids/{id}"
+    },
+    "customers.search": {
+      "method": "get",
+      "path": "/v1/customers/search"
+    },
+    "customers.update": {
+      "method": "post",
+      "path": "/v1/customers/{id}"
+    },
+    "customers.updateBalanceTransaction": {
+      "method": "post",
+      "path": "/v1/customers/{customerId}/balance_transactions/{id}"
+    },
+    "customers.updateCashBalance": {
+      "method": "post",
+      "path": "/v1/customers/{id}/cash_balance"
+    },
+    "customers.updateSource": {
+      "method": "post",
+      "path": "/v1/customers/{customerId}/sources/{id}"
+    },
+    "customers.verifySource": {
+      "method": "post",
+      "path": "/v1/customers/{customerId}/sources/{id}/verify"
+    },
+    "customerSessions.create": {
+      "method": "post",
+      "path": "/v1/customer_sessions"
+    },
+    "disputes.close": {
+      "method": "post",
+      "path": "/v1/disputes/{id}/close"
+    },
+    "disputes.list": {
+      "method": "get",
+      "path": "/v1/disputes"
+    },
+    "disputes.retrieve": {
+      "method": "get",
+      "path": "/v1/disputes/{id}"
+    },
+    "disputes.update": {
+      "method": "post",
+      "path": "/v1/disputes/{id}"
+    },
+    "entitlements.activeEntitlements.list": {
+      "method": "get",
+      "path": "/v1/entitlements/active_entitlements"
+    },
+    "entitlements.activeEntitlements.retrieve": {
+      "method": "get",
+      "path": "/v1/entitlements/active_entitlements/{id}"
+    },
+    "entitlements.features.create": {
+      "method": "post",
+      "path": "/v1/entitlements/features"
+    },
+    "entitlements.features.list": {
+      "method": "get",
+      "path": "/v1/entitlements/features"
+    },
+    "entitlements.features.retrieve": {
+      "method": "get",
+      "path": "/v1/entitlements/features/{id}"
+    },
+    "entitlements.features.update": {
+      "method": "post",
+      "path": "/v1/entitlements/features/{id}"
+    },
+    "ephemeralKeys.create": {
+      "method": "post",
+      "path": "/v1/ephemeral_keys"
+    },
+    "ephemeralKeys.del": {
+      "method": "delete",
+      "path": "/v1/ephemeral_keys/{id}"
+    },
+    "events.list": {
+      "method": "get",
+      "path": "/v1/events"
+    },
+    "events.retrieve": {
+      "method": "get",
+      "path": "/v1/events/{id}"
+    },
+    "exchangeRates.list": {
+      "method": "get",
+      "path": "/v1/exchange_rates"
+    },
+    "exchangeRates.retrieve": {
+      "method": "get",
+      "path": "/v1/exchange_rates/{id}"
+    },
+    "fileLinks.create": {
+      "method": "post",
+      "path": "/v1/file_links"
+    },
+    "fileLinks.list": {
+      "method": "get",
+      "path": "/v1/file_links"
+    },
+    "fileLinks.retrieve": {
+      "method": "get",
+      "path": "/v1/file_links/{id}"
+    },
+    "fileLinks.update": {
+      "method": "post",
+      "path": "/v1/file_links/{id}"
+    },
+    "files.create": {
+      "method": "post",
+      "path": "/v1/files"
+    },
+    "files.list": {
+      "method": "get",
+      "path": "/v1/files"
+    },
+    "files.retrieve": {
+      "method": "get",
+      "path": "/v1/files/{id}"
+    },
+    "financialConnections.accounts.disconnect": {
+      "method": "post",
+      "path": "/v1/financial_connections/accounts/{id}/disconnect"
+    },
+    "financialConnections.accounts.list": {
+      "method": "get",
+      "path": "/v1/financial_connections/accounts"
+    },
+    "financialConnections.accounts.listOwners": {
+      "method": "get",
+      "path": "/v1/financial_connections/accounts/{id}/owners"
+    },
+    "financialConnections.accounts.refresh": {
+      "method": "post",
+      "path": "/v1/financial_connections/accounts/{id}/refresh"
+    },
+    "financialConnections.accounts.retrieve": {
+      "method": "get",
+      "path": "/v1/financial_connections/accounts/{id}"
+    },
+    "financialConnections.accounts.subscribe": {
+      "method": "post",
+      "path": "/v1/financial_connections/accounts/{id}/subscribe"
+    },
+    "financialConnections.accounts.unsubscribe": {
+      "method": "post",
+      "path": "/v1/financial_connections/accounts/{id}/unsubscribe"
+    },
+    "financialConnections.sessions.create": {
+      "method": "post",
+      "path": "/v1/financial_connections/sessions"
+    },
+    "financialConnections.sessions.retrieve": {
+      "method": "get",
+      "path": "/v1/financial_connections/sessions/{id}"
+    },
+    "financialConnections.transactions.list": {
+      "method": "get",
+      "path": "/v1/financial_connections/transactions"
+    },
+    "financialConnections.transactions.retrieve": {
+      "method": "get",
+      "path": "/v1/financial_connections/transactions/{id}"
+    },
+    "forwarding.requests.create": {
+      "method": "post",
+      "path": "/v1/forwarding/requests"
+    },
+    "forwarding.requests.list": {
+      "method": "get",
+      "path": "/v1/forwarding/requests"
+    },
+    "forwarding.requests.retrieve": {
+      "method": "get",
+      "path": "/v1/forwarding/requests/{id}"
+    },
+    "identity.verificationReports.list": {
+      "method": "get",
+      "path": "/v1/identity/verification_reports"
+    },
+    "identity.verificationReports.retrieve": {
+      "method": "get",
+      "path": "/v1/identity/verification_reports/{id}"
+    },
+    "identity.verificationSessions.cancel": {
+      "method": "post",
+      "path": "/v1/identity/verification_sessions/{id}/cancel"
+    },
+    "identity.verificationSessions.create": {
+      "method": "post",
+      "path": "/v1/identity/verification_sessions"
+    },
+    "identity.verificationSessions.list": {
+      "method": "get",
+      "path": "/v1/identity/verification_sessions"
+    },
+    "identity.verificationSessions.redact": {
+      "method": "post",
+      "path": "/v1/identity/verification_sessions/{id}/redact"
+    },
+    "identity.verificationSessions.retrieve": {
+      "method": "get",
+      "path": "/v1/identity/verification_sessions/{id}"
+    },
+    "identity.verificationSessions.update": {
+      "method": "post",
+      "path": "/v1/identity/verification_sessions/{id}"
+    },
+    "invoiceItems.create": {
+      "method": "post",
+      "path": "/v1/invoiceitems"
+    },
+    "invoiceItems.del": {
+      "method": "delete",
+      "path": "/v1/invoiceitems/{id}"
+    },
+    "invoiceItems.list": {
+      "method": "get",
+      "path": "/v1/invoiceitems"
+    },
+    "invoiceItems.retrieve": {
+      "method": "get",
+      "path": "/v1/invoiceitems/{id}"
+    },
+    "invoiceItems.update": {
+      "method": "post",
+      "path": "/v1/invoiceitems/{id}"
+    },
+    "invoicePayments.list": {
+      "method": "get",
+      "path": "/v1/invoice_payments"
+    },
+    "invoicePayments.retrieve": {
+      "method": "get",
+      "path": "/v1/invoice_payments/{id}"
+    },
+    "invoiceRenderingTemplates.archive": {
+      "method": "post",
+      "path": "/v1/invoice_rendering_templates/{id}/archive"
+    },
+    "invoiceRenderingTemplates.list": {
+      "method": "get",
+      "path": "/v1/invoice_rendering_templates"
+    },
+    "invoiceRenderingTemplates.retrieve": {
+      "method": "get",
+      "path": "/v1/invoice_rendering_templates/{id}"
+    },
+    "invoiceRenderingTemplates.unarchive": {
+      "method": "post",
+      "path": "/v1/invoice_rendering_templates/{id}/unarchive"
+    },
+    "invoices.addLines": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/add_lines"
+    },
+    "invoices.attachPayment": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/attach_payment"
+    },
+    "invoices.create": {
+      "method": "post",
+      "path": "/v1/invoices"
+    },
+    "invoices.createPreview": {
+      "method": "post",
+      "path": "/v1/invoices/create_preview"
+    },
+    "invoices.del": {
+      "method": "delete",
+      "path": "/v1/invoices/{id}"
+    },
+    "invoices.finalizeInvoice": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/finalize"
+    },
+    "invoices.list": {
+      "method": "get",
+      "path": "/v1/invoices"
+    },
+    "invoices.listLineItems": {
+      "method": "get",
+      "path": "/v1/invoices/{id}/lines"
+    },
+    "invoices.markUncollectible": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/mark_uncollectible"
+    },
+    "invoices.pay": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/pay"
+    },
+    "invoices.removeLines": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/remove_lines"
+    },
+    "invoices.retrieve": {
+      "method": "get",
+      "path": "/v1/invoices/{id}"
+    },
+    "invoices.search": {
+      "method": "get",
+      "path": "/v1/invoices/search"
+    },
+    "invoices.sendInvoice": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/send"
+    },
+    "invoices.update": {
+      "method": "post",
+      "path": "/v1/invoices/{id}"
+    },
+    "invoices.updateLineItem": {
+      "method": "post",
+      "path": "/v1/invoices/{invoiceId}/lines/{id}"
+    },
+    "invoices.updateLines": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/update_lines"
+    },
+    "invoices.voidInvoice": {
+      "method": "post",
+      "path": "/v1/invoices/{id}/void"
+    },
+    "issuing.authorizations.approve": {
+      "method": "post",
+      "path": "/v1/issuing/authorizations/{id}/approve"
+    },
+    "issuing.authorizations.decline": {
+      "method": "post",
+      "path": "/v1/issuing/authorizations/{id}/decline"
+    },
+    "issuing.authorizations.list": {
+      "method": "get",
+      "path": "/v1/issuing/authorizations"
+    },
+    "issuing.authorizations.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/authorizations/{id}"
+    },
+    "issuing.authorizations.update": {
+      "method": "post",
+      "path": "/v1/issuing/authorizations/{id}"
+    },
+    "issuing.cardholders.create": {
+      "method": "post",
+      "path": "/v1/issuing/cardholders"
+    },
+    "issuing.cardholders.list": {
+      "method": "get",
+      "path": "/v1/issuing/cardholders"
+    },
+    "issuing.cardholders.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/cardholders/{id}"
+    },
+    "issuing.cardholders.update": {
+      "method": "post",
+      "path": "/v1/issuing/cardholders/{id}"
+    },
+    "issuing.cards.create": {
+      "method": "post",
+      "path": "/v1/issuing/cards"
+    },
+    "issuing.cards.list": {
+      "method": "get",
+      "path": "/v1/issuing/cards"
+    },
+    "issuing.cards.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/cards/{id}"
+    },
+    "issuing.cards.update": {
+      "method": "post",
+      "path": "/v1/issuing/cards/{id}"
+    },
+    "issuing.disputes.create": {
+      "method": "post",
+      "path": "/v1/issuing/disputes"
+    },
+    "issuing.disputes.list": {
+      "method": "get",
+      "path": "/v1/issuing/disputes"
+    },
+    "issuing.disputes.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/disputes/{id}"
+    },
+    "issuing.disputes.submit": {
+      "method": "post",
+      "path": "/v1/issuing/disputes/{id}/submit"
+    },
+    "issuing.disputes.update": {
+      "method": "post",
+      "path": "/v1/issuing/disputes/{id}"
+    },
+    "issuing.personalizationDesigns.create": {
+      "method": "post",
+      "path": "/v1/issuing/personalization_designs"
+    },
+    "issuing.personalizationDesigns.list": {
+      "method": "get",
+      "path": "/v1/issuing/personalization_designs"
+    },
+    "issuing.personalizationDesigns.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/personalization_designs/{id}"
+    },
+    "issuing.personalizationDesigns.update": {
+      "method": "post",
+      "path": "/v1/issuing/personalization_designs/{id}"
+    },
+    "issuing.physicalBundles.list": {
+      "method": "get",
+      "path": "/v1/issuing/physical_bundles"
+    },
+    "issuing.physicalBundles.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/physical_bundles/{id}"
+    },
+    "issuing.tokens.list": {
+      "method": "get",
+      "path": "/v1/issuing/tokens"
+    },
+    "issuing.tokens.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/tokens/{id}"
+    },
+    "issuing.tokens.update": {
+      "method": "post",
+      "path": "/v1/issuing/tokens/{id}"
+    },
+    "issuing.transactions.list": {
+      "method": "get",
+      "path": "/v1/issuing/transactions"
+    },
+    "issuing.transactions.retrieve": {
+      "method": "get",
+      "path": "/v1/issuing/transactions/{id}"
+    },
+    "issuing.transactions.update": {
+      "method": "post",
+      "path": "/v1/issuing/transactions/{id}"
+    },
+    "mandates.retrieve": {
+      "method": "get",
+      "path": "/v1/mandates/{id}"
+    },
+    "paymentAttemptRecords.list": {
+      "method": "get",
+      "path": "/v1/payment_attempt_records"
+    },
+    "paymentAttemptRecords.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_attempt_records/{id}"
+    },
+    "paymentIntents.applyCustomerBalance": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}/apply_customer_balance"
+    },
+    "paymentIntents.cancel": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}/cancel"
+    },
+    "paymentIntents.capture": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}/capture"
+    },
+    "paymentIntents.confirm": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}/confirm"
+    },
+    "paymentIntents.create": {
+      "method": "post",
+      "path": "/v1/payment_intents"
+    },
+    "paymentIntents.incrementAuthorization": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}/increment_authorization"
+    },
+    "paymentIntents.list": {
+      "method": "get",
+      "path": "/v1/payment_intents"
+    },
+    "paymentIntents.listAmountDetailsLineItems": {
+      "method": "get",
+      "path": "/v1/payment_intents/{id}/amount_details_line_items"
+    },
+    "paymentIntents.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_intents/{id}"
+    },
+    "paymentIntents.search": {
+      "method": "get",
+      "path": "/v1/payment_intents/search"
+    },
+    "paymentIntents.update": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}"
+    },
+    "paymentIntents.verifyMicrodeposits": {
+      "method": "post",
+      "path": "/v1/payment_intents/{id}/verify_microdeposits"
+    },
+    "paymentLinks.create": {
+      "method": "post",
+      "path": "/v1/payment_links"
+    },
+    "paymentLinks.list": {
+      "method": "get",
+      "path": "/v1/payment_links"
+    },
+    "paymentLinks.listLineItems": {
+      "method": "get",
+      "path": "/v1/payment_links/{id}/line_items"
+    },
+    "paymentLinks.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_links/{id}"
+    },
+    "paymentLinks.update": {
+      "method": "post",
+      "path": "/v1/payment_links/{id}"
+    },
+    "paymentMethodConfigurations.create": {
+      "method": "post",
+      "path": "/v1/payment_method_configurations"
+    },
+    "paymentMethodConfigurations.list": {
+      "method": "get",
+      "path": "/v1/payment_method_configurations"
+    },
+    "paymentMethodConfigurations.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_method_configurations/{id}"
+    },
+    "paymentMethodConfigurations.update": {
+      "method": "post",
+      "path": "/v1/payment_method_configurations/{id}"
+    },
+    "paymentMethodDomains.create": {
+      "method": "post",
+      "path": "/v1/payment_method_domains"
+    },
+    "paymentMethodDomains.list": {
+      "method": "get",
+      "path": "/v1/payment_method_domains"
+    },
+    "paymentMethodDomains.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_method_domains/{id}"
+    },
+    "paymentMethodDomains.update": {
+      "method": "post",
+      "path": "/v1/payment_method_domains/{id}"
+    },
+    "paymentMethodDomains.validate": {
+      "method": "post",
+      "path": "/v1/payment_method_domains/{id}/validate"
+    },
+    "paymentMethods.attach": {
+      "method": "post",
+      "path": "/v1/payment_methods/{id}/attach"
+    },
+    "paymentMethods.create": {
+      "method": "post",
+      "path": "/v1/payment_methods"
+    },
+    "paymentMethods.detach": {
+      "method": "post",
+      "path": "/v1/payment_methods/{id}/detach"
+    },
+    "paymentMethods.list": {
+      "method": "get",
+      "path": "/v1/payment_methods"
+    },
+    "paymentMethods.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_methods/{id}"
+    },
+    "paymentMethods.update": {
+      "method": "post",
+      "path": "/v1/payment_methods/{id}"
+    },
+    "paymentRecords.list": {
+      "method": "get",
+      "path": "/v1/payment_records"
+    },
+    "paymentRecords.reportPayment": {
+      "method": "post",
+      "path": "/v1/payment_records/report_payment"
+    },
+    "paymentRecords.reportPaymentAttempt": {
+      "method": "post",
+      "path": "/v1/payment_records/{id}/report_payment_attempt"
+    },
+    "paymentRecords.reportPaymentAttemptCanceled": {
+      "method": "post",
+      "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+    },
+    "paymentRecords.reportPaymentAttemptFailed": {
+      "method": "post",
+      "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+    },
+    "paymentRecords.reportPaymentAttemptGuaranteed": {
+      "method": "post",
+      "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+    },
+    "paymentRecords.reportPaymentAttemptInformational": {
+      "method": "post",
+      "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+    },
+    "paymentRecords.reportRefund": {
+      "method": "post",
+      "path": "/v1/payment_records/{id}/report_refund"
+    },
+    "paymentRecords.retrieve": {
+      "method": "get",
+      "path": "/v1/payment_records/{id}"
+    },
+    "payouts.cancel": {
+      "method": "post",
+      "path": "/v1/payouts/{id}/cancel"
+    },
+    "payouts.create": {
+      "method": "post",
+      "path": "/v1/payouts"
+    },
+    "payouts.list": {
+      "method": "get",
+      "path": "/v1/payouts"
+    },
+    "payouts.retrieve": {
+      "method": "get",
+      "path": "/v1/payouts/{id}"
+    },
+    "payouts.reverse": {
+      "method": "post",
+      "path": "/v1/payouts/{id}/reverse"
+    },
+    "payouts.update": {
+      "method": "post",
+      "path": "/v1/payouts/{id}"
+    },
+    "plans.create": {
+      "method": "post",
+      "path": "/v1/plans"
+    },
+    "plans.del": {
+      "method": "delete",
+      "path": "/v1/plans/{id}"
+    },
+    "plans.list": {
+      "method": "get",
+      "path": "/v1/plans"
+    },
+    "plans.retrieve": {
+      "method": "get",
+      "path": "/v1/plans/{id}"
+    },
+    "plans.update": {
+      "method": "post",
+      "path": "/v1/plans/{id}"
+    },
+    "prices.create": {
+      "method": "post",
+      "path": "/v1/prices"
+    },
+    "prices.list": {
+      "method": "get",
+      "path": "/v1/prices"
+    },
+    "prices.retrieve": {
+      "method": "get",
+      "path": "/v1/prices/{id}"
+    },
+    "prices.search": {
+      "method": "get",
+      "path": "/v1/prices/search"
+    },
+    "prices.update": {
+      "method": "post",
+      "path": "/v1/prices/{id}"
+    },
+    "products.create": {
+      "method": "post",
+      "path": "/v1/products"
+    },
+    "products.createFeature": {
+      "method": "post",
+      "path": "/v1/products/{id}/features"
+    },
+    "products.del": {
+      "method": "delete",
+      "path": "/v1/products/{id}"
+    },
+    "products.deleteFeature": {
+      "method": "delete",
+      "path": "/v1/products/{productId}/features/{id}"
+    },
+    "products.list": {
+      "method": "get",
+      "path": "/v1/products"
+    },
+    "products.listFeatures": {
+      "method": "get",
+      "path": "/v1/products/{id}/features"
+    },
+    "products.retrieve": {
+      "method": "get",
+      "path": "/v1/products/{id}"
+    },
+    "products.retrieveFeature": {
+      "method": "get",
+      "path": "/v1/products/{productId}/features/{id}"
+    },
+    "products.search": {
+      "method": "get",
+      "path": "/v1/products/search"
+    },
+    "products.update": {
+      "method": "post",
+      "path": "/v1/products/{id}"
+    },
+    "promotionCodes.create": {
+      "method": "post",
+      "path": "/v1/promotion_codes"
+    },
+    "promotionCodes.list": {
+      "method": "get",
+      "path": "/v1/promotion_codes"
+    },
+    "promotionCodes.retrieve": {
+      "method": "get",
+      "path": "/v1/promotion_codes/{id}"
+    },
+    "promotionCodes.update": {
+      "method": "post",
+      "path": "/v1/promotion_codes/{id}"
+    },
+    "quotes.accept": {
+      "method": "post",
+      "path": "/v1/quotes/{id}/accept"
+    },
+    "quotes.cancel": {
+      "method": "post",
+      "path": "/v1/quotes/{id}/cancel"
+    },
+    "quotes.create": {
+      "method": "post",
+      "path": "/v1/quotes"
+    },
+    "quotes.finalizeQuote": {
+      "method": "post",
+      "path": "/v1/quotes/{id}/finalize"
+    },
+    "quotes.list": {
+      "method": "get",
+      "path": "/v1/quotes"
+    },
+    "quotes.listComputedUpfrontLineItems": {
+      "method": "get",
+      "path": "/v1/quotes/{id}/computed_upfront_line_items"
+    },
+    "quotes.listLineItems": {
+      "method": "get",
+      "path": "/v1/quotes/{id}/line_items"
+    },
+    "quotes.pdf": {
+      "method": "get",
+      "path": "/v1/quotes/{id}/pdf"
+    },
+    "quotes.retrieve": {
+      "method": "get",
+      "path": "/v1/quotes/{id}"
+    },
+    "quotes.update": {
+      "method": "post",
+      "path": "/v1/quotes/{id}"
+    },
+    "radar.earlyFraudWarnings.list": {
+      "method": "get",
+      "path": "/v1/radar/early_fraud_warnings"
+    },
+    "radar.earlyFraudWarnings.retrieve": {
+      "method": "get",
+      "path": "/v1/radar/early_fraud_warnings/{id}"
+    },
+    "radar.paymentEvaluations.create": {
+      "method": "post",
+      "path": "/v1/radar/payment_evaluations"
+    },
+    "radar.valueListItems.create": {
+      "method": "post",
+      "path": "/v1/radar/value_list_items"
+    },
+    "radar.valueListItems.del": {
+      "method": "delete",
+      "path": "/v1/radar/value_list_items/{id}"
+    },
+    "radar.valueListItems.list": {
+      "method": "get",
+      "path": "/v1/radar/value_list_items"
+    },
+    "radar.valueListItems.retrieve": {
+      "method": "get",
+      "path": "/v1/radar/value_list_items/{id}"
+    },
+    "radar.valueLists.create": {
+      "method": "post",
+      "path": "/v1/radar/value_lists"
+    },
+    "radar.valueLists.del": {
+      "method": "delete",
+      "path": "/v1/radar/value_lists/{id}"
+    },
+    "radar.valueLists.list": {
+      "method": "get",
+      "path": "/v1/radar/value_lists"
+    },
+    "radar.valueLists.retrieve": {
+      "method": "get",
+      "path": "/v1/radar/value_lists/{id}"
+    },
+    "radar.valueLists.update": {
+      "method": "post",
+      "path": "/v1/radar/value_lists/{id}"
+    },
+    "refunds.cancel": {
+      "method": "post",
+      "path": "/v1/refunds/{id}/cancel"
+    },
+    "refunds.create": {
+      "method": "post",
+      "path": "/v1/refunds"
+    },
+    "refunds.list": {
+      "method": "get",
+      "path": "/v1/refunds"
+    },
+    "refunds.retrieve": {
+      "method": "get",
+      "path": "/v1/refunds/{id}"
+    },
+    "refunds.update": {
+      "method": "post",
+      "path": "/v1/refunds/{id}"
+    },
+    "reporting.reportRuns.create": {
+      "method": "post",
+      "path": "/v1/reporting/report_runs"
+    },
+    "reporting.reportRuns.list": {
+      "method": "get",
+      "path": "/v1/reporting/report_runs"
+    },
+    "reporting.reportRuns.retrieve": {
+      "method": "get",
+      "path": "/v1/reporting/report_runs/{id}"
+    },
+    "reporting.reportTypes.list": {
+      "method": "get",
+      "path": "/v1/reporting/report_types"
+    },
+    "reporting.reportTypes.retrieve": {
+      "method": "get",
+      "path": "/v1/reporting/report_types/{id}"
+    },
+    "reviews.approve": {
+      "method": "post",
+      "path": "/v1/reviews/{id}/approve"
+    },
+    "reviews.list": {
+      "method": "get",
+      "path": "/v1/reviews"
+    },
+    "reviews.retrieve": {
+      "method": "get",
+      "path": "/v1/reviews/{id}"
+    },
+    "setupAttempts.list": {
+      "method": "get",
+      "path": "/v1/setup_attempts"
+    },
+    "setupIntents.cancel": {
+      "method": "post",
+      "path": "/v1/setup_intents/{id}/cancel"
+    },
+    "setupIntents.confirm": {
+      "method": "post",
+      "path": "/v1/setup_intents/{id}/confirm"
+    },
+    "setupIntents.create": {
+      "method": "post",
+      "path": "/v1/setup_intents"
+    },
+    "setupIntents.list": {
+      "method": "get",
+      "path": "/v1/setup_intents"
+    },
+    "setupIntents.retrieve": {
+      "method": "get",
+      "path": "/v1/setup_intents/{id}"
+    },
+    "setupIntents.update": {
+      "method": "post",
+      "path": "/v1/setup_intents/{id}"
+    },
+    "setupIntents.verifyMicrodeposits": {
+      "method": "post",
+      "path": "/v1/setup_intents/{id}/verify_microdeposits"
+    },
+    "shippingRates.create": {
+      "method": "post",
+      "path": "/v1/shipping_rates"
+    },
+    "shippingRates.list": {
+      "method": "get",
+      "path": "/v1/shipping_rates"
+    },
+    "shippingRates.retrieve": {
+      "method": "get",
+      "path": "/v1/shipping_rates/{id}"
+    },
+    "shippingRates.update": {
+      "method": "post",
+      "path": "/v1/shipping_rates/{id}"
+    },
+    "sigma.scheduledQueryRuns.list": {
+      "method": "get",
+      "path": "/v1/sigma/scheduled_query_runs"
+    },
+    "sigma.scheduledQueryRuns.retrieve": {
+      "method": "get",
+      "path": "/v1/sigma/scheduled_query_runs/{id}"
+    },
+    "sources.create": {
+      "method": "post",
+      "path": "/v1/sources"
+    },
+    "sources.listSourceTransactions": {
+      "method": "get",
+      "path": "/v1/sources/{id}/source_transactions"
+    },
+    "sources.retrieve": {
+      "method": "get",
+      "path": "/v1/sources/{id}"
+    },
+    "sources.update": {
+      "method": "post",
+      "path": "/v1/sources/{id}"
+    },
+    "sources.verify": {
+      "method": "post",
+      "path": "/v1/sources/{id}/verify"
+    },
+    "subscriptionItems.create": {
+      "method": "post",
+      "path": "/v1/subscription_items"
+    },
+    "subscriptionItems.del": {
+      "method": "delete",
+      "path": "/v1/subscription_items/{id}"
+    },
+    "subscriptionItems.list": {
+      "method": "get",
+      "path": "/v1/subscription_items"
+    },
+    "subscriptionItems.retrieve": {
+      "method": "get",
+      "path": "/v1/subscription_items/{id}"
+    },
+    "subscriptionItems.update": {
+      "method": "post",
+      "path": "/v1/subscription_items/{id}"
+    },
+    "subscriptions.cancel": {
+      "method": "delete",
+      "path": "/v1/subscriptions/{id}"
+    },
+    "subscriptions.create": {
+      "method": "post",
+      "path": "/v1/subscriptions"
+    },
+    "subscriptions.deleteDiscount": {
+      "method": "delete",
+      "path": "/v1/subscriptions/{id}/discount"
+    },
+    "subscriptions.list": {
+      "method": "get",
+      "path": "/v1/subscriptions"
+    },
+    "subscriptions.migrate": {
+      "method": "post",
+      "path": "/v1/subscriptions/{id}/migrate"
+    },
+    "subscriptions.resume": {
+      "method": "post",
+      "path": "/v1/subscriptions/{id}/resume"
+    },
+    "subscriptions.retrieve": {
+      "method": "get",
+      "path": "/v1/subscriptions/{id}"
+    },
+    "subscriptions.search": {
+      "method": "get",
+      "path": "/v1/subscriptions/search"
+    },
+    "subscriptions.update": {
+      "method": "post",
+      "path": "/v1/subscriptions/{id}"
+    },
+    "subscriptionSchedules.cancel": {
+      "method": "post",
+      "path": "/v1/subscription_schedules/{id}/cancel"
+    },
+    "subscriptionSchedules.create": {
+      "method": "post",
+      "path": "/v1/subscription_schedules"
+    },
+    "subscriptionSchedules.list": {
+      "method": "get",
+      "path": "/v1/subscription_schedules"
+    },
+    "subscriptionSchedules.release": {
+      "method": "post",
+      "path": "/v1/subscription_schedules/{id}/release"
+    },
+    "subscriptionSchedules.retrieve": {
+      "method": "get",
+      "path": "/v1/subscription_schedules/{id}"
+    },
+    "subscriptionSchedules.update": {
+      "method": "post",
+      "path": "/v1/subscription_schedules/{id}"
+    },
+    "tax.associations.find": {
+      "method": "get",
+      "path": "/v1/tax/associations/find"
+    },
+    "tax.calculations.create": {
+      "method": "post",
+      "path": "/v1/tax/calculations"
+    },
+    "tax.calculations.listLineItems": {
+      "method": "get",
+      "path": "/v1/tax/calculations/{id}/line_items"
+    },
+    "tax.calculations.retrieve": {
+      "method": "get",
+      "path": "/v1/tax/calculations/{id}"
+    },
+    "tax.registrations.create": {
+      "method": "post",
+      "path": "/v1/tax/registrations"
+    },
+    "tax.registrations.list": {
+      "method": "get",
+      "path": "/v1/tax/registrations"
+    },
+    "tax.registrations.retrieve": {
+      "method": "get",
+      "path": "/v1/tax/registrations/{id}"
+    },
+    "tax.registrations.update": {
+      "method": "post",
+      "path": "/v1/tax/registrations/{id}"
+    },
+    "tax.settings.retrieve": {
+      "method": "get",
+      "path": "/v1/tax/settings"
+    },
+    "tax.settings.update": {
+      "method": "post",
+      "path": "/v1/tax/settings"
+    },
+    "tax.transactions.createFromCalculation": {
+      "method": "post",
+      "path": "/v1/tax/transactions/create_from_calculation"
+    },
+    "tax.transactions.createReversal": {
+      "method": "post",
+      "path": "/v1/tax/transactions/create_reversal"
+    },
+    "tax.transactions.listLineItems": {
+      "method": "get",
+      "path": "/v1/tax/transactions/{id}/line_items"
+    },
+    "tax.transactions.retrieve": {
+      "method": "get",
+      "path": "/v1/tax/transactions/{id}"
+    },
+    "taxCodes.list": {
+      "method": "get",
+      "path": "/v1/tax_codes"
+    },
+    "taxCodes.retrieve": {
+      "method": "get",
+      "path": "/v1/tax_codes/{id}"
+    },
+    "taxIds.create": {
+      "method": "post",
+      "path": "/v1/tax_ids"
+    },
+    "taxIds.del": {
+      "method": "delete",
+      "path": "/v1/tax_ids/{id}"
+    },
+    "taxIds.list": {
+      "method": "get",
+      "path": "/v1/tax_ids"
+    },
+    "taxIds.retrieve": {
+      "method": "get",
+      "path": "/v1/tax_ids/{id}"
+    },
+    "taxRates.create": {
+      "method": "post",
+      "path": "/v1/tax_rates"
+    },
+    "taxRates.list": {
+      "method": "get",
+      "path": "/v1/tax_rates"
+    },
+    "taxRates.retrieve": {
+      "method": "get",
+      "path": "/v1/tax_rates/{id}"
+    },
+    "taxRates.update": {
+      "method": "post",
+      "path": "/v1/tax_rates/{id}"
+    },
+    "terminal.configurations.create": {
+      "method": "post",
+      "path": "/v1/terminal/configurations"
+    },
+    "terminal.configurations.del": {
+      "method": "delete",
+      "path": "/v1/terminal/configurations/{id}"
+    },
+    "terminal.configurations.list": {
+      "method": "get",
+      "path": "/v1/terminal/configurations"
+    },
+    "terminal.configurations.retrieve": {
+      "method": "get",
+      "path": "/v1/terminal/configurations/{id}"
+    },
+    "terminal.configurations.update": {
+      "method": "post",
+      "path": "/v1/terminal/configurations/{id}"
+    },
+    "terminal.connectionTokens.create": {
+      "method": "post",
+      "path": "/v1/terminal/connection_tokens"
+    },
+    "terminal.locations.create": {
+      "method": "post",
+      "path": "/v1/terminal/locations"
+    },
+    "terminal.locations.del": {
+      "method": "delete",
+      "path": "/v1/terminal/locations/{id}"
+    },
+    "terminal.locations.list": {
+      "method": "get",
+      "path": "/v1/terminal/locations"
+    },
+    "terminal.locations.retrieve": {
+      "method": "get",
+      "path": "/v1/terminal/locations/{id}"
+    },
+    "terminal.locations.update": {
+      "method": "post",
+      "path": "/v1/terminal/locations/{id}"
+    },
+    "terminal.onboardingLinks.create": {
+      "method": "post",
+      "path": "/v1/terminal/onboarding_links"
+    },
+    "terminal.readers.cancelAction": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/cancel_action"
+    },
+    "terminal.readers.collectInputs": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/collect_inputs"
+    },
+    "terminal.readers.collectPaymentMethod": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/collect_payment_method"
+    },
+    "terminal.readers.confirmPaymentIntent": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/confirm_payment_intent"
+    },
+    "terminal.readers.create": {
+      "method": "post",
+      "path": "/v1/terminal/readers"
+    },
+    "terminal.readers.del": {
+      "method": "delete",
+      "path": "/v1/terminal/readers/{id}"
+    },
+    "terminal.readers.list": {
+      "method": "get",
+      "path": "/v1/terminal/readers"
+    },
+    "terminal.readers.processPaymentIntent": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/process_payment_intent"
+    },
+    "terminal.readers.processSetupIntent": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/process_setup_intent"
+    },
+    "terminal.readers.refundPayment": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/refund_payment"
+    },
+    "terminal.readers.retrieve": {
+      "method": "get",
+      "path": "/v1/terminal/readers/{id}"
+    },
+    "terminal.readers.setReaderDisplay": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}/set_reader_display"
+    },
+    "terminal.readers.update": {
+      "method": "post",
+      "path": "/v1/terminal/readers/{id}"
+    },
+    "testHelpers.confirmationTokens.create": {
+      "method": "post",
+      "path": "/v1/test_helpers/confirmation_tokens"
+    },
+    "testHelpers.customers.fundCashBalance": {
+      "method": "post",
+      "path": "/v1/test_helpers/customers/{id}/fund_cash_balance"
+    },
+    "testHelpers.issuing.authorizations.capture": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations/{id}/capture"
+    },
+    "testHelpers.issuing.authorizations.create": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations"
+    },
+    "testHelpers.issuing.authorizations.expire": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations/{id}/expire"
+    },
+    "testHelpers.issuing.authorizations.finalizeAmount": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations/{id}/finalize_amount"
+    },
+    "testHelpers.issuing.authorizations.increment": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations/{id}/increment"
+    },
+    "testHelpers.issuing.authorizations.respond": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations/{id}/fraud_challenges/respond"
+    },
+    "testHelpers.issuing.authorizations.reverse": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/authorizations/{id}/reverse"
+    },
+    "testHelpers.issuing.cards.deliverCard": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/cards/{id}/shipping/deliver"
+    },
+    "testHelpers.issuing.cards.failCard": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/cards/{id}/shipping/fail"
+    },
+    "testHelpers.issuing.cards.returnCard": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/cards/{id}/shipping/return"
+    },
+    "testHelpers.issuing.cards.shipCard": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/cards/{id}/shipping/ship"
+    },
+    "testHelpers.issuing.cards.submitCard": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/cards/{id}/shipping/submit"
+    },
+    "testHelpers.issuing.personalizationDesigns.activate": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/personalization_designs/{id}/activate"
+    },
+    "testHelpers.issuing.personalizationDesigns.deactivate": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/personalization_designs/{id}/deactivate"
+    },
+    "testHelpers.issuing.personalizationDesigns.reject": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/personalization_designs/{id}/reject"
+    },
+    "testHelpers.issuing.transactions.createForceCapture": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/transactions/create_force_capture"
+    },
+    "testHelpers.issuing.transactions.createUnlinkedRefund": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/transactions/create_unlinked_refund"
+    },
+    "testHelpers.issuing.transactions.refund": {
+      "method": "post",
+      "path": "/v1/test_helpers/issuing/transactions/{id}/refund"
+    },
+    "testHelpers.refunds.expire": {
+      "method": "post",
+      "path": "/v1/test_helpers/refunds/{id}/expire"
+    },
+    "testHelpers.terminal.readers.presentPaymentMethod": {
+      "method": "post",
+      "path": "/v1/test_helpers/terminal/readers/{id}/present_payment_method"
+    },
+    "testHelpers.terminal.readers.succeedInputCollection": {
+      "method": "post",
+      "path": "/v1/test_helpers/terminal/readers/{id}/succeed_input_collection"
+    },
+    "testHelpers.terminal.readers.timeoutInputCollection": {
+      "method": "post",
+      "path": "/v1/test_helpers/terminal/readers/{id}/timeout_input_collection"
+    },
+    "testHelpers.testClocks.advance": {
+      "method": "post",
+      "path": "/v1/test_helpers/test_clocks/{id}/advance"
+    },
+    "testHelpers.testClocks.create": {
+      "method": "post",
+      "path": "/v1/test_helpers/test_clocks"
+    },
+    "testHelpers.testClocks.del": {
+      "method": "delete",
+      "path": "/v1/test_helpers/test_clocks/{id}"
+    },
+    "testHelpers.testClocks.list": {
+      "method": "get",
+      "path": "/v1/test_helpers/test_clocks"
+    },
+    "testHelpers.testClocks.retrieve": {
+      "method": "get",
+      "path": "/v1/test_helpers/test_clocks/{id}"
+    },
+    "testHelpers.treasury.inboundTransfers.fail": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/inbound_transfers/{id}/fail"
+    },
+    "testHelpers.treasury.inboundTransfers.returnInboundTransfer": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/inbound_transfers/{id}/return"
+    },
+    "testHelpers.treasury.inboundTransfers.succeed": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/inbound_transfers/{id}/succeed"
+    },
+    "testHelpers.treasury.outboundPayments.fail": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_payments/{id}/fail"
+    },
+    "testHelpers.treasury.outboundPayments.post": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_payments/{id}/post"
+    },
+    "testHelpers.treasury.outboundPayments.returnOutboundPayment": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_payments/{id}/return"
+    },
+    "testHelpers.treasury.outboundPayments.update": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_payments/{id}"
+    },
+    "testHelpers.treasury.outboundTransfers.fail": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_transfers/{id}/fail"
+    },
+    "testHelpers.treasury.outboundTransfers.post": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_transfers/{id}/post"
+    },
+    "testHelpers.treasury.outboundTransfers.returnOutboundTransfer": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_transfers/{id}/return"
+    },
+    "testHelpers.treasury.outboundTransfers.update": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/outbound_transfers/{id}"
+    },
+    "testHelpers.treasury.receivedCredits.create": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/received_credits"
+    },
+    "testHelpers.treasury.receivedDebits.create": {
+      "method": "post",
+      "path": "/v1/test_helpers/treasury/received_debits"
+    },
+    "tokens.create": {
+      "method": "post",
+      "path": "/v1/tokens"
+    },
+    "tokens.retrieve": {
+      "method": "get",
+      "path": "/v1/tokens/{id}"
+    },
+    "topups.cancel": {
+      "method": "post",
+      "path": "/v1/topups/{id}/cancel"
+    },
+    "topups.create": {
+      "method": "post",
+      "path": "/v1/topups"
+    },
+    "topups.list": {
+      "method": "get",
+      "path": "/v1/topups"
+    },
+    "topups.retrieve": {
+      "method": "get",
+      "path": "/v1/topups/{id}"
+    },
+    "topups.update": {
+      "method": "post",
+      "path": "/v1/topups/{id}"
+    },
+    "transfers.create": {
+      "method": "post",
+      "path": "/v1/transfers"
+    },
+    "transfers.createReversal": {
+      "method": "post",
+      "path": "/v1/transfers/{id}/reversals"
+    },
+    "transfers.list": {
+      "method": "get",
+      "path": "/v1/transfers"
+    },
+    "transfers.listReversals": {
+      "method": "get",
+      "path": "/v1/transfers/{id}/reversals"
+    },
+    "transfers.retrieve": {
+      "method": "get",
+      "path": "/v1/transfers/{id}"
+    },
+    "transfers.retrieveReversal": {
+      "method": "get",
+      "path": "/v1/transfers/{transferId}/reversals/{id}"
+    },
+    "transfers.update": {
+      "method": "post",
+      "path": "/v1/transfers/{id}"
+    },
+    "transfers.updateReversal": {
+      "method": "post",
+      "path": "/v1/transfers/{transferId}/reversals/{id}"
+    },
+    "treasury.creditReversals.create": {
+      "method": "post",
+      "path": "/v1/treasury/credit_reversals"
+    },
+    "treasury.creditReversals.list": {
+      "method": "get",
+      "path": "/v1/treasury/credit_reversals"
+    },
+    "treasury.creditReversals.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/credit_reversals/{id}"
+    },
+    "treasury.debitReversals.create": {
+      "method": "post",
+      "path": "/v1/treasury/debit_reversals"
+    },
+    "treasury.debitReversals.list": {
+      "method": "get",
+      "path": "/v1/treasury/debit_reversals"
+    },
+    "treasury.debitReversals.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/debit_reversals/{id}"
+    },
+    "treasury.financialAccounts.close": {
+      "method": "post",
+      "path": "/v1/treasury/financial_accounts/{id}/close"
+    },
+    "treasury.financialAccounts.create": {
+      "method": "post",
+      "path": "/v1/treasury/financial_accounts"
+    },
+    "treasury.financialAccounts.list": {
+      "method": "get",
+      "path": "/v1/treasury/financial_accounts"
+    },
+    "treasury.financialAccounts.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/financial_accounts/{id}"
+    },
+    "treasury.financialAccounts.retrieveFeatures": {
+      "method": "get",
+      "path": "/v1/treasury/financial_accounts/{id}/features"
+    },
+    "treasury.financialAccounts.update": {
+      "method": "post",
+      "path": "/v1/treasury/financial_accounts/{id}"
+    },
+    "treasury.financialAccounts.updateFeatures": {
+      "method": "post",
+      "path": "/v1/treasury/financial_accounts/{id}/features"
+    },
+    "treasury.inboundTransfers.cancel": {
+      "method": "post",
+      "path": "/v1/treasury/inbound_transfers/{id}/cancel"
+    },
+    "treasury.inboundTransfers.create": {
+      "method": "post",
+      "path": "/v1/treasury/inbound_transfers"
+    },
+    "treasury.inboundTransfers.list": {
+      "method": "get",
+      "path": "/v1/treasury/inbound_transfers"
+    },
+    "treasury.inboundTransfers.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/inbound_transfers/{id}"
+    },
+    "treasury.outboundPayments.cancel": {
+      "method": "post",
+      "path": "/v1/treasury/outbound_payments/{id}/cancel"
+    },
+    "treasury.outboundPayments.create": {
+      "method": "post",
+      "path": "/v1/treasury/outbound_payments"
+    },
+    "treasury.outboundPayments.list": {
+      "method": "get",
+      "path": "/v1/treasury/outbound_payments"
+    },
+    "treasury.outboundPayments.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/outbound_payments/{id}"
+    },
+    "treasury.outboundTransfers.cancel": {
+      "method": "post",
+      "path": "/v1/treasury/outbound_transfers/{id}/cancel"
+    },
+    "treasury.outboundTransfers.create": {
+      "method": "post",
+      "path": "/v1/treasury/outbound_transfers"
+    },
+    "treasury.outboundTransfers.list": {
+      "method": "get",
+      "path": "/v1/treasury/outbound_transfers"
+    },
+    "treasury.outboundTransfers.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/outbound_transfers/{id}"
+    },
+    "treasury.receivedCredits.list": {
+      "method": "get",
+      "path": "/v1/treasury/received_credits"
+    },
+    "treasury.receivedCredits.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/received_credits/{id}"
+    },
+    "treasury.receivedDebits.list": {
+      "method": "get",
+      "path": "/v1/treasury/received_debits"
+    },
+    "treasury.receivedDebits.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/received_debits/{id}"
+    },
+    "treasury.transactionEntries.list": {
+      "method": "get",
+      "path": "/v1/treasury/transaction_entries"
+    },
+    "treasury.transactionEntries.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/transaction_entries/{id}"
+    },
+    "treasury.transactions.list": {
+      "method": "get",
+      "path": "/v1/treasury/transactions"
+    },
+    "treasury.transactions.retrieve": {
+      "method": "get",
+      "path": "/v1/treasury/transactions/{id}"
+    },
+    "v2.billing.meterEventAdjustments.create": {
+      "method": "post",
+      "path": "/v2/billing/meter_event_adjustments"
+    },
+    "v2.billing.meterEvents.create": {
+      "method": "post",
+      "path": "/v2/billing/meter_events"
+    },
+    "v2.billing.meterEventSession.create": {
+      "method": "post",
+      "path": "/v2/billing/meter_event_session"
+    },
+    "v2.billing.meterEventStream.create": {
+      "method": "post",
+      "path": "/v2/billing/meter_event_stream"
+    },
+    "v2.commerce.productCatalog.imports.create": {
+      "method": "post",
+      "path": "/v2/commerce/product_catalog/imports"
+    },
+    "v2.commerce.productCatalog.imports.list": {
+      "method": "get",
+      "path": "/v2/commerce/product_catalog/imports"
+    },
+    "v2.commerce.productCatalog.imports.retrieve": {
+      "method": "get",
+      "path": "/v2/commerce/product_catalog/imports/{id}"
+    },
+    "v2.core.accountLinks.create": {
+      "method": "post",
+      "path": "/v2/core/account_links"
+    },
+    "v2.core.accounts.close": {
+      "method": "post",
+      "path": "/v2/core/accounts/{id}/close"
+    },
+    "v2.core.accounts.create": {
+      "method": "post",
+      "path": "/v2/core/accounts"
+    },
+    "v2.core.accounts.list": {
+      "method": "get",
+      "path": "/v2/core/accounts"
+    },
+    "v2.core.accounts.persons.create": {
+      "method": "post",
+      "path": "/v2/core/accounts/{accountId}/persons"
+    },
+    "v2.core.accounts.persons.del": {
+      "method": "delete",
+      "path": "/v2/core/accounts/{accountId}/persons/{id}"
+    },
+    "v2.core.accounts.persons.list": {
+      "method": "get",
+      "path": "/v2/core/accounts/{accountId}/persons"
+    },
+    "v2.core.accounts.persons.retrieve": {
+      "method": "get",
+      "path": "/v2/core/accounts/{accountId}/persons/{id}"
+    },
+    "v2.core.accounts.persons.update": {
+      "method": "post",
+      "path": "/v2/core/accounts/{accountId}/persons/{id}"
+    },
+    "v2.core.accounts.personTokens.create": {
+      "method": "post",
+      "path": "/v2/core/accounts/{accountId}/person_tokens"
+    },
+    "v2.core.accounts.personTokens.retrieve": {
+      "method": "get",
+      "path": "/v2/core/accounts/{accountId}/person_tokens/{id}"
+    },
+    "v2.core.accounts.retrieve": {
+      "method": "get",
+      "path": "/v2/core/accounts/{id}"
+    },
+    "v2.core.accounts.update": {
+      "method": "post",
+      "path": "/v2/core/accounts/{id}"
+    },
+    "v2.core.accountTokens.create": {
+      "method": "post",
+      "path": "/v2/core/account_tokens"
+    },
+    "v2.core.accountTokens.retrieve": {
+      "method": "get",
+      "path": "/v2/core/account_tokens/{id}"
+    },
+    "v2.core.eventDestinations.create": {
+      "method": "post",
+      "path": "/v2/core/event_destinations"
+    },
+    "v2.core.eventDestinations.del": {
+      "method": "delete",
+      "path": "/v2/core/event_destinations/{id}"
+    },
+    "v2.core.eventDestinations.disable": {
+      "method": "post",
+      "path": "/v2/core/event_destinations/{id}/disable"
+    },
+    "v2.core.eventDestinations.enable": {
+      "method": "post",
+      "path": "/v2/core/event_destinations/{id}/enable"
+    },
+    "v2.core.eventDestinations.list": {
+      "method": "get",
+      "path": "/v2/core/event_destinations"
+    },
+    "v2.core.eventDestinations.ping": {
+      "method": "post",
+      "path": "/v2/core/event_destinations/{id}/ping"
+    },
+    "v2.core.eventDestinations.retrieve": {
+      "method": "get",
+      "path": "/v2/core/event_destinations/{id}"
+    },
+    "v2.core.eventDestinations.update": {
+      "method": "post",
+      "path": "/v2/core/event_destinations/{id}"
+    },
+    "v2.core.events.list": {
+      "method": "get",
+      "path": "/v2/core/events"
+    },
+    "v2.core.events.retrieve": {
+      "method": "get",
+      "path": "/v2/core/events/{id}"
+    },
+    "webhookEndpoints.create": {
+      "method": "post",
+      "path": "/v1/webhook_endpoints"
+    },
+    "webhookEndpoints.del": {
+      "method": "delete",
+      "path": "/v1/webhook_endpoints/{id}"
+    },
+    "webhookEndpoints.list": {
+      "method": "get",
+      "path": "/v1/webhook_endpoints"
+    },
+    "webhookEndpoints.retrieve": {
+      "method": "get",
+      "path": "/v1/webhook_endpoints/{id}"
+    },
+    "webhookEndpoints.update": {
+      "method": "post",
+      "path": "/v1/webhook_endpoints/{id}"
+    }
+  }
+}

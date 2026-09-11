@@ -1,0 +1,9 @@
+{
+  // Alias imports, the way most TypeScript apps are configured.
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
