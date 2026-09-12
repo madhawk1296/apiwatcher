@@ -24,15 +24,15 @@ import {
 } from '../specdiff/fetch.js';
 import { eventTypes } from '../specdiff/openapi.js';
 
-const USAGE = `apimigrate — find every call site a breaking Stripe API change affects
+const USAGE = `apiwatcher — find every call site a breaking Stripe API change affects
 
 Usage
-  apimigrate scan [dir] [options]          Scan a repo and print an impact report
-  apimigrate spec-diff [options]           Diff two Stripe spec versions into a changeset
-  apimigrate build-method-map [options]    Regenerate the SDK call -> endpoint map
-  apimigrate list-changesets               Show known changesets
-  apimigrate index-changesets              Regenerate changesets/stripe/index.json
-  apimigrate watch                         Diff Stripe's current spec forward (cron entry point)
+  apiwatcher scan [dir] [options]          Scan a repo and print an impact report
+  apiwatcher spec-diff [options]           Diff two Stripe spec versions into a changeset
+  apiwatcher build-method-map [options]    Regenerate the SDK call -> endpoint map
+  apiwatcher list-changesets               Show known changesets
+  apiwatcher index-changesets              Regenerate changesets/stripe/index.json
+  apiwatcher watch                         Diff Stripe's current spec forward (cron entry point)
 
 scan options
   --target <version|latest>   Version to check against         (default: latest known)
@@ -54,10 +54,10 @@ spec-diff options
   --include-additive          Record additive changes too
   --max-depth <n>             Field nesting depth to compare    (default: 3)
   --stdout                    Print the changeset instead of writing it
-  --events-out <file>         Event catalogue path (default: packages/apimigrate/data/stripe/events.json)
+  --events-out <file>         Event catalogue path (default: packages/apiwatcher/data/stripe/events.json)
 
 build-method-map options
-  --out <file>                Output path (default: packages/apimigrate/data/stripe/method-map.json)
+  --out <file>                Output path (default: packages/apiwatcher/data/stripe/method-map.json)
 
 Nothing leaves your machine during a scan. No account, no API keys.
 `;
@@ -70,7 +70,7 @@ async function main(argv: readonly string[]): Promise<number> {
     return args.command === null && !args.flags.has('help') && !args.flags.has('h') ? 1 : 0;
   }
   if (args.flags.has('version') || args.flags.has('v')) {
-    process.stdout.write('apimigrate 0.1.0\n');
+    process.stdout.write('apiwatcher 0.1.0\n');
     return 0;
   }
 
@@ -101,7 +101,7 @@ async function runScan(args: ReturnType<typeof parseArgs>): Promise<number> {
   const changesets = await loadChangesets(changesetDir);
   if (changesets.length === 0) {
     process.stderr.write(
-      'No changesets found. Run `apimigrate spec-diff` first, or pass --changesets <dir>.\n',
+      'No changesets found. Run `apiwatcher spec-diff` first, or pass --changesets <dir>.\n',
     );
     return 2;
   }
@@ -210,7 +210,7 @@ async function runSpecDiff(args: ReturnType<typeof parseArgs>): Promise<number> 
   if (!fromFile && !fromRef) {
     process.stderr.write(
       'spec-diff needs a starting point: --from-file <path> or --from-ref <git ref>.\n' +
-        'Tip: `apimigrate spec-diff --from-ref <sha>` diffs against stripe/openapi at that commit.\n',
+        'Tip: `apiwatcher spec-diff --from-ref <sha>` diffs against stripe/openapi at that commit.\n',
     );
     return 2;
   }
@@ -238,7 +238,7 @@ async function runSpecDiff(args: ReturnType<typeof parseArgs>): Promise<number> 
           source: {
             repo: STRIPE_SPEC_REPO,
             fromRef: fromRef as string,
-            // Pinned, so `apimigrate watch` has a fixed point to diff forward from.
+            // Pinned, so `apiwatcher watch` has a fixed point to diff forward from.
             toRef: await resolveSpecCommit(toRef),
           },
         }),
@@ -258,7 +258,7 @@ async function runSpecDiff(args: ReturnType<typeof parseArgs>): Promise<number> 
     // The event catalogue lets the scanner recognise webhook event strings
     // exactly rather than inferring them from surrounding code.
     const catalogFile = resolve(
-      flagString(args, 'events-out') ?? 'packages/apimigrate/data/stripe/events.json',
+      flagString(args, 'events-out') ?? 'packages/apiwatcher/data/stripe/events.json',
     );
     await mkdir(dirname(catalogFile), { recursive: true });
     await writeFile(
@@ -282,7 +282,7 @@ async function runSpecDiff(args: ReturnType<typeof parseArgs>): Promise<number> 
 }
 
 async function runBuildMethodMap(args: ReturnType<typeof parseArgs>): Promise<number> {
-  const out = resolve(flagString(args, 'out') ?? 'packages/apimigrate/data/stripe/method-map.json');
+  const out = resolve(flagString(args, 'out') ?? 'packages/apiwatcher/data/stripe/method-map.json');
   const map = await buildMethodMap();
   await writeMethodMap(map, out);
   process.stdout.write(
@@ -333,7 +333,7 @@ async function runWatch(args: ReturnType<typeof parseArgs>): Promise<number> {
   if (!newest) {
     process.stderr.write(
       'No existing changeset to continue from. Bootstrap one first:\n' +
-        '  apimigrate spec-diff --from-ref <old spec sha> --to-ref master\n',
+        '  apiwatcher spec-diff --from-ref <old spec sha> --to-ref master\n',
     );
     return 2;
   }
@@ -381,7 +381,7 @@ async function runWatch(args: ReturnType<typeof parseArgs>): Promise<number> {
   await writeFile(outFile, `${JSON.stringify(changeset, null, 2)}\n`, 'utf8');
 
   const catalogFile = resolve(
-    flagString(args, 'events-out') ?? 'packages/apimigrate/data/stripe/events.json',
+    flagString(args, 'events-out') ?? 'packages/apiwatcher/data/stripe/events.json',
   );
   await mkdir(dirname(catalogFile), { recursive: true });
   await writeFile(
@@ -431,6 +431,6 @@ main(process.argv.slice(2))
   })
   .catch((err: unknown) => {
     const message = err instanceof Error ? err.message : String(err);
-    process.stderr.write(`apimigrate: ${message}\n`);
+    process.stderr.write(`apiwatcher: ${message}\n`);
     process.exitCode = 2;
   });

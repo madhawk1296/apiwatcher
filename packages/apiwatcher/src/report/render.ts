@@ -55,7 +55,7 @@ export function renderTerminal(report: ImpactReport, options: { color?: boolean 
   const paint = makePaint(options.color ?? supportsColor());
   const out: string[] = [];
 
-  out.push(paint('apimigrate · Stripe', 'bold'));
+  out.push(paint('apiwatcher · Stripe', 'bold'));
   out.push(paint(versionLine(report), 'grey'));
   out.push(paint(`target version:  ${report.targetVersion}`, 'grey'));
   out.push(paint(`scanned ${report.filesScanned} file(s) under ${report.root}`, 'grey'));

@@ -8,7 +8,7 @@ scan itself.
 Three jobs, all small:
 
 1. **Keeps an index.** On install and on pushes that touch `package.json` or your
-   apimigrate config, it reads those two files to record whether the repo uses
+   apiwatcher config, it reads those two files to record whether the repo uses
    Stripe and at what version. Repos with no `stripe` dependency are dropped from
    the index and never heard from again.
 2. **Fans out new versions.** When the spec watcher publishes a changeset, the
@@ -27,14 +27,14 @@ costs pennies at idle.
 | Permission | Level | Why |
 | --- | --- | --- |
 | Metadata | Read | Required by GitHub for any app |
-| Contents | Read | Read `package.json` and `.apimigrate.json` — nothing else |
+| Contents | Read | Read `package.json` and `.apiwatcher.json` — nothing else |
 | Issues | Write | So a scan can open or update its tracking issue |
 
 Subscribed events: `installation`, `installation_repositories`, `push`,
 `repository`.
 
 Contents-read does grant more than the App uses. If that is not acceptable, skip
-the App entirely and run `npx apimigrate scan` in CI — the report is identical.
+the App entirely and run `npx apiwatcher scan` in CI — the report is identical.
 
 ## Install
 
@@ -42,8 +42,8 @@ the App entirely and run `npx apimigrate scan` in CI — the report is identical
 
 `repository_dispatch` only triggers workflows that already exist on your default
 branch, so this file has to live in your repo. Copy
-[`templates/apimigrate.yml`](../templates/apimigrate.yml) to
-`.github/workflows/apimigrate.yml`.
+[`templates/apiwatcher.yml`](../templates/apiwatcher.yml) to
+`.github/workflows/apiwatcher.yml`.
 
 It scans on push and on pull requests, weekly as a backstop, and whenever the App
 says a new Stripe version landed.
@@ -54,7 +54,7 @@ Grant it only the repositories you want watched.
 
 ### 3. Optional config
 
-`.apimigrate.json` at the repo root:
+`.apiwatcher.json` at the repo root:
 
 ```json
 {

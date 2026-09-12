@@ -1,4 +1,4 @@
-# apimigrate
+# apiwatcher
 
 Dependabot for API changes.
 
@@ -21,7 +21,7 @@ place that breaks. That gap is the whole product.
 ## Try it
 
 ```bash
-npx apimigrate scan
+npx apiwatcher scan
 ```
 
 No account, no API key, no network call. The scan reads your files, compares
@@ -29,7 +29,7 @@ them against a changeset that ships inside the package, and prints a report.
 Exit code is `1` when something breaks, so it drops into CI as-is.
 
 ```bash
-npx apimigrate scan ./services/api --target 2026-08-26.dahlia --format md --out report.md
+npx apiwatcher scan ./services/api --target 2026-08-26.dahlia --format md --out report.md
 ```
 
 ## How it works
@@ -101,7 +101,7 @@ Measured on two real repositories:
 
 ## Configuration
 
-Optional. Drop `.apimigrate.json` at your repo root:
+Optional. Drop `.apiwatcher.json` at your repo root:
 
 ```json
 {
@@ -120,22 +120,22 @@ its id.
 
 | Command | What it does |
 | --- | --- |
-| `apimigrate scan [dir]` | Scan a repo and print an impact report |
-| `apimigrate spec-diff` | Diff two Stripe spec versions into a changeset |
-| `apimigrate watch` | Diff Stripe's current spec forward (the cron entry point) |
-| `apimigrate build-method-map` | Regenerate the SDK-call → endpoint map |
-| `apimigrate list-changesets` | Show known changesets |
-| `apimigrate index-changesets` | Regenerate the changeset manifest |
+| `apiwatcher scan [dir]` | Scan a repo and print an impact report |
+| `apiwatcher spec-diff` | Diff two Stripe spec versions into a changeset |
+| `apiwatcher watch` | Diff Stripe's current spec forward (the cron entry point) |
+| `apiwatcher build-method-map` | Regenerate the SDK-call → endpoint map |
+| `apiwatcher list-changesets` | Show known changesets |
+| `apiwatcher index-changesets` | Regenerate the changeset manifest |
 
-Run `apimigrate --help` for flags.
+Run `apiwatcher --help` for flags.
 
 ## Repo layout
 
 ```
-packages/apimigrate/     the CLI: changesets, spec diff, scanner, report
+packages/apiwatcher/     the CLI: changesets, spec diff, scanner, report
 packages/github-app/     Cloudflare Worker: webhooks, repo index, alert fan-out
 changesets/stripe/       published changesets + index.json
-templates/apimigrate.yml the workflow customers copy into their repo
+templates/apiwatcher.yml the workflow customers copy into their repo
 .github/workflows/       CI, the spec watcher, the reusable scan workflow
 ```
 
@@ -143,16 +143,16 @@ templates/apimigrate.yml the workflow customers copy into their repo
 
 ```bash
 npm install
-npm run build --workspace apimigrate
-node --test "packages/apimigrate/dist/**/*.test.js"
+npm run build --workspace apiwatcher
+node --test "packages/apiwatcher/dist/**/*.test.js"
 ```
 
 Bootstrapping a changeset from scratch:
 
 ```bash
-node packages/apimigrate/dist/cli/index.js build-method-map
-node packages/apimigrate/dist/cli/index.js spec-diff --from-ref <old-sha> --to-ref master
-node packages/apimigrate/dist/cli/index.js index-changesets
+node packages/apiwatcher/dist/cli/index.js build-method-map
+node packages/apiwatcher/dist/cli/index.js spec-diff --from-ref <old-sha> --to-ref master
+node packages/apiwatcher/dist/cli/index.js index-changesets
 ```
 
 ## Status and limits

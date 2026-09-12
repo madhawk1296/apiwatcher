@@ -22,10 +22,10 @@ jobs:
       - run: npm ci
 
       - name: Build
-        run: npm run build --workspace apimigrate
+        run: npm run build --workspace apiwatcher
 
       - name: Typecheck the worker
-        run: npm run typecheck --workspace @apimigrate/github-app
+        run: npm run typecheck --workspace @apiwatcher/github-app
 
       - name: Test
         run: npm test --workspaces --if-present
@@ -34,8 +34,8 @@ jobs:
         run: |
           # The fixture passes a parameter that Stripe removed, so the scan must
           # exit 1. A 0 here means the detection pipeline silently stopped working.
-          if node packages/apimigrate/dist/cli/index.js scan \
-               packages/apimigrate/test/fixtures/sample-app --no-color; then
+          if node packages/apiwatcher/dist/cli/index.js scan \
+               packages/apiwatcher/test/fixtures/sample-app --no-color; then
             echo "Expected the fixture scan to report a breaking change." >&2
             exit 1
           fi

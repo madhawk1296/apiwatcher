@@ -30,9 +30,9 @@ interface WebhookPayload {
 /** Files whose change can alter what we have indexed. */
 const WATCHED_FILES = [
   'package.json',
-  '.apimigrate.json',
-  'apimigrate.config.json',
-  '.github/apimigrate.json',
+  '.apiwatcher.json',
+  'apiwatcher.config.json',
+  '.github/apiwatcher.json',
 ];
 
 export interface HandledEvent {

@@ -5,7 +5,7 @@ import { getLastKnownVersion, iterateRepos, type Env } from './store.js';
 import { handleWebhook } from './webhook.js';
 
 /**
- * The apimigrate GitHub App.
+ * The apiwatcher GitHub App.
  *
  * Report-only. It holds two GitHub permissions — read metadata/contents to see
  * whether a repo uses Stripe, and write issues so a scan can report back — and
@@ -15,7 +15,7 @@ import { handleWebhook } from './webhook.js';
  */
 
 const CHANGESET_URL =
-  'https://raw.githubusercontent.com/apimigrate/apimigrate/main/changesets/stripe/index.json';
+  'https://raw.githubusercontent.com/madhawk1296/apiwatcher/main/changesets/stripe/index.json';
 
 function json(body: unknown, status = 200): Response {
   return new Response(`${JSON.stringify(body, null, 2)}\n`, {
@@ -54,7 +54,7 @@ export default {
     if (url.pathname === '/' || url.pathname === '/health') {
       const missing = missingConfig(env);
       return json({
-        name: 'apimigrate-github-app',
+        name: 'apiwatcher-github-app',
         status: missing.length === 0 ? 'ok' : 'misconfigured',
         ...(missing.length > 0 ? { missing } : {}),
       });
@@ -134,7 +134,7 @@ export default {
     ctx.waitUntil(
       (async () => {
         const res = await fetch(CHANGESET_URL, {
-          headers: { 'user-agent': 'apimigrate-github-app' },
+          headers: { 'user-agent': 'apiwatcher-github-app' },
         });
         if (!res.ok) return;
 

@@ -8,7 +8,7 @@ import { createAppJwt } from './crypto.js';
  */
 
 const API = 'https://api.github.com';
-const UA = 'apimigrate-github-app';
+const UA = 'apiwatcher-github-app';
 
 export class GitHubError extends Error {
   constructor(
@@ -134,7 +134,7 @@ export async function dispatchScan(
 ): Promise<void> {
   await request<void>(`${API}/repos/${ref.owner}/${ref.repo}/dispatches`, token, {
     method: 'POST',
-    body: JSON.stringify({ event_type: 'apimigrate-scan', client_payload: payload }),
+    body: JSON.stringify({ event_type: 'apiwatcher-scan', client_payload: payload }),
   });
 }
 

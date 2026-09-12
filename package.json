@@ -1,5 +1,5 @@
 {
-  "name": "apimigrate-monorepo",
+  "name": "apiwatcher-monorepo",
   "private": true,
   "version": "0.0.0",
   "description": "Dependabot for API changes. Finds every call site a breaking API change affects.",
@@ -13,8 +13,8 @@
     "build": "npm run build --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "scan": "node packages/apimigrate/dist/cli/index.js scan",
-    "spec:diff": "node packages/apimigrate/dist/cli/index.js spec-diff",
-    "methodmap": "node packages/apimigrate/dist/cli/index.js build-method-map"
+    "scan": "node packages/apiwatcher/dist/cli/index.js scan",
+    "spec:diff": "node packages/apiwatcher/dist/cli/index.js spec-diff",
+    "methodmap": "node packages/apiwatcher/dist/cli/index.js build-method-map"
   }
 }

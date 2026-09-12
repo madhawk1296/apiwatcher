@@ -22,9 +22,9 @@ export interface RepoConfig {
 }
 
 export const CONFIG_FILENAMES = [
-  '.apimigrate.json',
-  'apimigrate.config.json',
-  '.github/apimigrate.json',
+  '.apiwatcher.json',
+  'apiwatcher.config.json',
+  '.github/apiwatcher.json',
 ];
 
 export const DEFAULT_CONFIG: Required<Pick<RepoConfig, 'target' | 'alerts' | 'failOn' | 'minConfidence'>> = {

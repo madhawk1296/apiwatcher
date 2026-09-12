@@ -5,4 +5,4 @@ dist/
 .dev.vars
 
 # Staged into the package at pack time by scripts/stage-package-data.mjs.
-packages/apimigrate/changesets/
+packages/apiwatcher/changesets/

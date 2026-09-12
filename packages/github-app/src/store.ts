@@ -17,7 +17,7 @@ export interface RepoRecord {
   stripeRange?: string;
   /** Pinned API version, if the repo's config or client sets one. */
   apiVersion?: string;
-  /** Target from the repo's apimigrate config; `latest` when unset. */
+  /** Target from the repo's apiwatcher config; `latest` when unset. */
   target: string;
   /** Whether this repo wants new-version issues. */
   alerts: boolean;

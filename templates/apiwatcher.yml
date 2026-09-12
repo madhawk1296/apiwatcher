@@ -1,14 +1,14 @@
-### Copy this file to .github/workflows/apimigrate.yml in your repository.
+### Copy this file to .github/workflows/apiwatcher.yml in your repository.
 #
 # It does three things:
 #   - scans on pushes that touch your code, so breakage shows up in the PR
 #   - scans on a weekly schedule, as a backstop
-#   - listens for `repository_dispatch`, which is how the apimigrate GitHub App
+#   - listens for `repository_dispatch`, which is how the apiwatcher GitHub App
 #     asks this repo to re-scan when Stripe ships a new API version
 #
 # `repository_dispatch` only triggers workflows on the default branch, so this
 # file has to live in your repo — the App cannot inject it.
-name: apimigrate
+name: apiwatcher
 
 on:
   push:
@@ -21,7 +21,7 @@ on:
       - '**/*.mjs'
       - '**/*.cjs'
       - package.json
-      - .apimigrate.json
+      - .apiwatcher.json
   pull_request:
     paths:
       - '**/*.ts'
@@ -29,12 +29,12 @@ on:
       - '**/*.js'
       - '**/*.jsx'
       - package.json
-      - .apimigrate.json
+      - .apiwatcher.json
   schedule:
     # Weekly, so a missed dispatch still surfaces eventually.
     - cron: '23 7 * * 1'
   repository_dispatch:
-    types: [apimigrate-scan]
+    types: [apiwatcher-scan]
   workflow_dispatch:
     inputs:
       target:
@@ -48,7 +48,7 @@ permissions:
 
 jobs:
   scan:
-    uses: apimigrate/apimigrate/.github/workflows/apimigrate-scan.yml@main
+    uses: madhawk1296/apiwatcher/.github/workflows/apiwatcher-scan.yml@main
     with:
       # The App passes the new version through the dispatch payload; everything
       # else falls back to whatever your config says.

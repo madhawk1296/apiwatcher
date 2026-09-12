@@ -14,7 +14,7 @@ export interface SpecCommit {
 function ghHeaders(): Record<string, string> {
   const headers: Record<string, string> = {
     accept: 'application/vnd.github+json',
-    'user-agent': 'apimigrate-spec-watcher',
+    'user-agent': 'apiwatcher-spec-watcher',
   };
   // Unauthenticated GitHub allows 60 requests/hour, which is plenty for a cron
   // but not for local iteration. Honour a token when one is present.
@@ -67,7 +67,7 @@ export async function resolveSpecCommit(ref: string): Promise<string> {
 /** Fetch the spec at a git ref. ~10MB, so callers should cache. */
 export async function fetchSpecAt(ref: string): Promise<OpenApiSpec> {
   const url = `https://raw.githubusercontent.com/${STRIPE_SPEC_REPO}/${ref}/${STRIPE_SPEC_PATH}`;
-  const res = await fetch(url, { headers: { 'user-agent': 'apimigrate-spec-watcher' } });
+  const res = await fetch(url, { headers: { 'user-agent': 'apiwatcher-spec-watcher' } });
   if (!res.ok) throw new Error(`Failed to fetch spec at ${ref}: ${res.status} ${res.statusText}`);
   return (await res.json()) as OpenApiSpec;
 }

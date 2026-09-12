@@ -4,7 +4,7 @@
  *
  * Changesets live at the repo root because they are the project's public data —
  * the spec watcher commits there and the changelog site will read from there —
- * but `npx apimigrate` has to carry them, since a scan must work with no network
+ * but `npx apiwatcher` has to carry them, since a scan must work with no network
  * and no account. `defaultChangesetDir()` walks up from the compiled module, so a
  * copy at the package root is what it finds once installed.
  */
@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, '..');
-const pkgRoot = join(repoRoot, 'packages', 'apimigrate');
+const pkgRoot = join(repoRoot, 'packages', 'apiwatcher');
 
 const source = join(repoRoot, 'changesets');
 const target = join(pkgRoot, 'changesets');
@@ -29,7 +29,7 @@ async function exists(path) {
 }
 
 if (!(await exists(source))) {
-  console.error(`No changesets at ${source}. Run \`apimigrate spec-diff\` first.`);
+  console.error(`No changesets at ${source}. Run \`apiwatcher spec-diff\` first.`);
   process.exit(1);
 }
 

@@ -1,6 +1,6 @@
 /**
  * A tiny flag parser. The CLI surface is small and stable, so a dependency
- * would cost more than it saves — and `npx apimigrate` should install fast.
+ * would cost more than it saves — and `npx apiwatcher` should install fast.
  */
 
 export interface ParsedArgs {

@@ -11,12 +11,12 @@ import { putRepo, type Env, type RepoRecord } from './store.js';
 /**
  * Decides whether a repo is worth tracking and records what we know about it.
  *
- * Only two files are read — `package.json` and the apimigrate config — so
+ * Only two files are read — `package.json` and the apiwatcher config — so
  * indexing is two API calls per repo and the app never pulls source code. Repos
  * without a `stripe` dependency are skipped entirely.
  */
 
-const CONFIG_PATHS = ['.apimigrate.json', 'apimigrate.config.json', '.github/apimigrate.json'];
+const CONFIG_PATHS = ['.apiwatcher.json', 'apiwatcher.config.json', '.github/apiwatcher.json'];
 
 interface ParsedConfig {
   target?: string;

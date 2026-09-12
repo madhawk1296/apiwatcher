@@ -1,9 +1,9 @@
 ### Reusable scan workflow.
 #
-# Customers reference this from their own repo (see templates/apimigrate.yml), so
+# Customers reference this from their own repo (see templates/apiwatcher.yml), so
 # the scan runs on their runner with their token. Their code never leaves their
 # infrastructure and the compute costs us nothing.
-name: apimigrate scan
+name: apiwatcher scan
 
 on:
   workflow_call:
@@ -28,8 +28,8 @@ on:
         type: string
         required: false
         default: '.'
-      apimigrate-version:
-        description: 'Version of the apimigrate CLI to run.'
+      apiwatcher-version:
+        description: 'Version of the apiwatcher CLI to run.'
         type: string
         required: false
         default: latest
@@ -58,18 +58,18 @@ jobs:
         env:
           TARGET: ${{ inputs.target }}
           FAIL_ON: ${{ inputs.fail-on }}
-          CLI_VERSION: ${{ inputs.apimigrate-version }}
+          CLI_VERSION: ${{ inputs.apiwatcher-version }}
         run: |
           set -o pipefail
-          npx --yes "apimigrate@${CLI_VERSION}" scan . \
+          npx --yes "apiwatcher@${CLI_VERSION}" scan . \
             --target "${TARGET}" \
             --fail-on "${FAIL_ON}" \
             --format md \
-            --out "${RUNNER_TEMP}/apimigrate-report.md"
+            --out "${RUNNER_TEMP}/apiwatcher-report.md"
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Publish report to the job summary
-        run: cat "${RUNNER_TEMP}/apimigrate-report.md" >> "$GITHUB_STEP_SUMMARY"
+        run: cat "${RUNNER_TEMP}/apiwatcher-report.md" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Open or update the tracking issue
         if: inputs.open-issue && steps.scan.outcome == 'failure'
@@ -79,24 +79,24 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          LABEL="apimigrate"
+          LABEL="apiwatcher"
           TITLE="Stripe API changes affect this repository"
 
           # One label-scoped issue, updated in place. A new issue per run would
           # be noise; a new comment per run buries the current state.
           if ! gh label list --repo "$REPO" --json name -q '.[].name' | grep -qx "$LABEL"; then
             gh label create "$LABEL" --repo "$REPO" \
-              --description "Opened by apimigrate" --color ededed || true
+              --description "Opened by apiwatcher" --color ededed || true
           fi
 
           BODY_FILE="${RUNNER_TEMP}/issue-body.md"
-          cp "${RUNNER_TEMP}/apimigrate-report.md" "$BODY_FILE"
+          cp "${RUNNER_TEMP}/apiwatcher-report.md" "$BODY_FILE"
           {
             echo
             echo "---"
             echo
-            echo "[Full run]($RUN_URL) · updated automatically by [apimigrate](https://github.com/apimigrate/apimigrate)."
-            echo "Silence a false positive by adding its \`id\` to \`ignoreChanges\` in \`.apimigrate.json\`."
+            echo "[Full run]($RUN_URL) · updated automatically by [apiwatcher](https://github.com/madhawk1296/apiwatcher)."
+            echo "Silence a false positive by adding its \`id\` to \`ignoreChanges\` in \`.apiwatcher.json\`."
           } >> "$BODY_FILE"
 
           EXISTING=$(gh issue list --repo "$REPO" --label "$LABEL" --state open \
@@ -117,7 +117,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          EXISTING=$(gh issue list --repo "$REPO" --label apimigrate --state open \
+          EXISTING=$(gh issue list --repo "$REPO" --label apiwatcher --state open \
             --json number -q '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
             gh issue close "$EXISTING" --repo "$REPO" \
@@ -127,6 +127,6 @@ jobs:
       - name: Fail the job if the scan found something
         if: steps.scan.outcome == 'failure'
         run: |
-          echo "apimigrate found changes at or above the '${{ inputs.fail-on }}' threshold." >&2
+          echo "apiwatcher found changes at or above the '${{ inputs.fail-on }}' threshold." >&2
           echo "See the job summary for the report." >&2
           exit 1

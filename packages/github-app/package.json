@@ -1,5 +1,5 @@
 {
-  "name": "@apimigrate/github-app",
+  "name": "@apiwatcher/github-app",
   "version": "0.1.0",
   "private": true,
   "description": "Report-only GitHub App: keeps the repo index and triggers scans on the customer's runner.",

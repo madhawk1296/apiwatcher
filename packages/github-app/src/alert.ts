@@ -101,7 +101,7 @@ export async function alertAffectedRepos(
       const message =
         err instanceof GitHubError
           ? // 404 on dispatch almost always means the workflow file is missing.
-            `${err.status}${err.status === 404 ? ' (is .github/workflows/apimigrate.yml installed?)' : ''}`
+            `${err.status}${err.status === 404 ? ' (is .github/workflows/apiwatcher.yml installed?)' : ''}`
           : (err as Error).message;
       result.failed.push({ fullName: record.fullName, error: message });
     }

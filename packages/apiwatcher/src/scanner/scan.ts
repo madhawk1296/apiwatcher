@@ -151,7 +151,7 @@ export async function scanRepo(root: string, options: ScanOptions = {}): Promise
 
   if (Object.keys(methodMap.byCall).length === 0) {
     warnings.push(
-      'No Stripe method map available, so SDK calls cannot be resolved to endpoints. Run `apimigrate build-method-map`.',
+      'No Stripe method map available, so SDK calls cannot be resolved to endpoints. Run `apiwatcher build-method-map`.',
     );
   }
 

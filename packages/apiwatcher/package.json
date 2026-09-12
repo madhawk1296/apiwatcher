@@ -1,11 +1,11 @@
 {
-  "name": "apimigrate",
+  "name": "apiwatcher",
   "version": "0.1.0",
   "description": "Find every call site a breaking API change affects. Stripe + TypeScript.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "apimigrate": "./dist/cli/index.js"
+    "apiwatcher": "./dist/cli/index.js"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
