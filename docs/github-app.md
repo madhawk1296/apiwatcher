@@ -50,7 +50,7 @@ says a new Stripe version landed.
 
 ### 2. Install the App
 
-Grant it only the repositories you want watched.
+[github.com/apps/apiwatcher-app](https://github.com/apps/apiwatcher-app) — grant it only the repositories you want watched.
 
 ### 3. Optional config
 
