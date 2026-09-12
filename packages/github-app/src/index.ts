@@ -86,8 +86,11 @@ export default {
 
       try {
         const handled = await handleWebhook(env, event, payload as Parameters<typeof handleWebhook>[2]);
+        // One line per delivery, so `wrangler tail` tells the whole story.
+        console.log(`webhook ${event}${handled.action ? `.${handled.action}` : ''}: ${handled.summary}`);
         return json(handled);
       } catch (err) {
+        console.error(`webhook ${event} failed: ${(err as Error).message}`);
         // Return 500 so GitHub retries; the delivery log keeps the detail.
         return json({ event, error: (err as Error).message }, 500);
       }
@@ -143,9 +146,15 @@ export default {
         if (!latest) return;
 
         const known = await getLastKnownVersion(env);
-        if (known === latest) return; // nothing new
+        if (known === latest) {
+          console.log(`cron: still on ${latest}, nothing to do`);
+          return;
+        }
 
-        await alertAffectedRepos(env, latest);
+        const result = await alertAffectedRepos(env, latest);
+        console.log(
+          `cron: ${latest} — dispatched ${result.dispatched.length}, skipped ${result.skipped.length}, failed ${result.failed.length}`,
+        );
       })(),
     );
   },
