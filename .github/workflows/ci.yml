@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
 
       - name: Build
-        run: npm run build --workspace apiwatcher
+        run: npm run build --workspace apiwatcher-cli
 
       - name: Typecheck the worker
         run: npm run typecheck --workspace @apiwatcher/github-app

@@ -34,7 +34,7 @@ Subscribed events: `installation`, `installation_repositories`, `push`,
 `repository`.
 
 Contents-read does grant more than the App uses. If that is not acceptable, skip
-the App entirely and run `npx apiwatcher scan` in CI — the report is identical.
+the App entirely and run `npx apiwatcher-cli scan` in CI — the report is identical.
 
 ## Install
 

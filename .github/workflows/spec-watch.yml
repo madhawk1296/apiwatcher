@@ -38,7 +38,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build --workspace apiwatcher
+      - run: npm run build --workspace apiwatcher-cli
 
       - name: Diff Stripe's spec forward
         id: watch

@@ -1,5 +1,5 @@
 {
-  "name": "apiwatcher",
+  "name": "apiwatcher-cli",
   "version": "0.1.0",
   "description": "Find every call site a breaking API change affects. Stripe + TypeScript.",
   "license": "MIT",

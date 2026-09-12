@@ -61,7 +61,7 @@ jobs:
           CLI_VERSION: ${{ inputs.apiwatcher-version }}
         run: |
           set -o pipefail
-          npx --yes "apiwatcher@${CLI_VERSION}" scan . \
+          npx --yes "apiwatcher-cli@${CLI_VERSION}" scan . \
             --target "${TARGET}" \
             --fail-on "${FAIL_ON}" \
             --format md \

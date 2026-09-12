@@ -21,7 +21,7 @@ place that breaks. That gap is the whole product.
 ## Try it
 
 ```bash
-npx apiwatcher scan
+npx apiwatcher-cli scan
 ```
 
 No account, no API key, no network call. The scan reads your files, compares
@@ -29,7 +29,7 @@ them against a changeset that ships inside the package, and prints a report.
 Exit code is `1` when something breaks, so it drops into CI as-is.
 
 ```bash
-npx apiwatcher scan ./services/api --target 2026-08-26.dahlia --format md --out report.md
+npx apiwatcher-cli scan ./services/api --target 2026-08-26.dahlia --format md --out report.md
 ```
 
 ## How it works
@@ -143,7 +143,7 @@ templates/apiwatcher.yml the workflow customers copy into their repo
 
 ```bash
 npm install
-npm run build --workspace apiwatcher
+npm run build --workspace apiwatcher-cli
 node --test "packages/apiwatcher/dist/**/*.test.js"
 ```
 
