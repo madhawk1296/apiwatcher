@@ -21,6 +21,7 @@ export {
 } from './specdiff/fetch.js';
 export {
   loadMethodMap,
+  loadEventCatalog,
   defaultMethodMapPath,
   lookupSdkMethods,
   normalizePath,

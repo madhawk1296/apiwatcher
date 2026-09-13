@@ -1,0 +1,38 @@
+# systemd unit for the apiwatcher server.
+#
+# Install: cp deploy/apiwatcher.service /etc/systemd/system/ && systemctl enable --now apiwatcher
+# Logs:    journalctl -u apiwatcher -f
+[Unit]
+Description=apiwatcher server (GitHub App backend + hosted Stripe scanning)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=apiwatcher
+Group=apiwatcher
+WorkingDirectory=/opt/apiwatcher
+EnvironmentFile=/etc/apiwatcher/env
+ExecStart=/usr/bin/node packages/server/dist/index.js
+Restart=on-failure
+RestartSec=5
+# Let in-flight scans finish; the server drains its queue on SIGTERM.
+TimeoutStopSec=90
+
+# Customer code is cloned under DATA_DIR for the seconds a scan takes.
+# Keep the process boxed in: it needs the data dir, the network, and nothing else.
+ReadWritePaths=/var/lib/apiwatcher
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+# git and node need the network; nothing here needs raw sockets.
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

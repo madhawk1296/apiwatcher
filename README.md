@@ -18,46 +18,54 @@ Dependabot tells you a version number moved. It cannot tell you that
 `tipping.bgn` no longer exists and that line 22 of your checkout route is the
 place that breaks. That gap is the whole product.
 
-## Try it
+## Two ways to use it
+
+**Install the [GitHub App](docs/github-app.md).** Every repo that uses Stripe
+gets a check on each pull request, an updated tracking issue on each push to
+your default branch, and a scan against every new Stripe API version the day it
+ships. Nothing to configure, no workflow file.
+
+**Or run the CLI.** No account, no API key, no network call:
 
 ```bash
 npx apiwatcher-cli scan
 ```
 
-No account, no API key, no network call. The scan reads your files, compares
-them against a changeset that ships inside the package, and prints a report.
-Exit code is `1` when something breaks, so it drops into CI as-is.
+It reads your files, compares them against a changeset that ships inside the
+package, and prints the report. Exit code is `1` when something breaks, so it
+drops into CI as-is.
 
 ```bash
 npx apiwatcher-cli scan ./services/api --target 2026-08-26.dahlia --format md --out report.md
 ```
 
+Same scanner either way; the App just runs it for you and knows when Stripe
+ships something.
+
 ## How it works
 
-Two loops that never touch each other.
+Two loops.
 
 **The spec watcher** runs on a cron in this repo. It pulls Stripe's OpenAPI spec,
-diffs it against the last version it published, and commits a changeset —
-a machine-readable list of what broke, with a docs link and a one-line
-explanation each. GitHub Actions on a public repo is free, and the job exits in
-seconds on the overwhelming majority of runs where nothing changed.
+diffs it against the last version it published, and commits a changeset — a
+machine-readable list of what broke, each with a docs link and a one-line
+explanation. Free on public-repo Actions, and a no-op almost every day.
 
-**The scanner** runs on your machine or your CI runner. It finds every Stripe
-call site, resolves each to an endpoint, and intersects that with the changeset
-for your version range.
-
-The [GitHub App](docs/github-app.md) is what connects them: when a new version
-lands, it looks up which installed repos are behind and asks each one's own
-workflow to re-scan itself. Repos that are unaffected are never touched.
+**The server** ([docs/server.md](docs/server.md)) receives the GitHub App's
+webhooks, keeps an index of which installed repos use Stripe, and scans them:
+shallow-clone the commit, run the scanner, post a check or issue, delete the
+clone. When the spec watcher publishes a new version, the server scans every
+tracked repo that is behind. Repos already current, or that do not use Stripe,
+are never touched.
 
 ```
-stripe/openapi ──cron──▶ changeset ──┐
-                                     ├──▶ GitHub App ──dispatch──▶ your Actions ──▶ issue
-your repo ──────scan───▶ call sites ─┘
+stripe/openapi ──cron──▶ changesets ──▶ server ──▶ clone → scan → check / issue
+                                          ▲
+GitHub webhooks (install, push, PR) ──────┘
 ```
 
-Your code never leaves your infrastructure. The App reads two files per repo —
-`package.json` and your config — to decide whether you use Stripe at all.
+One Node process on one small box. Customer code is on disk for the seconds a
+scan takes and nowhere else.
 
 ## What it detects
 
@@ -106,17 +114,18 @@ Optional. Drop `.apiwatcher.json` at your repo root:
 ```json
 {
   "target": "latest",
+  "alerts": true,
+  "scanOnPush": true,
   "ignorePaths": ["src/generated"],
   "ignoreChanges": ["stripe-2026-08-26.dahlia-0042"],
-  "failOn": "breaking",
-  "alerts": true
+  "failOn": "breaking"
 }
 ```
 
 `ignoreChanges` is the escape hatch for a false positive — every finding prints
-its id.
+its id. `scanOnPush: false` keeps the version alerts and drops the PR checks.
 
-## Commands
+## CLI commands
 
 | Command | What it does |
 | --- | --- |
@@ -132,11 +141,11 @@ Run `apiwatcher --help` for flags.
 ## Repo layout
 
 ```
-packages/apiwatcher/     the CLI: changesets, spec diff, scanner, report
-packages/github-app/     Cloudflare Worker: webhooks, repo index, alert fan-out
-changesets/stripe/       published changesets + index.json
-templates/apiwatcher.yml the workflow customers copy into their repo
-.github/workflows/       CI, the spec watcher, the reusable scan workflow
+packages/apiwatcher/   the scanner, differ, and CLI — published as apiwatcher-cli
+packages/server/       the backend: webhooks, index, scan queue, posting
+changesets/stripe/     published changesets + index.json
+deploy/                systemd unit, Caddyfile, setup script for a fresh box
+.github/workflows/     CI and the spec watcher cron
 ```
 
 ## Development
@@ -144,7 +153,8 @@ templates/apiwatcher.yml the workflow customers copy into their repo
 ```bash
 npm install
 npm run build --workspace apiwatcher-cli
-node --test "packages/apiwatcher/dist/**/*.test.js"
+npm run build --workspace @apiwatcher/server
+npm test --workspaces
 ```
 
 Bootstrapping a changeset from scratch:
@@ -154,6 +164,9 @@ node packages/apiwatcher/dist/cli/index.js build-method-map
 node packages/apiwatcher/dist/cli/index.js spec-diff --from-ref <old-sha> --to-ref master
 node packages/apiwatcher/dist/cli/index.js index-changesets
 ```
+
+Running the server locally needs `APP_ID`, `APP_PRIVATE_KEY_FILE`, and
+`WEBHOOK_SECRET` in the environment; see [docs/server.md](docs/server.md).
 
 ## Status and limits
 

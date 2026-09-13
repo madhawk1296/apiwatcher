@@ -22,10 +22,9 @@ jobs:
       - run: npm ci
 
       - name: Build
-        run: npm run build --workspace apiwatcher-cli
-
-      - name: Typecheck the worker
-        run: npm run typecheck --workspace @apiwatcher/github-app
+        run: |
+          npm run build --workspace apiwatcher-cli
+          npm run build --workspace @apiwatcher/server
 
       - name: Test
         run: npm test --workspaces --if-present
@@ -39,3 +38,15 @@ jobs:
             echo "Expected the fixture scan to report a breaking change." >&2
             exit 1
           fi
+
+      - name: Server fails fast on missing config
+        run: |
+          # A misconfigured deploy must die in the first second with a clear
+          # message, not on the first webhook.
+          set +e
+          out=$(node packages/server/dist/index.js 2>&1)
+          code=$?
+          set -e
+          echo "$out"
+          [ "$code" -ne 0 ] || { echo "expected a non-zero exit without APP_ID" >&2; exit 1; }
+          echo "$out" | grep -q "Missing required environment variable APP_ID"

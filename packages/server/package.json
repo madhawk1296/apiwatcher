@@ -1,0 +1,25 @@
+{
+  "name": "@apiwatcher/server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The apiwatcher backend: GitHub App webhooks, repo index, and hosted scanning. One Node process on one box.",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test \"dist/**/*.test.js\"",
+    "start": "node dist/index.js",
+    "dev": "node --watch dist/index.js"
+  },
+  "dependencies": {
+    "apiwatcher-cli": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

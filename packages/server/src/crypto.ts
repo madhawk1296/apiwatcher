@@ -1,6 +1,10 @@
+import type { webcrypto } from 'node:crypto';
+
 /**
- * Signature verification and App JWT minting, using Web Crypto only so the
- * worker has no dependencies and cold-starts instantly.
+ * Signature verification and App JWT minting, using Web Crypto only.
+ *
+ * Ported unchanged from the Cloudflare worker: Node 22 exposes the same
+ * `crypto.subtle` API, so the code that held up there holds up here.
  */
 
 function base64UrlEncode(bytes: Uint8Array | ArrayBuffer): string {
@@ -89,7 +93,7 @@ function pkcs1ToPkcs8(pkcs1: Uint8Array): Uint8Array {
   return out;
 }
 
-async function importPrivateKey(pem: string): Promise<CryptoKey> {
+async function importPrivateKey(pem: string): Promise<webcrypto.CryptoKey> {
   const match = PEM_BODY.exec(pem.trim());
   if (!match?.[1]) {
     throw new Error('APP_PRIVATE_KEY is not a PEM block. Paste the .pem GitHub gave you, newlines included.');
