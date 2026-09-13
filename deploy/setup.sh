@@ -3,6 +3,9 @@
 #
 #   DOMAIN=app.example.com sudo -E bash deploy/setup.sh
 #
+# No domain? Leave DOMAIN unset and the box's public IP is used through
+# sslip.io, which gives a real HTTPS hostname with nothing to register.
+#
 # Installs Node 22, git and Caddy; creates the service user and directories;
 # clones and builds the repo; installs the systemd unit. It stops short of
 # starting the service, because the secrets in /etc/apiwatcher/env are yours to
@@ -11,7 +14,11 @@
 # Safe to re-run: every step checks before it acts.
 set -euo pipefail
 
-: "${DOMAIN:?Set DOMAIN to the hostname that points at this box, e.g. DOMAIN=app.example.com}"
+if [ -z "${DOMAIN:-}" ]; then
+  IP=$(curl -4 -fsS https://ifconfig.me || curl -4 -fsS https://api.ipify.org)
+  DOMAIN="${IP//./-}.sslip.io"
+  echo "==> no DOMAIN given; using $DOMAIN (sslip.io maps it to $IP)"
+fi
 REPO_URL="${REPO_URL:-https://github.com/madhawk1296/apiwatcher.git}"
 APP_DIR=/opt/apiwatcher
 DATA_DIR=/var/lib/apiwatcher
