@@ -13,7 +13,7 @@ User=apiwatcher
 Group=apiwatcher
 WorkingDirectory=/opt/apiwatcher
 EnvironmentFile=/etc/apiwatcher/env
-ExecStart=/usr/bin/node packages/server/dist/index.js
+ExecStart=/usr/bin/node --no-warnings=ExperimentalWarning packages/server/dist/index.js
 Restart=on-failure
 RestartSec=5
 # Let in-flight scans finish; the server drains its queue on SIGTERM.
