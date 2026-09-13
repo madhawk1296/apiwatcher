@@ -2,6 +2,7 @@ import {
   getFileContent,
   getInstallationToken,
   listInstallationRepos,
+  listTreePaths,
   parseFullName,
   type AppCredentials,
   type RepoRef,
@@ -58,6 +59,51 @@ async function readConfig(token: string, ref: RepoRef, gitRef?: string): Promise
   return {};
 }
 
+/** How many workspace manifests to read before giving up on a monorepo. */
+const MAX_WORKSPACE_MANIFESTS = 25;
+
+/**
+ * Candidate `package.json` paths below the root, shallowest first, so
+ * `packages/lib/package.json` is read before something six levels deep.
+ * node_modules is excluded even though a committed one is rare, because when it
+ * exists it is enormous.
+ */
+export function pickWorkspaceManifests(paths: Iterable<string>): string[] {
+  const out: string[] = [];
+  for (const p of paths) {
+    if (p === 'package.json' || !p.endsWith('/package.json')) continue;
+    if (p.includes('node_modules/')) continue;
+    out.push(p);
+  }
+  out.sort((a, b) => a.split('/').length - b.split('/').length || a.localeCompare(b));
+  return out.slice(0, MAX_WORKSPACE_MANIFESTS);
+}
+
+/**
+ * The declared stripe range, from the root manifest or the first workspace
+ * package that has one. Monorepos almost always declare it in a package, not at
+ * the root — the CLI checks workspaces for the same reason.
+ */
+async function findStripeRange(token: string, ref: RepoRef, gitRef: string): Promise<string | null> {
+  const root = await getFileContent(token, ref, 'package.json', gitRef);
+  if (root === null) return null;
+  const direct = readStripeRange(root);
+  if (direct) return direct;
+
+  let tree: { paths: string[] };
+  try {
+    tree = await listTreePaths(token, ref, gitRef);
+  } catch {
+    return null; // a tree we cannot list is a repo we cannot see into
+  }
+  for (const path of pickWorkspaceManifests(tree.paths)) {
+    const text = await getFileContent(token, ref, path, gitRef);
+    const range = text === null ? null : readStripeRange(text);
+    if (range) return range;
+  }
+  return null;
+}
+
 export interface IndexOutcome {
   fullName: string;
   tracked: boolean;
@@ -79,13 +125,7 @@ export function createIndexer(creds: AppCredentials, store: Store): Indexer {
     }
 
     const token = await getInstallationToken(creds, installationId);
-    const packageJson = await getFileContent(token, ref, 'package.json', summary.default_branch);
-    if (packageJson === null) {
-      store.deleteRepo(summary.full_name);
-      return { fullName: summary.full_name, tracked: false, reason: 'no package.json' };
-    }
-
-    const stripeRange = readStripeRange(packageJson);
+    const stripeRange = await findStripeRange(token, ref, summary.default_branch);
     if (stripeRange === null) {
       // Not a Stripe consumer today. Nothing to watch, nothing to notify.
       store.deleteRepo(summary.full_name);

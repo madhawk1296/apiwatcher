@@ -126,6 +126,24 @@ export async function getFileContent(
   }
 }
 
+/**
+ * Every file path in the repo at a ref, in one API call.
+ *
+ * Used to find workspace manifests without cloning. GitHub truncates the
+ * listing for enormous repos; callers treat that as "may be incomplete".
+ */
+export async function listTreePaths(
+  token: string,
+  ref: RepoRef,
+  gitRef: string,
+): Promise<{ paths: string[]; truncated: boolean }> {
+  const body = await request<{ tree: Array<{ path: string; type: string }>; truncated: boolean }>(
+    `${API}/repos/${ref.owner}/${ref.repo}/git/trees/${encodeURIComponent(gitRef)}?recursive=1`,
+    token,
+  );
+  return { paths: body.tree.filter((t) => t.type === 'blob').map((t) => t.path), truncated: body.truncated };
+}
+
 /** Files touched by a pull request, capped so a giant PR cannot stall us. */
 export async function listPullRequestFiles(
   token: string,

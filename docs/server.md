@@ -12,8 +12,9 @@ GitHub webhook ──▶ index (SQLite) ──▶ scan queue ──▶ clone →
 spec watcher (cron in this repo) ──▶ poller: new version? ──▶ fan out to repos that are behind
 ```
 
-**On install**, every repo the installation covers is indexed — two API reads
-each, `package.json` and `.apiwatcher.json` — and every tracked one gets a first
+**On install**, every repo the installation covers is indexed by reading its
+`package.json` (and, for monorepos, the workspace packages' manifests) plus
+`.apiwatcher.json` over the API — no clone — and every tracked one gets a first
 scan, so a new install sees a result within a minute.
 
 **On push to the default branch**, if the commit touched TypeScript/JavaScript,
