@@ -143,12 +143,23 @@ export function createHttpServer(deps: HttpDeps): Server {
           });
         }
 
+        // Re-index an installation, by id or by any repo it covers. The repo form
+        // exists because only the App can list its own installations — an
+        // operator with a user token cannot look the id up.
         if (path === '/admin/backfill' && req.method === 'POST') {
-          const installationId = Number(url.searchParams.get('installation_id'));
-          if (!Number.isInteger(installationId) || installationId <= 0) {
-            return send(res, 400, { error: 'installation_id query parameter is required' });
+          let installationId = Number(url.searchParams.get('installation_id'));
+          const repoName = url.searchParams.get('repo');
+          if (repoName) {
+            const ref = parseFullName(repoName);
+            if (!ref) return send(res, 400, { error: 'repo must be owner/name' });
+            const found = await getInstallationForRepo(creds, ref);
+            if (found === null) return send(res, 404, { error: `the App is not installed on ${repoName}` });
+            installationId = found;
           }
-          return send(res, 200, { outcomes: await indexer.indexInstallation(installationId) });
+          if (!Number.isInteger(installationId) || installationId <= 0) {
+            return send(res, 400, { error: 'installation_id or repo query parameter is required' });
+          }
+          return send(res, 200, { installationId, outcomes: await indexer.indexInstallation(installationId) });
         }
 
         if (path === '/admin/alert' && req.method === 'POST') {

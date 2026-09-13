@@ -134,7 +134,7 @@ always delivered).
 | `GET /admin/scans?limit=50` | Recent scans (summaries) |
 | `GET /admin/scans/:id` | One scan with its full report |
 | `POST /admin/scan?repo=owner/name[&sha=…][&post=1]` | Scan a repo now. `post=1` also posts the check/issue |
-| `POST /admin/backfill?installation_id=N` | Re-index an installation |
+| `POST /admin/backfill?repo=owner/name` (or `installation_id=N`) | Re-index the installation covering that repo |
 | `POST /admin/alert?version=X[&dry_run=1]` | Preview or run a version fan-out |
 | `POST /admin/sync` | Fetch new changesets now |
 
