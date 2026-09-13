@@ -58,6 +58,9 @@ chown apiwatcher:apiwatcher "$DATA_DIR"
 chmod 750 "$ENV_DIR"
 
 echo "==> code"
+# Re-runs pull as root into a checkout owned by the service user; git refuses
+# that by default ("dubious ownership") unless told the directory is expected.
+git config --global --add safe.directory "$APP_DIR" >/dev/null 2>&1 || true
 if [ -d "$APP_DIR/.git" ]; then
   git -C "$APP_DIR" pull --ff-only --quiet
 else

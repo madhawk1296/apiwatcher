@@ -89,6 +89,12 @@ sudo systemctl start apiwatcher && journalctl -u apiwatcher -f
 Point the GitHub App's webhook at `https://app.example.com/webhooks/github` and
 check `/health`.
 
+To redeploy after a change lands on `main`:
+
+```bash
+sudo bash /opt/apiwatcher/deploy/update.sh
+```
+
 ### Environment
 
 | Variable | Required | Default | Purpose |
