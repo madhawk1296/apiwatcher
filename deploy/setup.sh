@@ -27,6 +27,13 @@ ENV_DIR=/etc/apiwatcher
 if [ "$(id -u)" -ne 0 ]; then echo "run as root (sudo -E)"; exit 1; fi
 
 echo "==> packages"
+# A fresh cloud image runs its own apt on first boot; contend for the lock and
+# apt-get exits 100. Wait for it rather than racing it.
+for _ in $(seq 1 120); do
+  fuser /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock >/dev/null 2>&1 || break
+  sleep 5
+done
+command -v cloud-init >/dev/null && cloud-init status --wait >/dev/null 2>&1 || true
 apt-get update -qq
 apt-get install -y -qq git curl ca-certificates debian-keyring debian-archive-keyring apt-transport-https gnupg >/dev/null
 
