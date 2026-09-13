@@ -55,6 +55,8 @@ echo "==> user and directories"
 id -u apiwatcher >/dev/null 2>&1 || useradd --system --home-dir "$DATA_DIR" --shell /usr/sbin/nologin apiwatcher
 mkdir -p "$DATA_DIR" "$ENV_DIR"
 chown apiwatcher:apiwatcher "$DATA_DIR"
+# root writes the secrets; the service user only needs to read them.
+chown root:apiwatcher "$ENV_DIR"
 chmod 750 "$ENV_DIR"
 
 echo "==> code"
@@ -93,7 +95,7 @@ Done. Two things left, both yours:
 1. Secrets. Edit $ENV_DIR/env and set APP_ID, WEBHOOK_SECRET, ADMIN_TOKEN, then
    copy the App's private key to $ENV_DIR/app-private-key.pem:
 
-     chmod 600 $ENV_DIR/app-private-key.pem && chown root:apiwatcher $ENV_DIR/app-private-key.pem $ENV_DIR/env && chmod 640 $ENV_DIR/app-private-key.pem $ENV_DIR/env
+     chown root:apiwatcher $ENV_DIR/app-private-key.pem $ENV_DIR/env && chmod 640 $ENV_DIR/app-private-key.pem $ENV_DIR/env
 
 2. Start it:
 
