@@ -111,6 +111,7 @@ check `/health`.
 | Contents | Read |
 | Issues | Read and write |
 | Checks | Read and write |
+| Pull requests | Read |
 | Metadata | Read (automatic) |
 
 Events: **Push**, **Pull request**, **Repository** (installation events are

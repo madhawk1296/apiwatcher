@@ -35,6 +35,7 @@ change. If nothing breaks, you hear nothing.
 | Contents | Read | Clone the commit being scanned |
 | Issues | Read and write | The tracking issue |
 | Checks | Read and write | The PR check |
+| Pull requests | Read | Read a PR's file list, so docs-only PRs are skipped without a clone |
 | Metadata | Read | Required by GitHub for any app |
 
 The App clones your repository to scan it. The clone lives on the scanning
