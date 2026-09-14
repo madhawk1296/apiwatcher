@@ -21,9 +21,20 @@ after=$(git rev-parse --short HEAD)
 npm ci --silent
 npm run build --workspace apiwatcher-cli --silent
 npm run build --workspace @apiwatcher/server --silent
+
+# The web build wants ~2 GB; a swapfile keeps a small box from OOM-killing it.
+if [ ! -f /swapfile ]; then
+  fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile >/dev/null && swapon /swapfile
+  grep -q '^/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' >> /etc/fstab
+fi
+# Build as the service user so .next is owned correctly; secrets are not needed to build.
+sudo -u apiwatcher -H env AUTH_SECRET=build AUTH_GITHUB_ID=build AUTH_GITHUB_SECRET=build \
+  npm run build --workspace @apiwatcher/web --silent
 chown -R apiwatcher:apiwatcher "$APP_DIR"
 
 systemctl restart apiwatcher
+[ -f /etc/systemd/system/apiwatcher-web.service ] && systemctl restart apiwatcher-web
 sleep 2
-echo "$before -> $after; apiwatcher is $(systemctl is-active apiwatcher)"
-journalctl -u apiwatcher -n 5 --no-pager
+echo "$before -> $after; apiwatcher is $(systemctl is-active apiwatcher); web is $(systemctl is-active apiwatcher-web 2>/dev/null || echo not-installed)"
+journalctl -u apiwatcher -n 3 --no-pager
+journalctl -u apiwatcher-web -n 3 --no-pager 2>/dev/null || true

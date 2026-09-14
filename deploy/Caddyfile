@@ -1,14 +1,22 @@
-# Caddy terminates TLS with an automatic Let's Encrypt certificate and proxies
-# to the server on localhost. Replace the hostname; nothing else to configure.
+# Caddy terminates TLS with an automatic Let's Encrypt certificate and routes:
+#   the scan server's endpoints -> :8787
+#   everything else (landing, changelog, dashboard) -> :3000 (Next.js)
 #
 # Install: cp deploy/Caddyfile /etc/caddy/Caddyfile && systemctl reload caddy
 
 app.example.com {
 	encode gzip
-	reverse_proxy localhost:8787
 
-	# GitHub webhook bodies are small; anything larger is not GitHub.
 	request_body {
 		max_size 2MB
+	}
+
+	@server path /webhooks/* /admin/* /health
+	handle @server {
+		reverse_proxy localhost:8787
+	}
+
+	handle {
+		reverse_proxy localhost:3000
 	}
 }

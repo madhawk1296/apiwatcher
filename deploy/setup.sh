@@ -72,6 +72,13 @@ cd "$APP_DIR"
 npm ci --silent
 npm run build --workspace apiwatcher-cli --silent
 npm run build --workspace @apiwatcher/server --silent
+if [ ! -f /swapfile ]; then
+  fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile >/dev/null && swapon /swapfile
+  grep -q '^/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' >> /etc/fstab
+fi
+chown -R apiwatcher:apiwatcher "$APP_DIR"
+sudo -u apiwatcher -H env AUTH_SECRET=build AUTH_GITHUB_ID=build AUTH_GITHUB_SECRET=build \
+  npm run build --workspace @apiwatcher/web --silent
 chown -R apiwatcher:apiwatcher "$APP_DIR"
 
 echo "==> config"
@@ -82,8 +89,9 @@ fi
 
 echo "==> systemd + caddy"
 cp deploy/apiwatcher.service /etc/systemd/system/apiwatcher.service
+cp deploy/apiwatcher-web.service /etc/systemd/system/apiwatcher-web.service
 systemctl daemon-reload
-systemctl enable apiwatcher >/dev/null
+systemctl enable apiwatcher apiwatcher-web >/dev/null
 sed "s/app\.example\.com/$DOMAIN/" deploy/Caddyfile > /etc/caddy/Caddyfile
 systemctl enable caddy >/dev/null
 systemctl reload caddy || systemctl restart caddy
@@ -92,14 +100,15 @@ cat <<EOF
 
 Done. Two things left, both yours:
 
-1. Secrets. Edit $ENV_DIR/env and set APP_ID, WEBHOOK_SECRET, ADMIN_TOKEN, then
+1. Secrets. Edit $ENV_DIR/env and set APP_ID, WEBHOOK_SECRET, ADMIN_TOKEN, and for the
+   dashboard AUTH_SECRET, AUTH_GITHUB_ID, AUTH_GITHUB_SECRET, AUTH_URL; then
    copy the App's private key to $ENV_DIR/app-private-key.pem:
 
      chown root:apiwatcher $ENV_DIR/app-private-key.pem $ENV_DIR/env && chmod 640 $ENV_DIR/app-private-key.pem $ENV_DIR/env
 
 2. Start it:
 
-     systemctl start apiwatcher && journalctl -u apiwatcher -f
+     systemctl start apiwatcher apiwatcher-web && journalctl -u apiwatcher -u apiwatcher-web -f
 
 Then point the GitHub App's webhook URL at https://$DOMAIN/webhooks/github
 and check https://$DOMAIN/health.

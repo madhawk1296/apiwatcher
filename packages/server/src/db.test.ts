@@ -87,3 +87,40 @@ test('meta is a simple key/value', () => {
   store.setMeta('lastKnownVersion', 'b');
   assert.equal(store.getMeta('lastKnownVersion'), 'b');
 });
+
+test('users, installations, and repo visibility', () => {
+  const store = new Store(':memory:');
+  store.putRepo({ ...base, fullName: 'acme/shop', installationId: 7 });
+  store.putRepo({ ...base, fullName: 'other/app', installationId: 9 });
+  store.upsertUser({ githubId: 1, login: 'cris', name: null, email: 'c@x.io', avatarUrl: null });
+  store.setUserInstallations(1, [{ id: 7, accountLogin: 'acme' }]);
+
+  assert.deepEqual(store.reposForUser(1).map((r) => r.fullName), ['acme/shop']);
+  assert.equal(store.userCanSeeRepo(1, 'ACME/shop'), true);
+  assert.equal(store.userCanSeeRepo(1, 'other/app'), false, 'a repo in an installation the user lacks is invisible');
+
+  // Sign-in refreshes the list wholesale.
+  store.setUserInstallations(1, [{ id: 9, accountLogin: 'other' }]);
+  assert.deepEqual(store.reposForUser(1).map((r) => r.fullName), ['other/app']);
+
+  // Email survives a later sign-in that reports none.
+  store.upsertUser({ githubId: 1, login: 'cris', name: 'C', email: null, avatarUrl: null });
+  assert.equal(store.getUser(1)?.email, 'c@x.io');
+});
+
+test('digest recipients and once-only sending', () => {
+  const store = new Store(':memory:');
+  store.putRepo({ ...base, fullName: 'acme/shop', installationId: 7 });
+  store.upsertUser({ githubId: 1, login: 'a', name: null, email: 'a@x.io', avatarUrl: null });
+  store.upsertUser({ githubId: 2, login: 'b', name: null, email: 'b@x.io', avatarUrl: null });
+  store.setUserInstallations(1, [{ id: 7, accountLogin: 'acme' }]);
+  store.setUserInstallations(2, [{ id: 7, accountLogin: 'acme' }]);
+  store.setPrefs({ githubId: 1, email: 'a@x.io', notifyOn: 'breaking', slackWebhook: null });
+  store.setPrefs({ githubId: 2, email: 'b@x.io', notifyOn: 'never', slackWebhook: null });
+
+  assert.deepEqual(store.digestRecipients(7).map((r) => r.login), ['a'], 'never means never');
+  assert.equal(store.digestAlreadySent('v', 7), false);
+  store.markDigestSent('v', 7, 1);
+  store.markDigestSent('v', 7, 1);
+  assert.equal(store.digestAlreadySent('v', 7), true);
+});

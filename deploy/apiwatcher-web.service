@@ -1,0 +1,36 @@
+# systemd unit for the apiwatcher web app (landing, changelog, dashboard).
+#
+# Install: cp deploy/apiwatcher-web.service /etc/systemd/system/ && systemctl enable --now apiwatcher-web
+# Logs:    journalctl -u apiwatcher-web -f
+[Unit]
+Description=apiwatcher web (Next.js: landing, changelog, dashboard)
+After=network-online.target apiwatcher.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=apiwatcher
+Group=apiwatcher
+WorkingDirectory=/opt/apiwatcher/packages/web
+EnvironmentFile=/etc/apiwatcher/env
+Environment=NODE_ENV=production
+Environment=HOSTNAME=127.0.0.1
+Environment=PORT=3000
+ExecStart=/usr/bin/npx next start
+Restart=on-failure
+RestartSec=5
+
+# Reads the scan server's SQLite; writes only user settings into it.
+ReadWritePaths=/var/lib/apiwatcher
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

@@ -4,3 +4,4 @@ dist/
 
 # Staged into the package at pack time by scripts/stage-package-data.mjs.
 packages/apiwatcher/changesets/
+.claude/launch.json
