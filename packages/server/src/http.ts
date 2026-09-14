@@ -7,7 +7,8 @@ import { verifyWebhookSignature } from './crypto.js';
 import type { Store } from './db.js';
 import { getInstallationForRepo, parseFullName } from './github.js';
 import type { Indexer } from './indexer.js';
-import { pollOnce } from './poller.js';
+import { flushDigests, pollOnce } from './poller.js';
+import { resendTransport } from './digest.js';
 import type { ScanQueue } from './queue.js';
 import { handleWebhook } from './webhook.js';
 import * as log from './log.js';
@@ -191,6 +192,22 @@ export function createHttpServer(deps: HttpDeps): Server {
             requestedAt: new Date().toISOString(),
           });
           return send(res, 202, { queued: outcome, repo: fullName, post, hint: 'GET /admin/scans to see the result' });
+        }
+
+        // Send (or re-evaluate) digests for a version now. Idempotent.
+        if (path === '/admin/digest' && req.method === 'POST') {
+          const version = url.searchParams.get('version');
+          if (!version) return send(res, 400, { error: 'version query parameter is required' });
+          store.setMeta('digestPendingVersion', version);
+          await flushDigests({
+            store,
+            changesets,
+            queue,
+            intervalMinutes: config.pollIntervalMinutes,
+            reportRetentionDays: config.reportRetentionDays,
+            digest: { transport: resendTransport(config.resendApiKey, config.emailFrom), publicUrl: config.publicUrl },
+          });
+          return send(res, 200, { version, pending: store.getMeta('digestPendingVersion') || null });
         }
 
         if (path === '/admin/sync' && req.method === 'POST') {

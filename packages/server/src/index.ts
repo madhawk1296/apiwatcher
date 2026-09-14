@@ -7,7 +7,8 @@ import { Store } from './db.js';
 import { assertGitAvailable } from './git.js';
 import { createHttpServer } from './http.js';
 import { createIndexer } from './indexer.js';
-import { startPoller } from './poller.js';
+import { flushDigests, startPoller } from './poller.js';
+import { resendTransport } from './digest.js';
 import { ScanQueue } from './queue.js';
 import { runScan } from './scan-job.js';
 import * as log from './log.js';
@@ -36,20 +37,32 @@ async function main(): Promise<void> {
   log.info(`changesets: ${(await changesets.latest()) ?? 'none'} (bundled seed)`);
 
   const indexer = createIndexer(creds, store);
-  const queue = new ScanQueue(
-    (request) =>
-      runScan({ creds, store, changesets, dataDir: config.dataDir, appSlug: config.appSlug }, request).then(() => {}),
+  const pollerDeps = {
+    store,
+    changesets,
+    intervalMinutes: config.pollIntervalMinutes,
+    reportRetentionDays: config.reportRetentionDays,
+    digest: { transport: resendTransport(config.resendApiKey, config.emailFrom), publicUrl: config.publicUrl },
+  };
+
+  // After the last scan of a fan-out finishes, the digest is owed. Debounced so a
+  // burst of completions triggers one check once the queue is quiet.
+  let digestTimer: NodeJS.Timeout | null = null;
+  const queue: ScanQueue = new ScanQueue(
+    async (request) => {
+      await runScan({ creds, store, changesets, dataDir: config.dataDir, appSlug: config.appSlug }, request);
+      if (request.trigger === 'new_version') {
+        if (digestTimer) clearTimeout(digestTimer);
+        digestTimer = setTimeout(() => {
+          void flushDigests({ ...pollerDeps, queue }).catch((err: Error) => log.warn(`digest flush failed: ${err.message}`));
+        }, 15_000);
+      }
+    },
     config.scanConcurrency,
     log.warn,
   );
 
-  const stopPoller = startPoller({
-    store,
-    changesets,
-    queue,
-    intervalMinutes: config.pollIntervalMinutes,
-    reportRetentionDays: config.reportRetentionDays,
-  });
+  const stopPoller = startPoller({ ...pollerDeps, queue });
 
   const server = createHttpServer({ config, store, changesets, indexer, queue });
   server.listen(config.port, config.host, () => {

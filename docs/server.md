@@ -118,6 +118,9 @@ sudo bash /opt/apiwatcher/deploy/update.sh
 | `AUTH_GITHUB_ID` / `AUTH_GITHUB_SECRET` | web | | The GitHub App's own OAuth client credentials — not a separate OAuth App |
 | `AUTH_URL` | web | | Public origin; the App's callback URL is `<AUTH_URL>/api/auth/callback/github` |
 | `SERVER_URL` | web | `http://127.0.0.1:8787` | How the web app reaches the server for "scan now" |
+| `RESEND_API_KEY` | no | unset | Sends the version digest; unset means digests are logged only |
+| `EMAIL_FROM` | no | `apiwatcher <alerts@apiwatcher.dev>` | Sender; the domain must be verified in Resend |
+| `PUBLIC_URL` | no | `AUTH_URL` | Links in digests |
 
 ### GitHub App permissions
 
@@ -145,6 +148,7 @@ always delivered).
 | `POST /admin/backfill?repo=owner/name` (or `installation_id=N`) | Re-index the installation covering that repo |
 | `POST /admin/alert?version=X[&dry_run=1]` | Preview or run a version fan-out |
 | `POST /admin/sync` | Fetch new changesets now |
+| `POST /admin/digest?version=X` | Send (or re-evaluate) the version digest now; idempotent per installation |
 
 Admin routes need `Authorization: Bearer $ADMIN_TOKEN`.
 

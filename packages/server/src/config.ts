@@ -28,6 +28,12 @@ export interface Config {
   reportRetentionDays: number;
   /** The GitHub App slug, for links in issues. */
   appSlug: string;
+  /** Resend API key for the version digest. Absent: digests are logged, not sent. */
+  resendApiKey: string | null;
+  /** Sender for digest emails, e.g. `apiwatcher <alerts@example.com>`. */
+  emailFrom: string;
+  /** Public origin of the web app, for links in digests. */
+  publicUrl: string;
 }
 
 function required(name: string): string {
@@ -83,5 +89,8 @@ export function loadConfig(): Config {
     pollIntervalMinutes: integer('POLL_INTERVAL_MINUTES', 60),
     reportRetentionDays: integer('REPORT_RETENTION_DAYS', 30),
     appSlug: optional('APP_SLUG', 'apiwatcher-app'),
+    resendApiKey: optional('RESEND_API_KEY', '') || null,
+    emailFrom: optional('EMAIL_FROM', 'apiwatcher <alerts@apiwatcher.dev>'),
+    publicUrl: optional('PUBLIC_URL', optional('AUTH_URL', 'http://localhost:3000')),
   };
 }
