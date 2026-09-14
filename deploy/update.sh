@@ -27,10 +27,11 @@ if [ ! -f /swapfile ]; then
   fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile >/dev/null && swapon /swapfile
   grep -q '^/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' >> /etc/fstab
 fi
-# Build as the service user so .next is owned correctly; secrets are not needed to build.
+# git pull and npm ci ran as root; hand the tree to the service user *before*
+# building the web app as that user, or .next cannot be created.
+chown -R apiwatcher:apiwatcher "$APP_DIR"
 sudo -u apiwatcher -H env AUTH_SECRET=build AUTH_GITHUB_ID=build AUTH_GITHUB_SECRET=build \
   npm run build --workspace @apiwatcher/web --silent
-chown -R apiwatcher:apiwatcher "$APP_DIR"
 
 systemctl restart apiwatcher
 [ -f /etc/systemd/system/apiwatcher-web.service ] && systemctl restart apiwatcher-web

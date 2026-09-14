@@ -79,7 +79,6 @@ fi
 chown -R apiwatcher:apiwatcher "$APP_DIR"
 sudo -u apiwatcher -H env AUTH_SECRET=build AUTH_GITHUB_ID=build AUTH_GITHUB_SECRET=build \
   npm run build --workspace @apiwatcher/web --silent
-chown -R apiwatcher:apiwatcher "$APP_DIR"
 
 echo "==> config"
 if [ ! -f "$ENV_DIR/env" ]; then
