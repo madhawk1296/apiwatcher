@@ -14,9 +14,10 @@ Group=apiwatcher
 WorkingDirectory=/opt/apiwatcher/packages/web
 EnvironmentFile=/etc/apiwatcher/env
 Environment=NODE_ENV=production
-Environment=HOSTNAME=127.0.0.1
-Environment=PORT=3000
-ExecStart=/usr/bin/npx next start
+# The env file carries PORT for the scan server and EnvironmentFile always
+# wins over Environment=, so the web app's port and bind address go on the
+# command line where nothing can override them.
+ExecStart=/usr/bin/npx next start -p 3000 -H 127.0.0.1
 Restart=on-failure
 RestartSec=5
 
