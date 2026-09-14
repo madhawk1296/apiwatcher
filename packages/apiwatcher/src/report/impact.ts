@@ -78,7 +78,7 @@ export function buildReport(input: BuildReportInput): ImpactReport {
       sites,
       severity: change.severity,
       confidence: sites[0]?.confidence ?? 0,
-      suggestion: suggest(change),
+      suggestion: suggest(change, sites[0]?.confidence ?? 0),
     });
   }
 
@@ -333,15 +333,25 @@ function matchUsages(change: SpecChange, index: UsageIndex): Usage[] {
     const idx = field.lastIndexOf('.');
     const parent = idx === -1 ? null : field.slice(0, idx);
 
-    return calls.filter((call) => {
-      // No params object we could read: cannot rule it out, so report it.
-      if (!call.callId) return true;
-      const passed = index.paramsByCall.get(call.callId);
-      if (!passed) return parent === null;
-      if (passed.has(field)) return false; // already supplies it
-      if (parent === null) return true; // top-level: every call needs it
-      return reachesParent(passed, parent);
-    });
+    const out: Usage[] = [];
+    for (const call of calls) {
+      const passed = call.callId ? index.paramsByCall.get(call.callId) : undefined;
+
+      if (passed?.has(field)) continue; // already supplies it
+      if (parent === null) {
+        out.push(call); // top-level: every call needs it
+        continue;
+      }
+      if (!passed) continue; // params not a literal at all; nothing to reach the parent with
+
+      const reach = reachesParent(passed, parent);
+      if (reach === 'no') continue;
+      // `phases: buildPhases(...)` — the parent is passed but built elsewhere.
+      // We cannot rule the field in or out, so report it as something to
+      // verify rather than as a certainty, and let the confidence say so.
+      out.push(reach === 'unknown' ? { ...call, confidence: Math.min(call.confidence, VERIFY_CONFIDENCE) } : call);
+    }
+    return out;
   }
 
   if (!change.field) return endpointUsages(index, change);
@@ -361,12 +371,15 @@ function matchUsages(change: SpecChange, index: UsageIndex): Usage[] {
  * not among them, the call demonstrably does not pass it, and reporting would be
  * a false alarm.
  */
-function reachesParent(passed: ReadonlySet<string>, parent: string): boolean {
+/** A finding we could not confirm is shown, but never as a certainty. */
+const VERIFY_CONFIDENCE = 0.6;
+
+function reachesParent(passed: ReadonlySet<string>, parent: string): 'yes' | 'no' | 'unknown' {
   const want = parent.replace(/\[\]/g, '');
   const have = [...passed].map((p) => p.replace(/\[\]/g, ''));
 
   for (const p of have) {
-    if (p === want || p.startsWith(`${want}.`)) return true;
+    if (p === want || p.startsWith(`${want}.`)) return 'yes';
   }
 
   // Deepest recorded ancestor of the wanted path.
@@ -375,15 +388,21 @@ function reachesParent(passed: ReadonlySet<string>, parent: string): boolean {
     if (!want.startsWith(`${p}.`)) continue;
     if (deepest === null || p.length > deepest.length) deepest = p;
   }
-  if (deepest === null) return false;
+  if (deepest === null) return 'no';
 
   const enumeratedChildren = have.some((p) => p.startsWith(`${deepest as string}.`));
-  // Children listed and ours absent -> not passed. Nothing listed -> unknown.
-  return !enumeratedChildren;
+  // Children listed and ours absent -> not passed. Nothing listed -> the value
+  // was not a literal we could read, so we do not know.
+  return enumeratedChildren ? 'no' : 'unknown';
 }
 
-function suggest(change: SpecChange): string {
+function suggest(change: SpecChange, confidence = 1): string {
   const field = change.field ?? change.event ?? '';
+  if (change.kind === 'required' && confidence <= VERIFY_CONFIDENCE) {
+    const idx = field.lastIndexOf('.');
+    const parent = idx === -1 ? field : field.slice(0, idx);
+    return `This call builds \`${parent}\` dynamically, so we cannot see whether \`${field}\` is included. It is now required — verify.`;
+  }
   switch (change.kind) {
     case 'renamed':
       return `Rename \`${field}\` to \`${change.replacement ?? '?'}\`.`;

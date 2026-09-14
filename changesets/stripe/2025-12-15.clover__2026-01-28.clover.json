@@ -1,0 +1,918 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2025-12-15.clover",
+  "to": "2026-01-28.clover",
+  "generatedAt": "2026-09-14T02:02:52.222Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "03af40466c67b98705b1453e929eb801fd8b5b03",
+    "toRef": "a402765c987f40ac7474547700da71a218428805"
+  },
+  "changes": [
+    {
+      "id": "stripe-2026-01-28.clover-0001",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents",
+      "method": "post",
+      "field": "payment_method_options.us_bank_account.preferred_settlement_speed",
+      "note": "Request parameter \"payment_method_options.us_bank_account.preferred_settlement_speed\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0002",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents/{intent}",
+      "method": "post",
+      "field": "payment_method_options.us_bank_account.preferred_settlement_speed",
+      "note": "Request parameter \"payment_method_options.us_bank_account.preferred_settlement_speed\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0003",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents/{intent}/confirm",
+      "method": "post",
+      "field": "payment_method_options.us_bank_account.preferred_settlement_speed",
+      "note": "Request parameter \"payment_method_options.us_bank_account.preferred_settlement_speed\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "confirm"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0004",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/terminal/configurations",
+      "method": "post",
+      "field": "tipping.bgn",
+      "note": "Request parameter \"tipping.bgn\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "terminal.configurations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0005",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/terminal/configurations/{configuration}",
+      "method": "post",
+      "field": "tipping.bgn",
+      "note": "Request parameter \"tipping.bgn\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "terminal.configurations",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0006",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_intent_payment_method_options_us_bank_account",
+      "field": "preferred_settlement_speed",
+      "note": "Response field \"payment_intent_payment_method_options_us_bank_account.preferred_settlement_speed\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment_intent.payment_method_options.us_bank_account.preferred_settlement_speed",
+        "data[].payment_method_options.us_bank_account.preferred_settlement_speed",
+        "payment_method_options.us_bank_account.preferred_settlement_speed"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "get",
+          "path": "/v1/disputes/{dispute}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/disputes/{dispute}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/disputes/{dispute}/close"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "disputes",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "disputes",
+          "method": "update"
+        },
+        {
+          "namespace": "disputes",
+          "method": "close"
+        },
+        {
+          "namespace": "paymentIntents",
+          "method": "list"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0007",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "konbini",
+      "fromType": "object(payment_method_details_konbini)",
+      "toType": "object(payment_method_details_payment_record_konbini)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.konbini\" changed from object(payment_method_details_konbini) to object(payment_method_details_payment_record_konbini).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.konbini",
+        "data[].payment_method_details.konbini",
+        "payment_method_details.konbini"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0008",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "mb_way",
+      "fromType": "object(payment_method_details_mb_way)",
+      "toType": "object(payment_method_details_payment_record_mb_way)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.mb_way\" changed from object(payment_method_details_mb_way) to object(payment_method_details_payment_record_mb_way).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.mb_way",
+        "data[].payment_method_details.mb_way",
+        "payment_method_details.mb_way"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0009",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "paynow",
+      "fromType": "object(payment_method_details_paynow)",
+      "toType": "object(payment_method_details_payment_record_paynow)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.paynow\" changed from object(payment_method_details_paynow) to object(payment_method_details_payment_record_paynow).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.paynow",
+        "data[].payment_method_details.paynow",
+        "payment_method_details.paynow"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0010",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "promptpay",
+      "fromType": "object(payment_method_details_promptpay)",
+      "toType": "object(payment_method_details_payment_record_promptpay)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.promptpay\" changed from object(payment_method_details_promptpay) to object(payment_method_details_payment_record_promptpay).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.promptpay",
+        "data[].payment_method_details.promptpay",
+        "payment_method_details.promptpay"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0011",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "wechat_pay",
+      "fromType": "object(payment_method_details_wechat_pay)",
+      "toType": "object(payment_method_details_payment_record_wechat_pay)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.wechat_pay\" changed from object(payment_method_details_wechat_pay) to object(payment_method_details_payment_record_wechat_pay).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.wechat_pay",
+        "data[].payment_method_details.wechat_pay",
+        "payment_method_details.wechat_pay"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0012",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "zip",
+      "fromType": "object(payment_method_details_zip)",
+      "toType": "object(payment_method_details_payment_record_zip)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.zip\" changed from object(payment_method_details_zip) to object(payment_method_details_payment_record_zip).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.zip",
+        "data[].payment_method_details.zip",
+        "payment_method_details.zip"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-01-28.clover-0013",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "terminal_configuration_configuration_resource_tipping",
+      "field": "bgn",
+      "note": "Response field \"terminal_configuration_configuration_resource_tipping.bgn\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].tipping.bgn",
+        "tipping.bgn"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/terminal/configurations"
+        },
+        {
+          "method": "post",
+          "path": "/v1/terminal/configurations"
+        },
+        {
+          "method": "get",
+          "path": "/v1/terminal/configurations/{configuration}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/terminal/configurations/{configuration}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "terminal.configurations",
+          "method": "list"
+        },
+        {
+          "namespace": "terminal.configurations",
+          "method": "create"
+        },
+        {
+          "namespace": "terminal.configurations",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "terminal.configurations",
+          "method": "update"
+        }
+      ]
+    }
+  ]
+}

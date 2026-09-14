@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2024-06-20",
+  "to": "2024-09-30.acacia",
+  "generatedAt": "2026-09-14T02:02:32.892Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "d86b6cc8bf110e4339ac1e319f995a9f97526092",
+    "toRef": "d5c0875f9c7bda6824c65f4bd658378004c4c5bf"
+  },
+  "changes": [
+    {
+      "id": "stripe-2024-09-30.acacia-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "queryParam",
+      "path": "/v1/billing/alerts",
+      "method": "get",
+      "field": "alert_type",
+      "fromType": "enum(spend_threshold|usage_threshold)",
+      "toType": "enum(usage_threshold)",
+      "note": "Query parameter \"alert_type\" no longer accepts spend_threshold.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "list"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0005",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/billing/alerts",
+      "method": "post",
+      "field": "alert_type",
+      "fromType": "enum(spend_threshold|usage_threshold)",
+      "toType": "enum(usage_threshold)",
+      "note": "Request parameter \"alert_type\" no longer accepts spend_threshold.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0002",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/billing/alerts",
+      "method": "post",
+      "field": "filter",
+      "note": "Request parameter \"filter\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0003",
+      "kind": "renamed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/billing/alerts",
+      "method": "post",
+      "field": "spend_threshold_config",
+      "replacement": "usage_threshold",
+      "note": "Request parameter \"spend_threshold_config\" was renamed to \"usage_threshold\".",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0004",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/billing/alerts",
+      "method": "post",
+      "field": "usage_threshold_config",
+      "note": "Request parameter \"usage_threshold_config\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0007",
+      "kind": "required",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/terminal/readers/{reader}/process_setup_intent",
+      "method": "post",
+      "field": "allow_redisplay",
+      "note": "Request parameter \"allow_redisplay\" is new and required.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "terminal.readers",
+          "method": "processSetupIntent"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0006",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/terminal/readers/{reader}/process_setup_intent",
+      "method": "post",
+      "field": "customer_consent_collected",
+      "note": "Request parameter \"customer_consent_collected\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "terminal.readers",
+          "method": "processSetupIntent"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0008",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "billing.alert",
+      "field": "filter",
+      "note": "Response field \"billing.alert.filter\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].filter",
+        "filter"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/billing/alerts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/alerts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/activate"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/archive"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/deactivate"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "list"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "activate"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "archive"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "deactivate"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0009",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "billing.alert",
+      "field": "spend_threshold_config",
+      "note": "Response field \"billing.alert.spend_threshold_config\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].spend_threshold_config",
+        "spend_threshold_config"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/billing/alerts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/alerts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/activate"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/archive"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/deactivate"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "list"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "activate"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "archive"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "deactivate"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0010",
+      "kind": "renamed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "billing.alert",
+      "field": "usage_threshold_config",
+      "replacement": "usage_threshold",
+      "note": "Response field \"billing.alert.usage_threshold_config\" was renamed to \"usage_threshold\".",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].usage_threshold_config",
+        "usage_threshold_config"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/billing/alerts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/alerts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/activate"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/archive"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/alerts/{id}/deactivate"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "billing.alerts",
+          "method": "list"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "create"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "activate"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "archive"
+        },
+        {
+          "namespace": "billing.alerts",
+          "method": "deactivate"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-09-30.acacia-0011",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "event",
+      "event": "billing.meter_error_report.triggered",
+      "note": "Webhook event \"billing.meter_error_report.triggered\" is no longer sent.",
+      "docsUrl": "https://docs.stripe.com/api/events/types"
+    }
+  ]
+}

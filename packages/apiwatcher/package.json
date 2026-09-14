@@ -21,7 +21,8 @@
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --test \"dist/**/*.test.js\"",
-    "prepack": "node ../../scripts/stage-package-data.mjs"
+    "prepack": "node ../../scripts/stage-package-data.mjs",
+    "postpack": "rm -rf changesets"
   },
   "dependencies": {
     "typescript": "^5.6.0"

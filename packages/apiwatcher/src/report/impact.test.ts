@@ -304,3 +304,29 @@ test('a pin inside the covered range has no gap', () => {
   assert.equal(report.coverageGap, false);
   assert.equal(report.coveredFrom, '2026-02-25.clover');
 });
+
+test('a parent built dynamically yields a verify-level finding, not a certainty', () => {
+  // `phases: buildPhases(...)` — the scanner records `phases` but nothing under it.
+  const report = buildReport({
+    scan: scanOf([
+      usage({ kind: 'sdkCall', httpMethod: 'post', path: '/v1/x', callId: 'k1' }),
+      usage({ kind: 'requestParam', httpMethod: 'post', path: '/v1/x', field: 'phases', callId: 'k1' }),
+    ]),
+    changes: [change({ kind: 'required', method: 'post', path: '/v1/x', field: 'phases[].settings.name' })],
+    targetVersion: TARGET,
+  });
+  assert.equal(report.findings.length, 1);
+  assert.ok((report.findings[0]?.confidence ?? 1) <= 0.6, 'must not read as certain');
+  assert.match(report.findings[0]?.suggestion ?? '', /verify/i);
+});
+
+test('params that are not a literal at all cannot reach a nested parent', () => {
+  // `stripe.x.update(id, params)` — nothing recorded; a nested requirement
+  // cannot be attributed to it.
+  const report = buildReport({
+    scan: scanOf([usage({ kind: 'sdkCall', httpMethod: 'post', path: '/v1/x', callId: 'k1' })]),
+    changes: [change({ kind: 'required', method: 'post', path: '/v1/x', field: 'phases[].settings.name' })],
+    targetVersion: TARGET,
+  });
+  assert.equal(report.findings.length, 0);
+});

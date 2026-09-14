@@ -1,13 +1,220 @@
 {
   "api": "stripe",
   "latest": "2026-08-26.dahlia",
-  "generatedAt": "2026-09-11T06:06:27.233Z",
+  "generatedAt": "2026-09-14T02:04:24.890Z",
   "entries": [
     {
+      "from": "2024-06-20",
+      "to": "2024-09-30.acacia",
+      "file": "2024-06-20__2024-09-30.acacia.json",
+      "breaking": 11,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "d5c0875f9c7bda6824c65f4bd658378004c4c5bf"
+    },
+    {
+      "from": "2024-09-30.acacia",
+      "to": "2024-10-28.acacia",
+      "file": "2024-09-30.acacia__2024-10-28.acacia.json",
+      "breaking": 13,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "02dbd538387bb5385730d870f0579e4e4c2181c3"
+    },
+    {
+      "from": "2024-10-28.acacia",
+      "to": "2024-11-20.acacia",
+      "file": "2024-10-28.acacia__2024-11-20.acacia.json",
+      "breaking": 14,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "b2893a015b95f318b434dee51cbaa968c3694714"
+    },
+    {
+      "from": "2024-11-20.acacia",
+      "to": "2024-12-18.acacia",
+      "file": "2024-11-20.acacia__2024-12-18.acacia.json",
+      "breaking": 148,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "f0a1a3ef6a1f0deb7ddeb7ff8a65d36283477c5a"
+    },
+    {
+      "from": "2024-12-18.acacia",
+      "to": "2025-01-27.acacia",
+      "file": "2024-12-18.acacia__2025-01-27.acacia.json",
+      "breaking": 9,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "d157c2e946b078c996be4bee7411b12d45f89c19"
+    },
+    {
+      "from": "2025-01-27.acacia",
+      "to": "2025-02-24.acacia",
+      "file": "2025-01-27.acacia__2025-02-24.acacia.json",
+      "breaking": 7,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "5a411d0d1e527229cdb4d6633197ab8009899ce6"
+    },
+    {
+      "from": "2025-02-24.acacia",
+      "to": "2025-03-31.basil",
+      "file": "2025-02-24.acacia__2025-03-31.basil.json",
+      "breaking": 113,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "072fe51d85959b0ca71c1296b32725c14a78f4a8"
+    },
+    {
+      "from": "2025-03-31.basil",
+      "to": "2025-04-30.basil",
+      "file": "2025-03-31.basil__2025-04-30.basil.json",
+      "breaking": 9,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "46e685e34c4fc7f56e8696936db2554e0c5b0fc1"
+    },
+    {
+      "from": "2025-04-30.basil",
+      "to": "2025-05-28.basil",
+      "file": "2025-04-30.basil__2025-05-28.basil.json",
+      "breaking": 5,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "6c7b45018fdeb279042e6f74c5141efe1e90b3d6"
+    },
+    {
+      "from": "2025-05-28.basil",
+      "to": "2025-06-30.basil",
+      "file": "2025-05-28.basil__2025-06-30.basil.json",
+      "breaking": 11,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "1729cb1360263b054abb3c5146548630a86fb68c"
+    },
+    {
+      "from": "2025-06-30.basil",
+      "to": "2025-07-30.basil",
+      "file": "2025-06-30.basil__2025-07-30.basil.json",
+      "breaking": 4,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "805a9b8cc62f35d2673b28c34ca5fa27d0650b8b"
+    },
+    {
+      "from": "2025-07-30.basil",
+      "to": "2025-08-27.basil",
+      "file": "2025-07-30.basil__2025-08-27.basil.json",
+      "breaking": 0,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "fc45b3d36c1ef1a98feddef419c662b5c5d44112"
+    },
+    {
+      "from": "2025-08-27.basil",
+      "to": "2025-09-30.clover",
+      "file": "2025-08-27.basil__2025-09-30.clover.json",
+      "breaking": 20,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "053c4b35b25fdb4b8f2afa4294a046026715f820"
+    },
+    {
       "from": "2025-09-30.clover",
+      "to": "2025-10-29.clover",
+      "file": "2025-09-30.clover__2025-10-29.clover.json",
+      "breaking": 13,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "260f91c74e44bcd2a819bac9428f6c9e57360105"
+    },
+    {
+      "from": "2025-10-29.clover",
+      "to": "2025-11-17.clover",
+      "file": "2025-10-29.clover__2025-11-17.clover.json",
+      "breaking": 2,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "8820133ae30a4b968ea20d803c51f639ab5461c6"
+    },
+    {
+      "from": "2025-11-17.clover",
+      "to": "2025-12-15.clover",
+      "file": "2025-11-17.clover__2025-12-15.clover.json",
+      "breaking": 20,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "03af40466c67b98705b1453e929eb801fd8b5b03"
+    },
+    {
+      "from": "2025-12-15.clover",
+      "to": "2026-01-28.clover",
+      "file": "2025-12-15.clover__2026-01-28.clover.json",
+      "breaking": 13,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "a402765c987f40ac7474547700da71a218428805"
+    },
+    {
+      "from": "2026-01-28.clover",
+      "to": "2026-02-25.clover",
+      "file": "2026-01-28.clover__2026-02-25.clover.json",
+      "breaking": 23,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "da3eadb239b437b59cdf3459768bc2a6672165f6"
+    },
+    {
+      "from": "2026-02-25.clover",
+      "to": "2026-03-25.dahlia",
+      "file": "2026-02-25.clover__2026-03-25.dahlia.json",
+      "breaking": 25,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "a54c3888eb6f227e15eeaa97d0adbd561b01e2c2"
+    },
+    {
+      "from": "2026-03-25.dahlia",
+      "to": "2026-04-22.dahlia",
+      "file": "2026-03-25.dahlia__2026-04-22.dahlia.json",
+      "breaking": 27,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "d771243fbfea51def29cebe79e6c458dda032dbd"
+    },
+    {
+      "from": "2026-04-22.dahlia",
+      "to": "2026-05-27.dahlia",
+      "file": "2026-04-22.dahlia__2026-05-27.dahlia.json",
+      "breaking": 27,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "fbd00919865b69647f714ba1c02adced187d4664"
+    },
+    {
+      "from": "2026-05-27.dahlia",
+      "to": "2026-06-24.dahlia",
+      "file": "2026-05-27.dahlia__2026-06-24.dahlia.json",
+      "breaking": 11,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "3881db83dff8d170d4b7ef7e00e1801cd617e891"
+    },
+    {
+      "from": "2026-06-24.dahlia",
+      "to": "2026-07-29.dahlia",
+      "file": "2026-06-24.dahlia__2026-07-29.dahlia.json",
+      "breaking": 15,
+      "deprecating": 0,
+      "additive": 0,
+      "toRef": "af5309cae53e5f666f9686dfed306d6d3b5fdc67"
+    },
+    {
+      "from": "2026-07-29.dahlia",
       "to": "2026-08-26.dahlia",
-      "file": "2025-09-30.clover__2026-08-26.dahlia.json",
-      "breaking": 163,
+      "file": "2026-07-29.dahlia__2026-08-26.dahlia.json",
+      "breaking": 20,
       "deprecating": 0,
       "additive": 0,
       "toRef": "30d3391cc09a0f67ad29bee002f570811b19e1da"

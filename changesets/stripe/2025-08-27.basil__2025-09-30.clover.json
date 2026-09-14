@@ -1,0 +1,846 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2025-08-27.basil",
+  "to": "2025-09-30.clover",
+  "generatedAt": "2026-09-14T02:02:46.971Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "fc45b3d36c1ef1a98feddef419c662b5c5d44112",
+    "toRef": "053c4b35b25fdb4b8f2afa4294a046026715f820"
+  },
+  "changes": [
+    {
+      "id": "stripe-2025-09-30.clover-0001",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/account_sessions",
+      "method": "post",
+      "field": "components.balance_report",
+      "note": "Request parameter \"components.balance_report\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accountSessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0002",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/account_sessions",
+      "method": "post",
+      "field": "components.payout_reconciliation_report",
+      "note": "Request parameter \"components.payout_reconciliation_report\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accountSessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0003",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/accounts",
+      "method": "post",
+      "field": "settings.payouts.schedule.weekly_payout_days",
+      "fromType": "array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)>",
+      "toType": "array<enum(friday|monday|thursday|tuesday|wednesday)>",
+      "note": "Request parameter \"settings.payouts.schedule.weekly_payout_days\" changed from array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)> to array<enum(friday|monday|thursday|tuesday|wednesday)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0004",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/accounts/{account}",
+      "method": "post",
+      "field": "settings.payouts.schedule.weekly_payout_days",
+      "fromType": "array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)>",
+      "toType": "array<enum(friday|monday|thursday|tuesday|wednesday)>",
+      "note": "Request parameter \"settings.payouts.schedule.weekly_payout_days\" changed from array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)> to array<enum(friday|monday|thursday|tuesday|wednesday)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0005",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoices/create_preview",
+      "method": "post",
+      "field": "schedule_details.phases[].iterations",
+      "note": "Request parameter \"schedule_details.phases[].iterations\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoices",
+          "method": "createPreview"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0006",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0007",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_methods/{payment_method}",
+      "method": "post",
+      "field": "link",
+      "note": "Request parameter \"link\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentMethods",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0008",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_methods/{payment_method}",
+      "method": "post",
+      "field": "pay_by_bank",
+      "note": "Request parameter \"pay_by_bank\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentMethods",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0009",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/promotion_codes",
+      "method": "post",
+      "field": "coupon",
+      "note": "Request parameter \"coupon\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "promotionCodes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0010",
+      "kind": "required",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/promotion_codes",
+      "method": "post",
+      "field": "promotion",
+      "note": "Request parameter \"promotion\" is new and required.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "promotionCodes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0011",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscription_schedules",
+      "method": "post",
+      "field": "phases[].iterations",
+      "note": "Request parameter \"phases[].iterations\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptionSchedules",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0012",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscription_schedules/{schedule}",
+      "method": "post",
+      "field": "phases[].iterations",
+      "note": "Request parameter \"phases[].iterations\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptionSchedules",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0013",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "connect_embedded_account_session_create_components",
+      "field": "balance_report",
+      "note": "Response field \"connect_embedded_account_session_create_components.balance_report\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "components.balance_report"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/account_sessions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accountSessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0014",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "connect_embedded_account_session_create_components",
+      "field": "payout_reconciliation_report",
+      "note": "Response field \"connect_embedded_account_session_create_components.payout_reconciliation_report\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "components.payout_reconciliation_report"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/account_sessions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accountSessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0015",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "deleted_discount",
+      "field": "coupon",
+      "note": "Response field \"deleted_discount.coupon\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].invoice.discounts[].coupon",
+        "invoice.discounts[].coupon",
+        "invoice.total_discount_amounts[].discount.coupon",
+        "invoice.total_pretax_credit_amounts[].discount.coupon",
+        "subscription.latest_invoice.discounts[].coupon",
+        "data[].discount_amounts[].discount.coupon",
+        "data[].pretax_credit_amounts[].discount.coupon",
+        "customer_balance_transaction.invoice.discounts[].coupon",
+        "discount_amounts[].discount.coupon",
+        "pretax_credit_amounts[].discount.coupon"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview/lines"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{credit_note}/lines"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "listPreviewLineItems"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "listLineItems"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0016",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "discount",
+      "field": "coupon",
+      "note": "Response field \"discount.coupon\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].customer.discount.coupon",
+        "customer.discount.coupon",
+        "charge.customer.discount.coupon",
+        "originating_transaction.customer.discount.coupon",
+        "source.customer.discount.coupon",
+        "credit_grant.customer.discount.coupon",
+        "payment_intent.customer.discount.coupon"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/credit_balance_summary"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/credit_balance_transactions/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/credit_grants"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/credit_grants"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/credit_grants/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/credit_grants/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "listExternalAccounts"
+        },
+        {
+          "namespace": "accounts",
+          "method": "createExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieveExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "updateExternalAccount"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.creditBalanceSummaries",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.creditBalanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "list"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "create"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0017",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_intent",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Response field \"payment_intent.excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].charge.payment_intent.excluded_payment_method_types",
+        "data[].originating_transaction.payment_intent.excluded_payment_method_types",
+        "balance_transaction.source.payment_intent.excluded_payment_method_types",
+        "fee.charge.payment_intent.excluded_payment_method_types",
+        "fee.originating_transaction.payment_intent.excluded_payment_method_types",
+        "charge.payment_intent.excluded_payment_method_types",
+        "charge.review.payment_intent.excluded_payment_method_types",
+        "originating_transaction.payment_intent.excluded_payment_method_types",
+        "originating_transaction.review.payment_intent.excluded_payment_method_types",
+        "data[].source.payment_intent.excluded_payment_method_types",
+        "source.charge.payment_intent.excluded_payment_method_types",
+        "source.originating_transaction.payment_intent.excluded_payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "list"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0018",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "promotion_code",
+      "field": "coupon",
+      "note": "Response field \"promotion_code.coupon\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "customer.discount.promotion_code.coupon",
+        "data[].discounts[].promotion_code.coupon",
+        "discounts[].promotion_code.coupon",
+        "invoice.discounts[].promotion_code.coupon",
+        "subscription.discounts[].promotion_code.coupon",
+        "discount_amounts[].discount.promotion_code.coupon"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/credit_balance_summary"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/credit_grants"
+        },
+        {
+          "method": "get",
+          "path": "/v1/billing/credit_grants/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/credit_grants/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/credit_grants/{id}/expire"
+        },
+        {
+          "method": "post",
+          "path": "/v1/billing/credit_grants/{id}/void"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "createExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieveExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "updateExternalAccount"
+        },
+        {
+          "namespace": "billing.creditBalanceSummaries",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "create"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "update"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "expire"
+        },
+        {
+          "namespace": "billing.creditGrants",
+          "method": "voidGrant"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0019",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "tax_product_registrations_resource_country_options",
+      "field": "th",
+      "fromType": "object(tax_product_registrations_resource_country_options_simplified)",
+      "toType": "object(tax_product_registrations_resource_country_options_thailand)",
+      "note": "Response field \"tax_product_registrations_resource_country_options.th\" changed from object(tax_product_registrations_resource_country_options_simplified) to object(tax_product_registrations_resource_country_options_thailand).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].country_options.th",
+        "country_options.th"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/tax/registrations"
+        },
+        {
+          "method": "post",
+          "path": "/v1/tax/registrations"
+        },
+        {
+          "method": "get",
+          "path": "/v1/tax/registrations/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/tax/registrations/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "list"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-09-30.clover-0020",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "transfer_schedule",
+      "field": "weekly_payout_days",
+      "fromType": "array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)>",
+      "toType": "array<enum(friday|monday|thursday|tuesday|wednesday)>",
+      "note": "Response field \"transfer_schedule.weekly_payout_days\" changed from array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)> to array<enum(friday|monday|thursday|tuesday|wednesday)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "settings.payouts.schedule.weekly_payout_days"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/account"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/reject"
+        },
+        {
+          "method": "post",
+          "path": "/v1/customers/{customer}/sources"
+        },
+        {
+          "method": "delete",
+          "path": "/v1/customers/{customer}/sources/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/customers/{customer}/sources/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "retrieveCurrent"
+        },
+        {
+          "namespace": "accounts",
+          "method": "create"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "accounts",
+          "method": "update"
+        },
+        {
+          "namespace": "accounts",
+          "method": "reject"
+        },
+        {
+          "namespace": "customers",
+          "method": "createSource"
+        },
+        {
+          "namespace": "customers",
+          "method": "deleteSource"
+        },
+        {
+          "namespace": "customers",
+          "method": "retrieveSource"
+        }
+      ]
+    }
+  ]
+}

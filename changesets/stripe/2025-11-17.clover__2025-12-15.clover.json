@@ -1,0 +1,1008 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2025-11-17.clover",
+  "to": "2025-12-15.clover",
+  "generatedAt": "2026-09-14T02:02:51.134Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "8820133ae30a4b968ea20d803c51f639ab5461c6",
+    "toRef": "03af40466c67b98705b1453e929eb801fd8b5b03"
+  },
+  "changes": [
+    {
+      "id": "stripe-2025-12-15.clover-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/checkout/sessions",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0002",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/checkout/sessions",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0003",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoices",
+      "method": "post",
+      "field": "payment_settings.payment_method_types",
+      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoices",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0004",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoices/{invoice}",
+      "method": "post",
+      "field": "payment_settings.payment_method_types",
+      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoices",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0005",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0006",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents/{intent}",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "toType": "union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()) to union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0007",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents/{intent}/confirm",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "toType": "union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()) to union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "confirm"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0008",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_links",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|payto|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"payment_method_types\" changed from array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|payto|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentLinks",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0009",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_links/{payment_link}",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "toType": "union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|payto|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "note": "Request parameter \"payment_method_types\" changed from union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()) to union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|payto|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentLinks",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0010",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/setup_intents",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "setupIntents",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0011",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/setup_intents/{intent}",
+      "method": "post",
+      "field": "excluded_payment_method_types",
+      "fromType": "union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "toType": "union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "note": "Request parameter \"excluded_payment_method_types\" changed from union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()) to union(array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "setupIntents",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0012",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions",
+      "method": "post",
+      "field": "payment_settings.payment_method_types",
+      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0013",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
+      "method": "post",
+      "field": "payment_settings.payment_method_types",
+      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
+      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0014",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "billing_bill_resource_invoicing_pricing_pricing_price_details",
+      "field": "price",
+      "fromType": "string",
+      "toType": "union(object(price)|string)",
+      "note": "Response field \"billing_bill_resource_invoicing_pricing_pricing_price_details.price\" changed from string to union(object(price)|string).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].pricing.price_details.price",
+        "pricing.price_details.price"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoiceitems"
+        },
+        {
+          "method": "post",
+          "path": "/v1/invoiceitems"
+        },
+        {
+          "method": "get",
+          "path": "/v1/invoiceitems/{invoiceitem}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/invoiceitems/{invoiceitem}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/invoices/{invoice}/lines"
+        },
+        {
+          "method": "post",
+          "path": "/v1/invoices/{invoice}/lines/{line_item_id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoiceItems",
+          "method": "list"
+        },
+        {
+          "namespace": "invoiceItems",
+          "method": "create"
+        },
+        {
+          "namespace": "invoiceItems",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "invoiceItems",
+          "method": "update"
+        },
+        {
+          "namespace": "invoices",
+          "method": "listLineItems"
+        },
+        {
+          "namespace": "invoices",
+          "method": "updateLineItem"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0015",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "invoices_payment_settings",
+      "field": "payment_method_types",
+      "fromType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
+      "toType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
+      "note": "Response field \"invoices_payment_settings.payment_method_types\" changed from array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)> to array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].invoice.payment_settings.payment_method_types",
+        "invoice.payment_settings.payment_method_types",
+        "subscription.latest_invoice.payment_settings.payment_method_types",
+        "customer_balance_transaction.invoice.payment_settings.payment_method_types",
+        "checkout_session.invoice.payment_settings.payment_method_types",
+        "credit_note.invoice.payment_settings.payment_method_types",
+        "data[].payment_settings.payment_method_types",
+        "payment_settings.payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}/void"
+        },
+        {
+          "method": "get",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "update"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "voidCreditNote"
+        },
+        {
+          "namespace": "customers",
+          "method": "listBalanceTransactions"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0016",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_intent",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Response field \"payment_intent.excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].charge.payment_intent.excluded_payment_method_types",
+        "data[].originating_transaction.payment_intent.excluded_payment_method_types",
+        "balance_transaction.source.payment_intent.excluded_payment_method_types",
+        "fee.charge.payment_intent.excluded_payment_method_types",
+        "fee.originating_transaction.payment_intent.excluded_payment_method_types",
+        "charge.payment_intent.excluded_payment_method_types",
+        "charge.review.payment_intent.excluded_payment_method_types",
+        "originating_transaction.payment_intent.excluded_payment_method_types",
+        "originating_transaction.review.payment_intent.excluded_payment_method_types",
+        "data[].source.payment_intent.excluded_payment_method_types",
+        "source.charge.payment_intent.excluded_payment_method_types",
+        "source.originating_transaction.payment_intent.excluded_payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "list"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0017",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_link",
+      "field": "payment_method_types",
+      "fromType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|payto|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Response field \"payment_link.payment_method_types\" changed from array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mb_way|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|payto|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].payment_link.payment_method_types",
+        "payment_link.payment_method_types",
+        "customer_balance_transaction.checkout_session.payment_link.payment_method_types",
+        "data[].checkout_session.payment_link.payment_method_types",
+        "checkout_session.payment_link.payment_method_types",
+        "data[].payment_method_types",
+        "payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}/void"
+        },
+        {
+          "method": "get",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "update"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "voidCreditNote"
+        },
+        {
+          "namespace": "customers",
+          "method": "listBalanceTransactions"
+        },
+        {
+          "namespace": "customers",
+          "method": "createBalanceTransaction"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0018",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payments_primitives_payment_records_resource_payment_method_details",
+      "field": "us_bank_account",
+      "fromType": "object(payments_primitives_payment_records_resource_payment_method_us_bank_account_details)",
+      "toType": "object(payment_method_details_payment_record_us_bank_account)",
+      "note": "Response field \"payments_primitives_payment_records_resource_payment_method_details.us_bank_account\" changed from object(payments_primitives_payment_records_resource_payment_method_us_bank_account_details) to object(payment_method_details_payment_record_us_bank_account).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment.payment_record.payment_method_details.us_bank_account",
+        "data[].payment_method_details.us_bank_account",
+        "payment_method_details.us_bank_account"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/invoice_payments/{invoice_payment}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_attempt_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/report_payment"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_records/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_canceled"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_failed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_payment_attempt_informational"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_records/{id}/report_refund"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "invoicePayments",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentAttemptRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPayment"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttempt"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptCanceled"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptFailed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptGuaranteed"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportPaymentAttemptInformational"
+        },
+        {
+          "namespace": "paymentRecords",
+          "method": "reportRefund"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0019",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "setup_intent",
+      "field": "excluded_payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Response field \"setup_intent.excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|payto|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment_intent.last_payment_error.setup_intent.excluded_payment_method_types",
+        "data[].setup_intent.excluded_payment_method_types",
+        "data[].subscription.pending_setup_intent.excluded_payment_method_types",
+        "invoice.last_finalization_error.setup_intent.excluded_payment_method_types",
+        "invoice.subscription.pending_setup_intent.excluded_payment_method_types",
+        "setup_intent.excluded_payment_method_types",
+        "subscription.pending_setup_intent.excluded_payment_method_types",
+        "customer_balance_transaction.checkout_session.setup_intent.excluded_payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-12-15.clover-0020",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "subscriptions_resource_payment_settings",
+      "field": "payment_method_types",
+      "fromType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
+      "toType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
+      "note": "Response field \"subscriptions_resource_payment_settings.payment_method_types\" changed from array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)> to array<enum(ach_credit_transfer|ach_debit|acss_debit|affirm|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|crypto|custom|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|payto|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].subscription.payment_settings.payment_method_types",
+        "invoice.subscription.payment_settings.payment_method_types",
+        "subscription.payment_settings.payment_method_types",
+        "subscriptions.data[].payment_settings.payment_method_types",
+        "checkout_session.subscription.payment_settings.payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}/void"
+        },
+        {
+          "method": "post",
+          "path": "/v1/customers"
+        },
+        {
+          "method": "get",
+          "path": "/v1/customers/{customer}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "update"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "voidCreditNote"
+        },
+        {
+          "namespace": "customers",
+          "method": "create"
+        },
+        {
+          "namespace": "customers",
+          "method": "retrieve"
+        }
+      ]
+    }
+  ]
+}

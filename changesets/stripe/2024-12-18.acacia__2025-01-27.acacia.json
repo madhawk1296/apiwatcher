@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2024-12-18.acacia",
+  "to": "2025-01-27.acacia",
+  "generatedAt": "2026-09-14T02:02:36.734Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "f0a1a3ef6a1f0deb7ddeb7ff8a65d36283477c5a",
+    "toRef": "d157c2e946b078c996be4bee7411b12d45f89c19"
+  },
+  "changes": [
+    {
+      "id": "stripe-2025-01-27.acacia-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/checkout/sessions",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0002",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/checkout/sessions",
+      "method": "post",
+      "field": "shipping_address_collection.allowed_countries",
+      "fromType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "toType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "note": "Request parameter \"shipping_address_collection.allowed_countries\" changed from array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)> to array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0003",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_links",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"payment_method_types\" changed from array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentLinks",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0004",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_links",
+      "method": "post",
+      "field": "shipping_address_collection.allowed_countries",
+      "fromType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "toType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "note": "Request parameter \"shipping_address_collection.allowed_countries\" changed from array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)> to array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentLinks",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0005",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_links/{payment_link}",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "toType": "union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
+      "note": "Request parameter \"payment_method_types\" changed from union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()) to union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentLinks",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0006",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_links/{payment_link}",
+      "method": "post",
+      "field": "shipping_address_collection.allowed_countries",
+      "fromType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "toType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "note": "Request parameter \"shipping_address_collection.allowed_countries\" changed from array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)> to array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentLinks",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0007",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_link",
+      "field": "payment_method_types",
+      "fromType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Response field \"payment_link.payment_method_types\" changed from array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].payment_link.payment_method_types",
+        "payment_link.payment_method_types",
+        "data[].payment_method_types",
+        "payment_method_types"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_links"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_links"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_links/{payment_link}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_links/{payment_link}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "create"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0008",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_links_resource_shipping_address_collection",
+      "field": "allowed_countries",
+      "fromType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "toType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "note": "Response field \"payment_links_resource_shipping_address_collection.allowed_countries\" changed from array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)> to array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].payment_link.shipping_address_collection.allowed_countries",
+        "payment_link.shipping_address_collection.allowed_countries",
+        "data[].shipping_address_collection.allowed_countries",
+        "shipping_address_collection.allowed_countries"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_links"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_links"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_links/{payment_link}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_links/{payment_link}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "create"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-01-27.acacia-0009",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_pages_checkout_session_shipping_address_collection",
+      "field": "allowed_countries",
+      "fromType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "toType": "array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>",
+      "note": "Response field \"payment_pages_checkout_session_shipping_address_collection.allowed_countries\" changed from array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)> to array<enum(AC|AD|AE|AF|AG|AI|AL|AM|AO|AQ|AR|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CV|CW|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MK|ML|MM|MN|MO|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SZ|TA|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|US|UY|UZ|VA|VC|VE|VG|VN|VU|WF|WS|XK|YE|YT|ZA|ZM|ZW|ZZ)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].shipping_address_collection.allowed_countries",
+        "shipping_address_collection.allowed_countries"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        }
+      ]
+    }
+  ]
+}

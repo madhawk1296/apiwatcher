@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2025-06-30.basil",
+  "to": "2025-07-30.basil",
+  "generatedAt": "2026-09-14T02:02:44.578Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "1729cb1360263b054abb3c5146548630a86fb68c",
+    "toRef": "805a9b8cc62f35d2673b28c34ca5fa27d0650b8b"
+  },
+  "changes": [
+    {
+      "id": "stripe-2025-07-30.basil-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/checkout/sessions",
+      "method": "post",
+      "field": "payment_method_types",
+      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
+      "note": "Request parameter \"payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-07-30.basil-0002",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoices/create_preview",
+      "method": "post",
+      "field": "subscription_details.cancel_at",
+      "fromType": "union(enum()|integer:unix-time)",
+      "toType": "union(enum()|enum(max_period_end|min_period_end)|integer:unix-time)",
+      "note": "Request parameter \"subscription_details.cancel_at\" changed from union(enum()|integer:unix-time) to union(enum()|enum(max_period_end|min_period_end)|integer:unix-time).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoices",
+          "method": "createPreview"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-07-30.basil-0003",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions",
+      "method": "post",
+      "field": "cancel_at",
+      "fromType": "integer:unix-time",
+      "toType": "union(enum(max_period_end|min_period_end)|integer:unix-time)",
+      "note": "Request parameter \"cancel_at\" changed from integer:unix-time to union(enum(max_period_end|min_period_end)|integer:unix-time).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-07-30.basil-0004",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
+      "method": "post",
+      "field": "cancel_at",
+      "fromType": "union(enum()|integer:unix-time)",
+      "toType": "union(enum()|enum(max_period_end|min_period_end)|integer:unix-time)",
+      "note": "Request parameter \"cancel_at\" changed from union(enum()|integer:unix-time) to union(enum()|enum(max_period_end|min_period_end)|integer:unix-time).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "update"
+        }
+      ]
+    }
+  ]
+}

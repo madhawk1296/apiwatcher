@@ -1,0 +1,1774 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2024-10-28.acacia",
+  "to": "2024-11-20.acacia",
+  "generatedAt": "2026-09-14T02:02:35.003Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "02dbd538387bb5385730d870f0579e4e4c2181c3",
+    "toRef": "b2893a015b95f318b434dee51cbaa968c3694714"
+  },
+  "changes": [
+    {
+      "id": "stripe-2024-11-20.acacia-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "account_future_requirements",
+      "field": "disabled_reason",
+      "fromType": "string",
+      "toType": "enum(action_required.requested_capabilities|listed|other|platform_paused|rejected.fraud|rejected.incomplete_verification|rejected.listed|rejected.other|rejected.platform_fraud|rejected.platform_other|rejected.platform_terms_of_service|rejected.terms_of_service|requirements.past_due|requirements.pending_verification|under_review)",
+      "note": "Response field \"account_future_requirements.disabled_reason\" changed from string to enum(action_required.requested_capabilities|listed|other|platform_paused|rejected.fraud|rejected.incomplete_verification|rejected.listed|rejected.other|rejected.platform_fraud|rejected.platform_other|rejected.platform_terms_of_service|rejected.terms_of_service|requirements.past_due|requirements.pending_verification|under_review).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "future_requirements.disabled_reason",
+        "data[].future_requirements.disabled_reason",
+        "data[].account.future_requirements.disabled_reason",
+        "account.future_requirements.disabled_reason",
+        "customer.default_source.future_requirements.disabled_reason",
+        "fee.account.future_requirements.disabled_reason",
+        "charge.on_behalf_of.future_requirements.disabled_reason",
+        "charge.source.future_requirements.disabled_reason",
+        "originating_transaction.on_behalf_of.future_requirements.disabled_reason",
+        "originating_transaction.source.future_requirements.disabled_reason",
+        "source.account.future_requirements.disabled_reason",
+        "source.on_behalf_of.future_requirements.disabled_reason"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/account"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/capabilities"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/capabilities/{capability}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/capabilities/{capability}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "retrieveCurrent"
+        },
+        {
+          "namespace": "accounts",
+          "method": "list"
+        },
+        {
+          "namespace": "accounts",
+          "method": "create"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "accounts",
+          "method": "update"
+        },
+        {
+          "namespace": "accounts",
+          "method": "listCapabilities"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieveCapability"
+        },
+        {
+          "namespace": "accounts",
+          "method": "updateCapability"
+        },
+        {
+          "namespace": "accounts",
+          "method": "listExternalAccounts"
+        },
+        {
+          "namespace": "accounts",
+          "method": "createExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieveExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "updateExternalAccount"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0002",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "account_requirements",
+      "field": "disabled_reason",
+      "fromType": "string",
+      "toType": "enum(action_required.requested_capabilities|listed|other|platform_paused|rejected.fraud|rejected.incomplete_verification|rejected.listed|rejected.other|rejected.platform_fraud|rejected.platform_other|rejected.platform_terms_of_service|rejected.terms_of_service|requirements.past_due|requirements.pending_verification|under_review)",
+      "note": "Response field \"account_requirements.disabled_reason\" changed from string to enum(action_required.requested_capabilities|listed|other|platform_paused|rejected.fraud|rejected.incomplete_verification|rejected.listed|rejected.other|rejected.platform_fraud|rejected.platform_other|rejected.platform_terms_of_service|rejected.terms_of_service|requirements.past_due|requirements.pending_verification|under_review).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "requirements.disabled_reason",
+        "data[].requirements.disabled_reason",
+        "data[].account.requirements.disabled_reason",
+        "account.requirements.disabled_reason",
+        "customer.default_source.requirements.disabled_reason",
+        "fee.account.requirements.disabled_reason",
+        "charge.on_behalf_of.requirements.disabled_reason",
+        "charge.source.requirements.disabled_reason",
+        "originating_transaction.on_behalf_of.requirements.disabled_reason",
+        "originating_transaction.source.requirements.disabled_reason",
+        "source.account.requirements.disabled_reason",
+        "source.on_behalf_of.requirements.disabled_reason"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/account"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/capabilities"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/capabilities/{capability}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/capabilities/{capability}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts"
+        },
+        {
+          "method": "get",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/accounts/{account}/external_accounts/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "retrieveCurrent"
+        },
+        {
+          "namespace": "accounts",
+          "method": "list"
+        },
+        {
+          "namespace": "accounts",
+          "method": "create"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "accounts",
+          "method": "update"
+        },
+        {
+          "namespace": "accounts",
+          "method": "listCapabilities"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieveCapability"
+        },
+        {
+          "namespace": "accounts",
+          "method": "updateCapability"
+        },
+        {
+          "namespace": "accounts",
+          "method": "listExternalAccounts"
+        },
+        {
+          "namespace": "accounts",
+          "method": "createExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "retrieveExternalAccount"
+        },
+        {
+          "namespace": "accounts",
+          "method": "updateExternalAccount"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0003",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_flows_amount_details",
+      "field": "tip",
+      "fromType": "object(payment_flows_amount_details_resource_tip)",
+      "toType": "object(payment_flows_amount_details_client_resource_tip)",
+      "note": "Response field \"payment_flows_amount_details.tip\" changed from object(payment_flows_amount_details_resource_tip) to object(payment_flows_amount_details_client_resource_tip).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "charge.payment_intent.amount_details.tip",
+        "originating_transaction.payment_intent.amount_details.tip",
+        "source.payment_intent.amount_details.tip",
+        "data[].payment_intent.amount_details.tip",
+        "invoice.payment_intent.amount_details.tip",
+        "payment_intent.amount_details.tip",
+        "review.payment_intent.amount_details.tip",
+        "refund.payment_intent.amount_details.tip"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/search"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "list"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "search"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0004",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "blik",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_blik)",
+      "note": "Response field \"refund_destination_details.blik\" changed from object(refund_destination_details_generic) to object(refund_destination_details_blik).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.blik",
+        "data[].source.destination_details.blik",
+        "source.destination_details.blik",
+        "source.destination_payment_refund.destination_details.blik",
+        "source.source_refund.destination_details.blik",
+        "failure_balance_transaction.source.destination_details.blik",
+        "refunds.data[].destination_details.blik",
+        "data[].destination_details.blik",
+        "destination_details.blik",
+        "data[].refund.destination_details.blik",
+        "refund.destination_details.blik",
+        "credit_note.refund.destination_details.blik"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0005",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "br_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_br_bank_transfer)",
+      "note": "Response field \"refund_destination_details.br_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_br_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.br_bank_transfer",
+        "data[].source.destination_details.br_bank_transfer",
+        "source.destination_details.br_bank_transfer",
+        "source.destination_payment_refund.destination_details.br_bank_transfer",
+        "source.source_refund.destination_details.br_bank_transfer",
+        "failure_balance_transaction.source.destination_details.br_bank_transfer",
+        "refunds.data[].destination_details.br_bank_transfer",
+        "data[].destination_details.br_bank_transfer",
+        "destination_details.br_bank_transfer",
+        "data[].refund.destination_details.br_bank_transfer",
+        "refund.destination_details.br_bank_transfer",
+        "credit_note.refund.destination_details.br_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0006",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "eu_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_eu_bank_transfer)",
+      "note": "Response field \"refund_destination_details.eu_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_eu_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.eu_bank_transfer",
+        "data[].source.destination_details.eu_bank_transfer",
+        "source.destination_details.eu_bank_transfer",
+        "source.destination_payment_refund.destination_details.eu_bank_transfer",
+        "source.source_refund.destination_details.eu_bank_transfer",
+        "failure_balance_transaction.source.destination_details.eu_bank_transfer",
+        "refunds.data[].destination_details.eu_bank_transfer",
+        "data[].destination_details.eu_bank_transfer",
+        "destination_details.eu_bank_transfer",
+        "data[].refund.destination_details.eu_bank_transfer",
+        "refund.destination_details.eu_bank_transfer",
+        "credit_note.refund.destination_details.eu_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0007",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "gb_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_gb_bank_transfer)",
+      "note": "Response field \"refund_destination_details.gb_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_gb_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.gb_bank_transfer",
+        "data[].source.destination_details.gb_bank_transfer",
+        "source.destination_details.gb_bank_transfer",
+        "source.destination_payment_refund.destination_details.gb_bank_transfer",
+        "source.source_refund.destination_details.gb_bank_transfer",
+        "failure_balance_transaction.source.destination_details.gb_bank_transfer",
+        "refunds.data[].destination_details.gb_bank_transfer",
+        "data[].destination_details.gb_bank_transfer",
+        "destination_details.gb_bank_transfer",
+        "data[].refund.destination_details.gb_bank_transfer",
+        "refund.destination_details.gb_bank_transfer",
+        "credit_note.refund.destination_details.gb_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0008",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "jp_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_jp_bank_transfer)",
+      "note": "Response field \"refund_destination_details.jp_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_jp_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.jp_bank_transfer",
+        "data[].source.destination_details.jp_bank_transfer",
+        "source.destination_details.jp_bank_transfer",
+        "source.destination_payment_refund.destination_details.jp_bank_transfer",
+        "source.source_refund.destination_details.jp_bank_transfer",
+        "failure_balance_transaction.source.destination_details.jp_bank_transfer",
+        "refunds.data[].destination_details.jp_bank_transfer",
+        "data[].destination_details.jp_bank_transfer",
+        "destination_details.jp_bank_transfer",
+        "data[].refund.destination_details.jp_bank_transfer",
+        "refund.destination_details.jp_bank_transfer",
+        "credit_note.refund.destination_details.jp_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0009",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "multibanco",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_multibanco)",
+      "note": "Response field \"refund_destination_details.multibanco\" changed from object(refund_destination_details_generic) to object(refund_destination_details_multibanco).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.multibanco",
+        "data[].source.destination_details.multibanco",
+        "source.destination_details.multibanco",
+        "source.destination_payment_refund.destination_details.multibanco",
+        "source.source_refund.destination_details.multibanco",
+        "failure_balance_transaction.source.destination_details.multibanco",
+        "refunds.data[].destination_details.multibanco",
+        "data[].destination_details.multibanco",
+        "destination_details.multibanco",
+        "data[].refund.destination_details.multibanco",
+        "refund.destination_details.multibanco",
+        "credit_note.refund.destination_details.multibanco"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0010",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "mx_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_mx_bank_transfer)",
+      "note": "Response field \"refund_destination_details.mx_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_mx_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.mx_bank_transfer",
+        "data[].source.destination_details.mx_bank_transfer",
+        "source.destination_details.mx_bank_transfer",
+        "source.destination_payment_refund.destination_details.mx_bank_transfer",
+        "source.source_refund.destination_details.mx_bank_transfer",
+        "failure_balance_transaction.source.destination_details.mx_bank_transfer",
+        "refunds.data[].destination_details.mx_bank_transfer",
+        "data[].destination_details.mx_bank_transfer",
+        "destination_details.mx_bank_transfer",
+        "data[].refund.destination_details.mx_bank_transfer",
+        "refund.destination_details.mx_bank_transfer",
+        "credit_note.refund.destination_details.mx_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0011",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "p24",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_p24)",
+      "note": "Response field \"refund_destination_details.p24\" changed from object(refund_destination_details_generic) to object(refund_destination_details_p24).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.p24",
+        "data[].source.destination_details.p24",
+        "source.destination_details.p24",
+        "source.destination_payment_refund.destination_details.p24",
+        "source.source_refund.destination_details.p24",
+        "failure_balance_transaction.source.destination_details.p24",
+        "refunds.data[].destination_details.p24",
+        "data[].destination_details.p24",
+        "destination_details.p24",
+        "data[].refund.destination_details.p24",
+        "refund.destination_details.p24",
+        "credit_note.refund.destination_details.p24"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0012",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "swish",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_swish)",
+      "note": "Response field \"refund_destination_details.swish\" changed from object(refund_destination_details_generic) to object(refund_destination_details_swish).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.swish",
+        "data[].source.destination_details.swish",
+        "source.destination_details.swish",
+        "source.destination_payment_refund.destination_details.swish",
+        "source.source_refund.destination_details.swish",
+        "failure_balance_transaction.source.destination_details.swish",
+        "refunds.data[].destination_details.swish",
+        "data[].destination_details.swish",
+        "destination_details.swish",
+        "data[].refund.destination_details.swish",
+        "refund.destination_details.swish",
+        "credit_note.refund.destination_details.swish"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0013",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "th_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_th_bank_transfer)",
+      "note": "Response field \"refund_destination_details.th_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_th_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.th_bank_transfer",
+        "data[].source.destination_details.th_bank_transfer",
+        "source.destination_details.th_bank_transfer",
+        "source.destination_payment_refund.destination_details.th_bank_transfer",
+        "source.source_refund.destination_details.th_bank_transfer",
+        "failure_balance_transaction.source.destination_details.th_bank_transfer",
+        "refunds.data[].destination_details.th_bank_transfer",
+        "data[].destination_details.th_bank_transfer",
+        "destination_details.th_bank_transfer",
+        "data[].refund.destination_details.th_bank_transfer",
+        "refund.destination_details.th_bank_transfer",
+        "credit_note.refund.destination_details.th_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2024-11-20.acacia-0014",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "refund_destination_details",
+      "field": "us_bank_transfer",
+      "fromType": "object(refund_destination_details_generic)",
+      "toType": "object(refund_destination_details_us_bank_transfer)",
+      "note": "Response field \"refund_destination_details.us_bank_transfer\" changed from object(refund_destination_details_generic) to object(refund_destination_details_us_bank_transfer).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "balance_transaction.source.destination_details.us_bank_transfer",
+        "data[].source.destination_details.us_bank_transfer",
+        "source.destination_details.us_bank_transfer",
+        "source.destination_payment_refund.destination_details.us_bank_transfer",
+        "source.source_refund.destination_details.us_bank_transfer",
+        "failure_balance_transaction.source.destination_details.us_bank_transfer",
+        "refunds.data[].destination_details.us_bank_transfer",
+        "data[].destination_details.us_bank_transfer",
+        "destination_details.us_bank_transfer",
+        "data[].refund.destination_details.us_bank_transfer",
+        "refund.destination_details.us_bank_transfer",
+        "credit_note.refund.destination_details.us_bank_transfer"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}/capture"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}/refunds/{refund}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        },
+        {
+          "namespace": "charges",
+          "method": "capture"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "list"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        }
+      ]
+    }
+  ]
+}

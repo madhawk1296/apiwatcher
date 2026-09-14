@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -52,7 +52,20 @@ export class ChangesetSync {
     if (!res.ok) throw new Error(`changeset index fetch failed: ${res.status}`);
 
     const index = (await res.json()) as { entries?: Array<{ file: string; to: string }> };
-    for (const entry of index.entries ?? []) {
+    const entries = index.entries ?? [];
+
+    // A changeset withdrawn upstream (superseded, or found wrong) must go here
+    // too, or its ids keep counting alongside its replacement's.
+    if (entries.length > 0) {
+      const published = new Set(entries.map((e) => e.file));
+      for (const name of await readdir(this.stripeDir)) {
+        if (name.endsWith('.json') && name !== 'index.json' && !published.has(name)) {
+          await rm(join(this.stripeDir, name), { force: true });
+        }
+      }
+    }
+
+    for (const entry of entries) {
       const target = join(this.stripeDir, entry.file);
       if (existsSync(target)) continue;
 

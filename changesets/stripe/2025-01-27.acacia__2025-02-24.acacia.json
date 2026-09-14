@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2025-01-27.acacia",
+  "to": "2025-02-24.acacia",
+  "generatedAt": "2026-09-14T02:02:38.550Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "d157c2e946b078c996be4bee7411b12d45f89c19",
+    "toRef": "5a411d0d1e527229cdb4d6633197ab8009899ce6"
+  },
+  "changes": [
+    {
+      "id": "stripe-2025-02-24.acacia-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/accounts/{account}/persons",
+      "method": "post",
+      "field": "political_exposure",
+      "fromType": "string",
+      "toType": "enum(existing|none)",
+      "note": "Request parameter \"political_exposure\" changed from string to enum(existing|none).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "createPerson"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-02-24.acacia-0002",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/accounts/{account}/persons/{person}",
+      "method": "post",
+      "field": "political_exposure",
+      "fromType": "string",
+      "toType": "enum(existing|none)",
+      "note": "Request parameter \"political_exposure\" changed from string to enum(existing|none).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "updatePerson"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-02-24.acacia-0003",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tokens",
+      "method": "post",
+      "field": "person.political_exposure",
+      "fromType": "string",
+      "toType": "enum(existing|none)",
+      "note": "Request parameter \"person.political_exposure\" changed from string to enum(existing|none).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tokens",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-02-24.acacia-0004",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "connect_embedded_account_session_create_components",
+      "field": "balances",
+      "fromType": "object(connect_embedded_payouts_config_claim)",
+      "toType": "object(connect_embedded_payouts_config)",
+      "note": "Response field \"connect_embedded_account_session_create_components.balances\" changed from object(connect_embedded_payouts_config_claim) to object(connect_embedded_payouts_config).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "components.balances"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/account_sessions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accountSessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-02-24.acacia-0005",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "connect_embedded_account_session_create_components",
+      "field": "payouts",
+      "fromType": "object(connect_embedded_payouts_config_claim)",
+      "toType": "object(connect_embedded_payouts_config)",
+      "note": "Response field \"connect_embedded_account_session_create_components.payouts\" changed from object(connect_embedded_payouts_config_claim) to object(connect_embedded_payouts_config).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "components.payouts"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/account_sessions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "accountSessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-02-24.acacia-0006",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_links_resource_invoice_settings",
+      "field": "rendering_options",
+      "fromType": "object(invoice_setting_rendering_options)",
+      "toType": "object(invoice_setting_checkout_rendering_options)",
+      "note": "Response field \"payment_links_resource_invoice_settings.rendering_options\" changed from object(invoice_setting_rendering_options) to object(invoice_setting_checkout_rendering_options).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment_link.invoice_creation.invoice_data.rendering_options",
+        "data[].invoice_creation.invoice_data.rendering_options",
+        "invoice_creation.invoice_data.rendering_options"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_links"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_links"
+        },
+        {
+          "method": "get",
+          "path": "/v1/payment_links/{payment_link}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/payment_links/{payment_link}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "list"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "create"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "paymentLinks",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-02-24.acacia-0007",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_pages_checkout_session_invoice_settings",
+      "field": "rendering_options",
+      "fromType": "object(invoice_setting_rendering_options)",
+      "toType": "object(invoice_setting_checkout_rendering_options)",
+      "note": "Response field \"payment_pages_checkout_session_invoice_settings.rendering_options\" changed from object(invoice_setting_rendering_options) to object(invoice_setting_checkout_rendering_options).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].invoice_creation.invoice_data.rendering_options",
+        "invoice_creation.invoice_data.rendering_options"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        }
+      ]
+    }
+  ]
+}
