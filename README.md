@@ -49,7 +49,9 @@ Two loops.
 **The spec watcher** runs on a cron in this repo. It pulls Stripe's OpenAPI spec,
 diffs it against the last version it published, and commits a changeset — a
 machine-readable list of what broke, each with a docs link and a one-line
-explanation. Free on public-repo Actions, and a no-op almost every day.
+explanation. One changeset per Stripe version, monthly back to 2024-06-20, so a
+finding names the exact version that introduced it. Free on public-repo
+Actions, and a no-op almost every day.
 
 **The server** ([docs/server.md](docs/server.md)) receives the GitHub App's
 webhooks, keeps an index of which installed repos use Stripe, and scans them:
@@ -132,6 +134,7 @@ its id. `scanOnPush: false` keeps the version alerts and drops the PR checks.
 | `apiwatcher scan [dir]` | Scan a repo and print an impact report |
 | `apiwatcher spec-diff` | Diff two Stripe spec versions into a changeset |
 | `apiwatcher watch` | Diff Stripe's current spec forward (the cron entry point) |
+| `apiwatcher backfill --since <date>` | Build one changeset per Stripe version from spec history |
 | `apiwatcher build-method-map` | Regenerate the SDK-call → endpoint map |
 | `apiwatcher list-changesets` | Show known changesets |
 | `apiwatcher index-changesets` | Regenerate the changeset manifest |
