@@ -42,8 +42,9 @@
   --color-deprecating-bg: var(--deprecating-bg);
   --color-ok: var(--ok);
   --color-ok-bg: var(--ok-bg);
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  /* --font-heading / --font-body are set on <html> from the font picker's cookie. */
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
 }
 
@@ -64,7 +65,6 @@ body {
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-variation-settings: "opsz" 144, "SOFT" 30;
   letter-spacing: -0.01em;
 }
 

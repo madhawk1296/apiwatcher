@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
 
-export default function Home() {
+import { FontPicker } from "@/components/font-picker";
+import { FONT_COOKIE, FONT_OPTIONS, parseFontCookie } from "@/lib/fonts";
+
+export default async function Home() {
+  const fonts = parseFontCookie((await cookies()).get(FONT_COOKIE)?.value);
   return (
     <>
       <style>{`html, body { background: #fff !important; background-image: none !important; }`}</style>
@@ -21,6 +26,8 @@ export default function Home() {
           Get notified the moment an API you use changes.
         </h1>
       </main>
+
+      <FontPicker options={FONT_OPTIONS} initial={{ heading: fonts.heading.id, body: fonts.body.id }} />
     </>
   );
 }

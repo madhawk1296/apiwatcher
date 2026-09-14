@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 
-// Variable font: weight comes from the axis, so it is not listed.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
-  style: ["normal", "italic"],
-});
-
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
+import { FONT_COOKIE, fontClassNames, parseFontCookie } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: { default: "apiwatcher", template: "%s · apiwatcher" },
+  title: { default: "APIWatcher", template: "%s · APIWatcher" },
   description:
-    "Dependabot for API changes. When Stripe ships a breaking change, apiwatcher finds every affected call site in your repo and tells you what to fix.",
+    "Get notified the moment an API you use changes — and see every affected file and line in your code.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  // The chosen fonts come from a cookie set by the picker, so the server
+  // renders the same pair the browser will show — no flash of the wrong font.
+  const jar = await cookies();
+  const fonts = parseFontCookie(jar.get(FONT_COOKIE)?.value);
+
   return (
-    <html lang="en" className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${fontClassNames} h-full antialiased`}
+      style={
+        {
+          "--font-heading": `var(${fonts.heading.variable})`,
+          "--font-body": `var(${fonts.body.variable})`,
+        } as React.CSSProperties
+      }
+    >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
