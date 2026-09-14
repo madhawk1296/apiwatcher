@@ -52,8 +52,8 @@ async function main(): Promise<void> {
   });
 
   const server = createHttpServer({ config, store, changesets, indexer, queue });
-  server.listen(config.port, () => {
-    log.info(`listening on :${config.port} (data in ${config.dataDir}, concurrency ${config.scanConcurrency})`);
+  server.listen(config.port, config.host, () => {
+    log.info(`listening on ${config.host}:${config.port} (data in ${config.dataDir}, concurrency ${config.scanConcurrency})`);
     if (!config.adminToken) log.warn('ADMIN_TOKEN is not set; /admin/* is disabled');
   });
 

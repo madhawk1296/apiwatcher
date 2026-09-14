@@ -104,6 +104,7 @@ sudo bash /opt/apiwatcher/deploy/update.sh
 | `WEBHOOK_SECRET` | yes | | Same value as on the App |
 | `ADMIN_TOKEN` | no | unset | Enables `/admin/*`; `openssl rand -hex 32` |
 | `PORT` | no | 8787 | |
+| `HOST` | no | `127.0.0.1` | Bind address; only Caddy on localhost should reach it |
 | `DATA_DIR` | no | `./data` | SQLite, clones, synced changesets |
 | `SCAN_CONCURRENCY` | no | 2 | Parallel scans |
 | `POLL_INTERVAL_MINUTES` | no | 60 | How often to check for a new Stripe version |

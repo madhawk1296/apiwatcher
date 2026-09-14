@@ -9,6 +9,8 @@ import { resolve } from 'node:path';
  */
 export interface Config {
   port: number;
+  /** Interface to listen on. Caddy proxies from localhost; nothing else should reach the port. */
+  host: string;
   /** Where SQLite, cloned repos, and synced changesets live. */
   dataDir: string;
   appId: string;
@@ -67,6 +69,7 @@ function privateKey(): string {
 export function loadConfig(): Config {
   return {
     port: integer('PORT', 8787),
+    host: optional('HOST', '127.0.0.1'),
     dataDir: resolve(optional('DATA_DIR', './data')),
     appId: required('APP_ID'),
     appPrivateKey: privateKey(),
