@@ -48,7 +48,11 @@ export class ChangesetSync {
    */
   async sync(): Promise<{ latest: string | null; added: string[] }> {
     const added: string[] = [];
-    const res = await fetch(this.indexUrl, { headers: { 'user-agent': 'apiwatcher-server' } });
+    // raw.githubusercontent.com sits behind a CDN that caches for minutes, per
+    // edge. A unique query string makes each sync a cache miss, so a forced
+    // sync right after a publish sees the publish.
+    const bust = `?t=${Date.now()}`;
+    const res = await fetch(`${this.indexUrl}${bust}`, { headers: { 'user-agent': 'apiwatcher-server' } });
     if (!res.ok) throw new Error(`changeset index fetch failed: ${res.status}`);
 
     const index = (await res.json()) as { entries?: Array<{ file: string; to: string }> };
@@ -69,7 +73,9 @@ export class ChangesetSync {
       const target = join(this.stripeDir, entry.file);
       if (existsSync(target)) continue;
 
-      const fileRes = await fetch(`${this.baseUrl}/${entry.file}`, { headers: { 'user-agent': 'apiwatcher-server' } });
+      const fileRes = await fetch(`${this.baseUrl}/${entry.file}${bust}`, {
+        headers: { 'user-agent': 'apiwatcher-server' },
+      });
       if (!fileRes.ok) throw new Error(`changeset ${entry.file} fetch failed: ${fileRes.status}`);
       const text = await fileRes.text();
       // Parse before writing so a truncated download never lands on disk.
