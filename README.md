@@ -7,7 +7,7 @@ in your repo and tells you what to fix. Today it covers **Stripe** and
 **TypeScript**, and it reports — it does not open fix-up PRs.
 
 ```
-BREAKING POST /v1/terminal/configurations/{configuration}  stripe-2026-08-26.dahlia-0137
+BREAKING POST /v1/terminal/configurations/{configuration}  stripe-2026-01-28.clover-0005
   Request parameter "tipping.bgn" was removed.
   → Stop using `tipping.bgn` — it is gone in the target version.
     src/routes/checkout.ts:22:16  tipping: { bgn: { fixed_amounts: [100] } },
