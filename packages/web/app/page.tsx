@@ -15,6 +15,12 @@ export default function Home() {
           Log In
         </Link>
       </header>
+
+      <main className="px-16 pt-28">
+        <h1 className="mx-auto max-w-3xl text-center text-5xl font-semibold leading-tight tracking-tight">
+          Get notified the moment an API you use changes.
+        </h1>
+      </main>
     </>
   );
 }
