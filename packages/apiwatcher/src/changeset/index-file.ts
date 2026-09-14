@@ -23,6 +23,9 @@ export interface ChangesetIndex {
     breaking: number;
     deprecating: number;
     additive: number;
+    /** When the file was generated. A regenerated changeset keeps its filename,
+     *  so consumers use this to notice the contents changed. */
+    generatedAt: string;
     /** Spec commit this changeset ended at, so the watcher can diff forward. */
     toRef?: string;
   }>;
@@ -42,6 +45,7 @@ export function buildIndex(
         breaking: count('breaking'),
         deprecating: count('deprecating'),
         additive: count('additive'),
+        generatedAt: changeset.generatedAt,
         ...(changeset.source?.toRef ? { toRef: changeset.source.toRef } : {}),
       };
     })

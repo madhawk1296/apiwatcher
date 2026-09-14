@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { appendFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
+import { tmpdir } from 'node:os';
 
 import { flagBool, flagList, flagNumber, flagString, parseArgs } from './args.js';
 import { changesBetween, latestKnownVersion, loadChangesets, oldestCoveredVersion } from '../changeset/load.js';
@@ -467,13 +468,25 @@ async function runBackfill(args: ReturnType<typeof parseArgs>): Promise<number> 
   const methodMap = await loadMethodMap();
   const maxDepth = flagNumber(args, 'max-depth') ?? 3;
 
+  // Specs are ~10MB each and immutable per commit; cache them so re-running
+  // after a differ change costs nothing but CPU.
+  const cacheDir = resolve(flagString(args, 'cache-dir') ?? join(tmpdir(), 'apiwatcher-spec-cache'));
+  await mkdir(cacheDir, { recursive: true });
+  const fetchCached = async (sha: string) => {
+    const file = join(cacheDir, `${sha}.json`);
+    if (existsSync(file)) return readSpecFile(file);
+    const spec = await fetchSpecAt(sha);
+    await writeFile(file, JSON.stringify(spec), 'utf8');
+    return spec;
+  };
+
   // Walk oldest -> newest keeping the last spec of the previous version.
   let prev: { version: string; sha: string; spec: Awaited<ReturnType<typeof fetchSpecAt>> } | null = null;
   const versionsSeen: string[] = [];
   let written = 0;
 
   for (const sample of samples) {
-    const spec = await fetchSpecAt(sample.sha);
+    const spec = await fetchCached(sample.sha);
     const version = spec.info?.version;
     if (!version || !isApiVersion(version)) {
       process.stderr.write(`  ${sample.sha.slice(0, 8)} ${sample.date.slice(0, 10)}: no usable info.version, skipping\n`);

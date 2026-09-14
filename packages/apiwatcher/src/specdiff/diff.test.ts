@@ -329,3 +329,74 @@ test('a required field inside a newly added parent is a new feature, not a break
   const breaking = diffSpecs(before, after).changes.filter((c) => c.severity === 'breaking');
   assert.deepEqual(breaking, [], `expected no breaking changes, got ${JSON.stringify(breaking.map((c) => c.field))}`);
 });
+
+test('an enum inside an array widening is additive, narrowing breaks only senders', () => {
+  const narrow = 'array<enum(a|b)>';
+  const wide = 'array<enum(a|b|c)>';
+  assert.equal(classifyTypeChange(narrow, wide, 'request').severity, 'additive');
+  assert.equal(classifyTypeChange(narrow, wide, 'response').severity, 'additive');
+  assert.equal(classifyTypeChange(wide, narrow, 'request').severity, 'breaking');
+  assert.equal(classifyTypeChange(wide, narrow, 'response').severity, 'additive');
+  assert.match(classifyTypeChange(narrow, wide, 'request').detail, /^items /);
+});
+
+test('union members are split at depth zero, not inside nested signatures', () => {
+  // The nested enum's `|` must not be mistaken for a union separator.
+  const a = 'union(array<enum(x|y)>|string)';
+  const b = 'union(array<enum(x|y|z)>|string)';
+  const verdict = classifyTypeChange(a, b, 'request');
+  // One member changed (the array's enum widened); nothing was removed.
+  assert.equal(verdict.severity, 'additive');
+});
+
+test('an array whose element type genuinely changes is still breaking', () => {
+  assert.equal(classifyTypeChange('array<string>', 'array<integer>', 'response').severity, 'breaking');
+});
+
+test('a format annotation appearing is not a type change', () => {
+  assert.equal(classifyTypeChange('string', 'string:currency', 'request').changed, false);
+  assert.equal(classifyTypeChange('integer', 'integer:unix-time', 'response').changed, false);
+});
+
+test('a string becoming an enum restricts senders but not readers', () => {
+  assert.equal(classifyTypeChange('string', 'enum(a|b)', 'request').severity, 'breaking');
+  assert.equal(classifyTypeChange('string', 'enum(a|b)', 'response').changed, false);
+});
+
+test('a type that becomes a union still containing it is widening', () => {
+  // An id string that can now also arrive expanded.
+  const v = classifyTypeChange('string', 'union(object(price)|string)', 'response');
+  assert.equal(v.severity, 'additive');
+});
+
+test('union members that each widened are one widening, not a swap', () => {
+  const a = 'union(array<enum(x|y)>|enum(x|y))';
+  const b = 'union(array<enum(x|y|z)>|enum(x|y|z))';
+  assert.equal(classifyTypeChange(a, b, 'request').severity, 'additive');
+  // But a member that genuinely narrowed still breaks a sender.
+  assert.equal(classifyTypeChange(b, a, 'request').severity, 'breaking');
+});
+
+test('a renamed ref with identical fields produces no change; a lost field is reported under the field path', () => {
+  const build = (refName: string, props: Record<string, SchemaNode>, version: string): OpenApiSpec =>
+    spec(version, {
+      paths: {
+        '/v1/x': { post: { requestBody: formBody({ tip: { $ref: `#/components/schemas/${refName}` } }) } },
+      },
+      components: { schemas: { [refName]: { type: 'object', properties: props } } },
+    });
+
+  const renamedOnly = diffSpecs(
+    build('tip_v1', { amount: { type: 'integer' } }, '2025-01-01'),
+    build('tip_v2', { amount: { type: 'integer' } }, '2025-06-01'),
+  );
+  assert.deepEqual(renamedOnly.changes, [], 'a schema rename alone is not an API change');
+
+  const lostField = diffSpecs(
+    build('tip_v1', { amount: { type: 'integer' }, note: { type: 'string' } }, '2025-01-01'),
+    build('tip_v2', { amount: { type: 'integer' } }, '2025-06-01'),
+  );
+  assert.equal(lostField.changes.length, 1);
+  assert.equal(lostField.changes[0]?.kind, 'removed');
+  assert.equal(lostField.changes[0]?.field, 'tip.note');
+});

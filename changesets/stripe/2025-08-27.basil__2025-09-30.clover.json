@@ -3,7 +3,7 @@
   "api": "stripe",
   "from": "2025-08-27.basil",
   "to": "2025-09-30.clover",
-  "generatedAt": "2026-09-14T02:02:46.971Z",
+  "generatedAt": "2026-09-14T02:13:12.006Z",
   "source": {
     "repo": "stripe/openapi",
     "fromRef": "fc45b3d36c1ef1a98feddef419c662b5c5d44112",
@@ -54,7 +54,7 @@
       "field": "settings.payouts.schedule.weekly_payout_days",
       "fromType": "array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)>",
       "toType": "array<enum(friday|monday|thursday|tuesday|wednesday)>",
-      "note": "Request parameter \"settings.payouts.schedule.weekly_payout_days\" changed from array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)> to array<enum(friday|monday|thursday|tuesday|wednesday)>.",
+      "note": "Request parameter \"settings.payouts.schedule.weekly_payout_days\" items no longer accepts saturday, sunday.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
@@ -73,7 +73,7 @@
       "field": "settings.payouts.schedule.weekly_payout_days",
       "fromType": "array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)>",
       "toType": "array<enum(friday|monday|thursday|tuesday|wednesday)>",
-      "note": "Request parameter \"settings.payouts.schedule.weekly_payout_days\" changed from array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)> to array<enum(friday|monday|thursday|tuesday|wednesday)>.",
+      "note": "Request parameter \"settings.payouts.schedule.weekly_payout_days\" items no longer accepts saturday, sunday.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
@@ -101,25 +101,6 @@
     },
     {
       "id": "stripe-2025-09-30.clover-0006",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/payment_intents",
-      "method": "post",
-      "field": "excluded_payment_method_types",
-      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "note": "Request parameter \"excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "paymentIntents",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-09-30.clover-0007",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -136,7 +117,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0008",
+      "id": "stripe-2025-09-30.clover-0007",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -153,7 +134,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0009",
+      "id": "stripe-2025-09-30.clover-0008",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -170,7 +151,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0010",
+      "id": "stripe-2025-09-30.clover-0009",
       "kind": "required",
       "severity": "breaking",
       "location": "requestBody",
@@ -187,7 +168,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0011",
+      "id": "stripe-2025-09-30.clover-0010",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -204,7 +185,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0012",
+      "id": "stripe-2025-09-30.clover-0011",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -221,7 +202,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0013",
+      "id": "stripe-2025-09-30.clover-0012",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -246,7 +227,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0014",
+      "id": "stripe-2025-09-30.clover-0013",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -271,7 +252,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0015",
+      "id": "stripe-2025-09-30.clover-0014",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -385,7 +366,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0016",
+      "id": "stripe-2025-09-30.clover-0015",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -504,93 +485,7 @@
       ]
     },
     {
-      "id": "stripe-2025-09-30.clover-0017",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "payment_intent",
-      "field": "excluded_payment_method_types",
-      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "note": "Response field \"payment_intent.excluded_payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|crypto|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|mb_way|mobilepay|multibanco|naver_pay|nz_bank_account|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].charge.payment_intent.excluded_payment_method_types",
-        "data[].originating_transaction.payment_intent.excluded_payment_method_types",
-        "balance_transaction.source.payment_intent.excluded_payment_method_types",
-        "fee.charge.payment_intent.excluded_payment_method_types",
-        "fee.originating_transaction.payment_intent.excluded_payment_method_types",
-        "charge.payment_intent.excluded_payment_method_types",
-        "charge.review.payment_intent.excluded_payment_method_types",
-        "originating_transaction.payment_intent.excluded_payment_method_types",
-        "originating_transaction.review.payment_intent.excluded_payment_method_types",
-        "data[].source.payment_intent.excluded_payment_method_types",
-        "source.charge.payment_intent.excluded_payment_method_types",
-        "source.originating_transaction.payment_intent.excluded_payment_method_types"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/application_fees"
-        },
-        {
-          "method": "get",
-          "path": "/v1/application_fees/{fee}/refunds/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/application_fees/{fee}/refunds/{id}"
-        },
-        {
-          "method": "get",
-          "path": "/v1/application_fees/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/application_fees/{id}/refunds"
-        },
-        {
-          "method": "get",
-          "path": "/v1/balance_transactions"
-        },
-        {
-          "method": "get",
-          "path": "/v1/balance_transactions/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "applicationFees",
-          "method": "list"
-        },
-        {
-          "namespace": "applicationFees",
-          "method": "retrieveRefund"
-        },
-        {
-          "namespace": "applicationFees",
-          "method": "updateRefund"
-        },
-        {
-          "namespace": "applicationFees",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "applicationFees",
-          "method": "createRefund"
-        },
-        {
-          "namespace": "balanceTransactions",
-          "method": "list"
-        },
-        {
-          "namespace": "balanceTransactions",
-          "method": "retrieve"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-09-30.clover-0018",
+      "id": "stripe-2025-09-30.clover-0016",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -704,141 +599,6 @@
         {
           "namespace": "charges",
           "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-09-30.clover-0019",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "th",
-      "fromType": "object(tax_product_registrations_resource_country_options_simplified)",
-      "toType": "object(tax_product_registrations_resource_country_options_thailand)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.th\" changed from object(tax_product_registrations_resource_country_options_simplified) to object(tax_product_registrations_resource_country_options_thailand).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.th",
-        "country_options.th"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-09-30.clover-0020",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "transfer_schedule",
-      "field": "weekly_payout_days",
-      "fromType": "array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)>",
-      "toType": "array<enum(friday|monday|thursday|tuesday|wednesday)>",
-      "note": "Response field \"transfer_schedule.weekly_payout_days\" changed from array<enum(friday|monday|saturday|sunday|thursday|tuesday|wednesday)> to array<enum(friday|monday|thursday|tuesday|wednesday)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "settings.payouts.schedule.weekly_payout_days"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/account"
-        },
-        {
-          "method": "post",
-          "path": "/v1/accounts"
-        },
-        {
-          "method": "get",
-          "path": "/v1/accounts/{account}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/accounts/{account}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/accounts/{account}/reject"
-        },
-        {
-          "method": "post",
-          "path": "/v1/customers/{customer}/sources"
-        },
-        {
-          "method": "delete",
-          "path": "/v1/customers/{customer}/sources/{id}"
-        },
-        {
-          "method": "get",
-          "path": "/v1/customers/{customer}/sources/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "accounts",
-          "method": "retrieveCurrent"
-        },
-        {
-          "namespace": "accounts",
-          "method": "create"
-        },
-        {
-          "namespace": "accounts",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "accounts",
-          "method": "update"
-        },
-        {
-          "namespace": "accounts",
-          "method": "reject"
-        },
-        {
-          "namespace": "customers",
-          "method": "createSource"
-        },
-        {
-          "namespace": "customers",
-          "method": "deleteSource"
-        },
-        {
-          "namespace": "customers",
-          "method": "retrieveSource"
         }
       ]
     }

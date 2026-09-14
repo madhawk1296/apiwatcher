@@ -55,8 +55,22 @@ export class ChangesetSync {
     const res = await fetch(`${this.indexUrl}${bust}`, { headers: { 'user-agent': 'apiwatcher-server' } });
     if (!res.ok) throw new Error(`changeset index fetch failed: ${res.status}`);
 
-    const index = (await res.json()) as { entries?: Array<{ file: string; to: string }> };
+    const indexText = await res.text();
+    const index = JSON.parse(indexText) as { entries?: Array<{ file: string; to: string; generatedAt?: string }> };
     const entries = index.entries ?? [];
+
+    // What we fetched last time, so a regenerated changeset under the same
+    // filename is noticed by its generatedAt and refreshed.
+    const localIndexPath = join(this.stripeDir, 'index.json');
+    let previous = new Map<string, string>();
+    if (existsSync(localIndexPath)) {
+      try {
+        const local = JSON.parse(await readFile(localIndexPath, 'utf8')) as typeof index;
+        previous = new Map((local.entries ?? []).map((e) => [e.file, e.generatedAt ?? '']));
+      } catch {
+        previous = new Map();
+      }
+    }
 
     // A changeset withdrawn upstream (superseded, or found wrong) must go here
     // too, or its ids keep counting alongside its replacement's.
@@ -71,7 +85,8 @@ export class ChangesetSync {
 
     for (const entry of entries) {
       const target = join(this.stripeDir, entry.file);
-      if (existsSync(target)) continue;
+      const unchanged = existsSync(target) && previous.get(entry.file) === (entry.generatedAt ?? '');
+      if (unchanged) continue;
 
       const fileRes = await fetch(`${this.baseUrl}/${entry.file}${bust}`, {
         headers: { 'user-agent': 'apiwatcher-server' },
@@ -83,6 +98,9 @@ export class ChangesetSync {
       await writeFile(target, text, 'utf8');
       added.push(entry.to);
     }
+
+    // Record what we now hold, so the next sync can tell what changed.
+    await writeFile(localIndexPath, indexText, 'utf8');
 
     const sets = await this.load();
     return { latest: latestKnownVersion(sets), added };

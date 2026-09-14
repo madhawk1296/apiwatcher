@@ -3,7 +3,7 @@
   "api": "stripe",
   "from": "2025-07-30.basil",
   "to": "2025-08-27.basil",
-  "generatedAt": "2026-09-14T02:02:45.529Z",
+  "generatedAt": "2026-09-14T02:13:11.852Z",
   "source": {
     "repo": "stripe/openapi",
     "fromRef": "805a9b8cc62f35d2673b28c34ca5fa27d0650b8b",

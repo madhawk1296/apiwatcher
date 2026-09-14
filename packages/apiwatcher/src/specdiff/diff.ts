@@ -120,6 +120,7 @@ export function diffSpecs(oldSpec: OpenApiSpec, newSpec: OpenApiSpec, options: D
         after: flattenOwnFields(newSpec, requestSchema(newSpec, newEntry.op), { maxDepth }),
         location: 'requestBody',
         direction: 'request',
+        specs: { old: oldSpec, new: newSpec },
         path: oldEntry.path,
         method: oldEntry.method,
         extra: sdk,
@@ -135,6 +136,7 @@ export function diffSpecs(oldSpec: OpenApiSpec, newSpec: OpenApiSpec, options: D
         after: parameterFields(newSpec, newEntry.op, 'query'),
         location: 'queryParam',
         direction: 'request',
+        specs: { old: oldSpec, new: newSpec },
         path: oldEntry.path,
         method: oldEntry.method,
         extra: sdk,
@@ -168,6 +170,7 @@ export function diffSpecs(oldSpec: OpenApiSpec, newSpec: OpenApiSpec, options: D
         after: flattenOwnFields(newSpec, newSchema, { maxDepth }),
         location: 'response',
         direction: 'response',
+        specs: { old: oldSpec, new: newSpec },
         resource: name,
         sites,
         maxAttribution,
@@ -313,6 +316,10 @@ interface FieldDiffInput {
   after: Map<string, FieldInfo>;
   location: Location;
   direction: Direction;
+  /** Needed to look inside a `$ref` whose identity changed. */
+  specs: { old: OpenApiSpec; new: OpenApiSpec };
+  /** Guards the ref-rename recursion. */
+  depth?: number;
   path?: string;
   method?: string;
   resource?: string;
@@ -421,6 +428,22 @@ function diffFields(
   for (const [key, oldField] of before) {
     const newField = after.get(key);
     if (!newField) continue;
+
+    // `object(A)` -> `object(B)`: an internal schema was renamed. The name is
+    // not part of the API; what matters is whether B's fields differ from A's.
+    // Diff those under this field's path instead of flagging the rename.
+    const refSwap = refIdentitySwap(oldField.typeSig, newField.typeSig);
+    if (refSwap && (input.depth ?? 0) < 2) {
+      const oldSchema = input.specs.old.components?.schemas?.[refSwap.from];
+      const newSchema = input.specs.new.components?.schemas?.[refSwap.to];
+      if (oldSchema && newSchema) {
+        const prefix = refSwap.inArray ? `${key}[]` : key;
+        const nestedBefore = prefixFields(flattenOwnFields(input.specs.old, oldSchema, { maxDepth: 2 }), prefix);
+        const nestedAfter = prefixFields(flattenOwnFields(input.specs.new, newSchema, { maxDepth: 2 }), prefix);
+        diffFields({ ...input, before: nestedBefore, after: nestedAfter, depth: (input.depth ?? 0) + 1 }, out, ids, options);
+        continue;
+      }
+    }
 
     const verdict = classifyTypeChange(oldField.typeSig, newField.typeSig, direction);
     if (verdict.changed && (verdict.severity === 'breaking' || options.includeAdditive)) {
@@ -569,6 +592,26 @@ function hasRemovedAncestor(path: string, removed: ReadonlySet<string>): boolean
     // A parent may be recorded with or without its array marker.
     if (removed.has(cursor) || removed.has(cursor.replace(/\[\]$/, ''))) return true;
   }
+}
+
+const REF_SIG = /^(array<)?object\(([^)]+)\)>?$/;
+
+/** `object(a)` vs `object(b)`, optionally inside one array wrapper. */
+function refIdentitySwap(fromSig: string, toSig: string): { from: string; to: string; inArray: boolean } | null {
+  const a = REF_SIG.exec(fromSig);
+  const b = REF_SIG.exec(toSig);
+  if (!a || !b) return null;
+  const inArray = Boolean(a[1]);
+  if (inArray !== Boolean(b[1])) return null;
+  const from = a[2] as string;
+  const to = b[2] as string;
+  return from === to ? null : { from, to, inArray };
+}
+
+function prefixFields(fields: Map<string, FieldInfo>, prefix: string): Map<string, FieldInfo> {
+  const out = new Map<string, FieldInfo>();
+  for (const [k, v] of fields) out.set(`${prefix}.${k}`, { ...v, path: `${prefix}.${k}` });
+  return out;
 }
 
 function leaf(path: string): string {

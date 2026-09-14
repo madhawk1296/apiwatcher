@@ -3,7 +3,7 @@
   "api": "stripe",
   "from": "2025-02-24.acacia",
   "to": "2025-03-31.basil",
-  "generatedAt": "2026-09-14T02:02:39.649Z",
+  "generatedAt": "2026-09-14T02:13:11.067Z",
   "source": {
     "repo": "stripe/openapi",
     "fromRef": "5a411d0d1e527229cdb4d6633197ab8009899ce6",
@@ -12,25 +12,6 @@
   "changes": [
     {
       "id": "stripe-2025-03-31.basil-0005",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/checkout/sessions",
-      "method": "post",
-      "field": "payment_method_types",
-      "fromType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "toType": "array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "note": "Request parameter \"payment_method_types\" changed from array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(acss_debit|affirm|afterpay_clearpay|alipay|alma|amazon_pay|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|kakao_pay|klarna|konbini|kr_card|link|mobilepay|multibanco|naver_pay|oxxo|p24|pay_by_bank|payco|paynow|paypal|pix|promptpay|revolut_pay|samsung_pay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "checkout.sessions",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0006",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -47,7 +28,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0007",
+      "id": "stripe-2025-03-31.basil-0006",
       "kind": "removed",
       "severity": "breaking",
       "location": "queryParam",
@@ -64,7 +45,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0008",
+      "id": "stripe-2025-03-31.basil-0007",
       "kind": "removed",
       "severity": "breaking",
       "location": "queryParam",
@@ -81,7 +62,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0009",
+      "id": "stripe-2025-03-31.basil-0008",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -89,6 +70,23 @@
       "method": "post",
       "field": "coupon",
       "note": "Request parameter \"coupon\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "customers",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0009",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/customers",
+      "method": "post",
+      "field": "promotion_code",
+      "note": "Request parameter \"promotion_code\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
@@ -102,23 +100,6 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/customers",
-      "method": "post",
-      "field": "promotion_code",
-      "note": "Request parameter \"promotion_code\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "customers",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0011",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
       "path": "/v1/customers/{customer}",
       "method": "post",
       "field": "coupon",
@@ -132,7 +113,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0012",
+      "id": "stripe-2025-03-31.basil-0011",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -149,7 +130,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0013",
+      "id": "stripe-2025-03-31.basil-0012",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -157,6 +138,23 @@
       "method": "post",
       "field": "price",
       "note": "Request parameter \"price\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoiceItems",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0013",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoiceitems",
+      "method": "post",
+      "field": "unit_amount",
+      "note": "Request parameter \"unit_amount\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
@@ -170,23 +168,6 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/invoiceitems",
-      "method": "post",
-      "field": "unit_amount",
-      "note": "Request parameter \"unit_amount\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "invoiceItems",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0015",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
       "path": "/v1/invoiceitems/{invoiceitem}",
       "method": "post",
       "field": "price",
@@ -200,7 +181,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0016",
+      "id": "stripe-2025-03-31.basil-0015",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -217,45 +198,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0017",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/invoices",
-      "method": "post",
-      "field": "payment_settings.payment_method_types",
-      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "invoices",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0023",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/invoices/{invoice}",
-      "method": "post",
-      "field": "payment_settings.payment_method_types",
-      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "invoices",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0024",
+      "id": "stripe-2025-03-31.basil-0021",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -272,7 +215,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0025",
+      "id": "stripe-2025-03-31.basil-0022",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -289,7 +232,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0026",
+      "id": "stripe-2025-03-31.basil-0023",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -306,7 +249,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0018",
+      "id": "stripe-2025-03-31.basil-0016",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -323,7 +266,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0019",
+      "id": "stripe-2025-03-31.basil-0017",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -340,7 +283,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0020",
+      "id": "stripe-2025-03-31.basil-0018",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -357,7 +300,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0021",
+      "id": "stripe-2025-03-31.basil-0019",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -374,7 +317,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0022",
+      "id": "stripe-2025-03-31.basil-0020",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -411,45 +354,7 @@
       "docsUrl": "https://docs.stripe.com/upgrades"
     },
     {
-      "id": "stripe-2025-03-31.basil-0027",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/payment_links",
-      "method": "post",
-      "field": "payment_method_types",
-      "fromType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "toType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "note": "Request parameter \"payment_method_types\" changed from array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "paymentLinks",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0028",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/payment_links/{payment_link}",
-      "method": "post",
-      "field": "payment_method_types",
-      "fromType": "union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
-      "toType": "union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum())",
-      "note": "Request parameter \"payment_method_types\" changed from union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()) to union(array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>|enum()).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "paymentLinks",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0029",
+      "id": "stripe-2025-03-31.basil-0024",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -466,7 +371,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0030",
+      "id": "stripe-2025-03-31.basil-0025",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -483,7 +388,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0031",
+      "id": "stripe-2025-03-31.basil-0026",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -500,7 +405,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0032",
+      "id": "stripe-2025-03-31.basil-0027",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -517,7 +422,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0033",
+      "id": "stripe-2025-03-31.basil-0028",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -554,7 +459,7 @@
       "docsUrl": "https://docs.stripe.com/upgrades"
     },
     {
-      "id": "stripe-2025-03-31.basil-0034",
+      "id": "stripe-2025-03-31.basil-0029",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -571,7 +476,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0035",
+      "id": "stripe-2025-03-31.basil-0030",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -588,7 +493,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0036",
+      "id": "stripe-2025-03-31.basil-0031",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -605,7 +510,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0037",
+      "id": "stripe-2025-03-31.basil-0032",
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
@@ -617,6 +522,91 @@
       "sdkMethods": [
         {
           "namespace": "subscriptionSchedules",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0033",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscription_schedules/{schedule}",
+      "method": "post",
+      "field": "default_settings.billing_thresholds",
+      "note": "Request parameter \"default_settings.billing_thresholds\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptionSchedules",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0034",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscription_schedules/{schedule}",
+      "method": "post",
+      "field": "phases[].billing_thresholds",
+      "note": "Request parameter \"phases[].billing_thresholds\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptionSchedules",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0035",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscription_schedules/{schedule}",
+      "method": "post",
+      "field": "phases[].coupon",
+      "note": "Request parameter \"phases[].coupon\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptionSchedules",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0036",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscription_schedules/{schedule}",
+      "method": "post",
+      "field": "phases[].items[].billing_thresholds",
+      "note": "Request parameter \"phases[].items[].billing_thresholds\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptionSchedules",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0037",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions",
+      "method": "post",
+      "field": "billing_thresholds",
+      "note": "Request parameter \"billing_thresholds\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
           "method": "create"
         }
       ]
@@ -626,15 +616,15 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscription_schedules/{schedule}",
+      "path": "/v1/subscriptions",
       "method": "post",
-      "field": "default_settings.billing_thresholds",
-      "note": "Request parameter \"default_settings.billing_thresholds\" was removed.",
+      "field": "coupon",
+      "note": "Request parameter \"coupon\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
-          "namespace": "subscriptionSchedules",
-          "method": "update"
+          "namespace": "subscriptions",
+          "method": "create"
         }
       ]
     },
@@ -643,15 +633,15 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscription_schedules/{schedule}",
+      "path": "/v1/subscriptions",
       "method": "post",
-      "field": "phases[].billing_thresholds",
-      "note": "Request parameter \"phases[].billing_thresholds\" was removed.",
+      "field": "items[].billing_thresholds",
+      "note": "Request parameter \"items[].billing_thresholds\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
-          "namespace": "subscriptionSchedules",
-          "method": "update"
+          "namespace": "subscriptions",
+          "method": "create"
         }
       ]
     },
@@ -660,15 +650,15 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscription_schedules/{schedule}",
+      "path": "/v1/subscriptions",
       "method": "post",
-      "field": "phases[].coupon",
-      "note": "Request parameter \"phases[].coupon\" was removed.",
+      "field": "promotion_code",
+      "note": "Request parameter \"promotion_code\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
-          "namespace": "subscriptionSchedules",
-          "method": "update"
+          "namespace": "subscriptions",
+          "method": "create"
         }
       ]
     },
@@ -677,14 +667,14 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscription_schedules/{schedule}",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
       "method": "post",
-      "field": "phases[].items[].billing_thresholds",
-      "note": "Request parameter \"phases[].items[].billing_thresholds\" was removed.",
+      "field": "billing_thresholds",
+      "note": "Request parameter \"billing_thresholds\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
-          "namespace": "subscriptionSchedules",
+          "namespace": "subscriptions",
           "method": "update"
         }
       ]
@@ -694,15 +684,15 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscriptions",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
       "method": "post",
-      "field": "billing_thresholds",
-      "note": "Request parameter \"billing_thresholds\" was removed.",
+      "field": "coupon",
+      "note": "Request parameter \"coupon\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
           "namespace": "subscriptions",
-          "method": "create"
+          "method": "update"
         }
       ]
     },
@@ -711,15 +701,15 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscriptions",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
       "method": "post",
-      "field": "coupon",
-      "note": "Request parameter \"coupon\" was removed.",
+      "field": "items[].billing_thresholds",
+      "note": "Request parameter \"items[].billing_thresholds\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
           "namespace": "subscriptions",
-          "method": "create"
+          "method": "update"
         }
       ]
     },
@@ -728,181 +718,20 @@
       "kind": "removed",
       "severity": "breaking",
       "location": "requestBody",
-      "path": "/v1/subscriptions",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
       "method": "post",
-      "field": "items[].billing_thresholds",
-      "note": "Request parameter \"items[].billing_thresholds\" was removed.",
+      "field": "promotion_code",
+      "note": "Request parameter \"promotion_code\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "sdkMethods": [
         {
           "namespace": "subscriptions",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0046",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions",
-      "method": "post",
-      "field": "payment_settings.payment_method_types",
-      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "create"
+          "method": "update"
         }
       ]
     },
     {
       "id": "stripe-2025-03-31.basil-0045",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions",
-      "method": "post",
-      "field": "promotion_code",
-      "note": "Request parameter \"promotion_code\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0047",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions/{subscription_exposed_id}",
-      "method": "post",
-      "field": "billing_thresholds",
-      "note": "Request parameter \"billing_thresholds\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0048",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions/{subscription_exposed_id}",
-      "method": "post",
-      "field": "coupon",
-      "note": "Request parameter \"coupon\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0049",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions/{subscription_exposed_id}",
-      "method": "post",
-      "field": "items[].billing_thresholds",
-      "note": "Request parameter \"items[].billing_thresholds\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0051",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions/{subscription_exposed_id}",
-      "method": "post",
-      "field": "payment_settings.payment_method_types",
-      "fromType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "toType": "union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum())",
-      "note": "Request parameter \"payment_settings.payment_method_types\" changed from union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()) to union(array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>|enum()).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0050",
-      "kind": "removed",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/subscriptions/{subscription_exposed_id}",
-      "method": "post",
-      "field": "promotion_code",
-      "note": "Request parameter \"promotion_code\" was removed.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "subscriptions",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0052",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/webhook_endpoints",
-      "method": "post",
-      "field": "enabled_events",
-      "fromType": "array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)>",
-      "toType": "array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.overpaid|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)>",
-      "note": "Request parameter \"enabled_events\" changed from array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)> to array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.overpaid|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "webhookEndpoints",
-          "method": "create"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0053",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "requestBody",
-      "path": "/v1/webhook_endpoints/{webhook_endpoint}",
-      "method": "post",
-      "field": "enabled_events",
-      "fromType": "array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)>",
-      "toType": "array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.overpaid|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)>",
-      "note": "Request parameter \"enabled_events\" changed from array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)> to array<enum(*|account.application.authorized|account.application.deauthorized|account.external_account.created|account.external_account.deleted|account.external_account.updated|account.updated|application_fee.created|application_fee.refund.updated|application_fee.refunded|balance.available|billing.alert.triggered|billing_portal.configuration.created|billing_portal.configuration.updated|billing_portal.session.created|capability.updated|cash_balance.funds_available|charge.captured|charge.dispute.closed|charge.dispute.created|charge.dispute.funds_reinstated|charge.dispute.funds_withdrawn|charge.dispute.updated|charge.expired|charge.failed|charge.pending|charge.refund.updated|charge.refunded|charge.succeeded|charge.updated|checkout.session.async_payment_failed|checkout.session.async_payment_succeeded|checkout.session.completed|checkout.session.expired|climate.order.canceled|climate.order.created|climate.order.delayed|climate.order.delivered|climate.order.product_substituted|climate.product.created|climate.product.pricing_updated|coupon.created|coupon.deleted|coupon.updated|credit_note.created|credit_note.updated|credit_note.voided|customer.created|customer.deleted|customer.discount.created|customer.discount.deleted|customer.discount.updated|customer.source.created|customer.source.deleted|customer.source.expiring|customer.source.updated|customer.subscription.created|customer.subscription.deleted|customer.subscription.paused|customer.subscription.pending_update_applied|customer.subscription.pending_update_expired|customer.subscription.resumed|customer.subscription.trial_will_end|customer.subscription.updated|customer.tax_id.created|customer.tax_id.deleted|customer.tax_id.updated|customer.updated|customer_cash_balance_transaction.created|entitlements.active_entitlement_summary.updated|file.created|financial_connections.account.created|financial_connections.account.deactivated|financial_connections.account.disconnected|financial_connections.account.reactivated|financial_connections.account.refreshed_balance|financial_connections.account.refreshed_ownership|financial_connections.account.refreshed_transactions|identity.verification_session.canceled|identity.verification_session.created|identity.verification_session.processing|identity.verification_session.redacted|identity.verification_session.requires_input|identity.verification_session.verified|invoice.created|invoice.deleted|invoice.finalization_failed|invoice.finalized|invoice.marked_uncollectible|invoice.overdue|invoice.overpaid|invoice.paid|invoice.payment_action_required|invoice.payment_failed|invoice.payment_succeeded|invoice.sent|invoice.upcoming|invoice.updated|invoice.voided|invoice.will_be_due|invoiceitem.created|invoiceitem.deleted|issuing_authorization.created|issuing_authorization.request|issuing_authorization.updated|issuing_card.created|issuing_card.updated|issuing_cardholder.created|issuing_cardholder.updated|issuing_dispute.closed|issuing_dispute.created|issuing_dispute.funds_reinstated|issuing_dispute.funds_rescinded|issuing_dispute.submitted|issuing_dispute.updated|issuing_personalization_design.activated|issuing_personalization_design.deactivated|issuing_personalization_design.rejected|issuing_personalization_design.updated|issuing_token.created|issuing_token.updated|issuing_transaction.created|issuing_transaction.purchase_details_receipt_updated|issuing_transaction.updated|mandate.updated|payment_intent.amount_capturable_updated|payment_intent.canceled|payment_intent.created|payment_intent.partially_funded|payment_intent.payment_failed|payment_intent.processing|payment_intent.requires_action|payment_intent.succeeded|payment_link.created|payment_link.updated|payment_method.attached|payment_method.automatically_updated|payment_method.detached|payment_method.updated|payout.canceled|payout.created|payout.failed|payout.paid|payout.reconciliation_completed|payout.updated|person.created|person.deleted|person.updated|plan.created|plan.deleted|plan.updated|price.created|price.deleted|price.updated|product.created|product.deleted|product.updated|promotion_code.created|promotion_code.updated|quote.accepted|quote.canceled|quote.created|quote.finalized|radar.early_fraud_warning.created|radar.early_fraud_warning.updated|refund.created|refund.failed|refund.updated|reporting.report_run.failed|reporting.report_run.succeeded|reporting.report_type.updated|review.closed|review.opened|setup_intent.canceled|setup_intent.created|setup_intent.requires_action|setup_intent.setup_failed|setup_intent.succeeded|sigma.scheduled_query_run.created|source.canceled|source.chargeable|source.failed|source.mandate_notification|source.refund_attributes_required|source.transaction.created|source.transaction.updated|subscription_schedule.aborted|subscription_schedule.canceled|subscription_schedule.completed|subscription_schedule.created|subscription_schedule.expiring|subscription_schedule.released|subscription_schedule.updated|tax.settings.updated|tax_rate.created|tax_rate.updated|terminal.reader.action_failed|terminal.reader.action_succeeded|test_helpers.test_clock.advancing|test_helpers.test_clock.created|test_helpers.test_clock.deleted|test_helpers.test_clock.internal_failure|test_helpers.test_clock.ready|topup.canceled|topup.created|topup.failed|topup.reversed|topup.succeeded|transfer.created|transfer.reversed|transfer.updated|treasury.credit_reversal.created|treasury.credit_reversal.posted|treasury.debit_reversal.completed|treasury.debit_reversal.created|treasury.debit_reversal.initial_credit_granted|treasury.financial_account.closed|treasury.financial_account.created|treasury.financial_account.features_status_updated|treasury.inbound_transfer.canceled|treasury.inbound_transfer.created|treasury.inbound_transfer.failed|treasury.inbound_transfer.succeeded|treasury.outbound_payment.canceled|treasury.outbound_payment.created|treasury.outbound_payment.expected_arrival_date_updated|treasury.outbound_payment.failed|treasury.outbound_payment.posted|treasury.outbound_payment.returned|treasury.outbound_payment.tracking_details_updated|treasury.outbound_transfer.canceled|treasury.outbound_transfer.created|treasury.outbound_transfer.expected_arrival_date_updated|treasury.outbound_transfer.failed|treasury.outbound_transfer.posted|treasury.outbound_transfer.returned|treasury.outbound_transfer.tracking_details_updated|treasury.received_credit.created|treasury.received_credit.failed|treasury.received_credit.succeeded|treasury.received_debit.created)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "sdkMethods": [
-        {
-          "namespace": "webhookEndpoints",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0054",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -978,7 +807,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0055",
+      "id": "stripe-2025-03-31.basil-0046",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1096,7 +925,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0056",
+      "id": "stripe-2025-03-31.basil-0047",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1196,7 +1025,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0057",
+      "id": "stripe-2025-03-31.basil-0048",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1296,7 +1125,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0058",
+      "id": "stripe-2025-03-31.basil-0049",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1404,7 +1233,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0059",
+      "id": "stripe-2025-03-31.basil-0050",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1512,7 +1341,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0060",
+      "id": "stripe-2025-03-31.basil-0051",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1620,7 +1449,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0061",
+      "id": "stripe-2025-03-31.basil-0052",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1744,7 +1573,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0062",
+      "id": "stripe-2025-03-31.basil-0053",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1868,7 +1697,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0063",
+      "id": "stripe-2025-03-31.basil-0054",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -1992,7 +1821,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0064",
+      "id": "stripe-2025-03-31.basil-0055",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2116,7 +1945,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0065",
+      "id": "stripe-2025-03-31.basil-0056",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2240,7 +2069,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0066",
+      "id": "stripe-2025-03-31.basil-0057",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2364,7 +2193,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0067",
+      "id": "stripe-2025-03-31.basil-0058",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2488,7 +2317,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0068",
+      "id": "stripe-2025-03-31.basil-0059",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2612,7 +2441,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0069",
+      "id": "stripe-2025-03-31.basil-0060",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2736,7 +2565,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0070",
+      "id": "stripe-2025-03-31.basil-0061",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2860,7 +2689,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0071",
+      "id": "stripe-2025-03-31.basil-0062",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -2984,7 +2813,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0072",
+      "id": "stripe-2025-03-31.basil-0063",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3108,7 +2937,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0073",
+      "id": "stripe-2025-03-31.basil-0064",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3158,7 +2987,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0074",
+      "id": "stripe-2025-03-31.basil-0065",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3208,7 +3037,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0075",
+      "id": "stripe-2025-03-31.basil-0066",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3258,7 +3087,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0076",
+      "id": "stripe-2025-03-31.basil-0067",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3308,7 +3137,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0077",
+      "id": "stripe-2025-03-31.basil-0068",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3358,7 +3187,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0078",
+      "id": "stripe-2025-03-31.basil-0069",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3408,129 +3237,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0079",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "invoices_payment_settings",
-      "field": "payment_method_types",
-      "fromType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
-      "toType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
-      "note": "Response field \"invoices_payment_settings.payment_method_types\" changed from array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)> to array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].invoice.payment_settings.payment_method_types",
-        "invoice.payment_settings.payment_method_types",
-        "subscription.latest_invoice.payment_settings.payment_method_types",
-        "customer_balance_transaction.invoice.payment_settings.payment_method_types",
-        "checkout_session.invoice.payment_settings.payment_method_types",
-        "credit_note.invoice.payment_settings.payment_method_types",
-        "data[].payment_settings.payment_method_types",
-        "payment_settings.payment_method_types"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/checkout/sessions"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions"
-        },
-        {
-          "method": "get",
-          "path": "/v1/checkout/sessions/{session}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions/{session}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions/{session}/expire"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes/preview"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes/{id}/void"
-        },
-        {
-          "method": "get",
-          "path": "/v1/customers/{customer}/balance_transactions"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "checkout.sessions",
-          "method": "list"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "create"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "update"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "expire"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "list"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "create"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "preview"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "update"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "voidCreditNote"
-        },
-        {
-          "namespace": "customers",
-          "method": "listBalanceTransactions"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0080",
+      "id": "stripe-2025-03-31.basil-0070",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3648,7 +3355,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0081",
+      "id": "stripe-2025-03-31.basil-0071",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3766,7 +3473,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0082",
+      "id": "stripe-2025-03-31.basil-0072",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -3884,7 +3591,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0083",
+      "id": "stripe-2025-03-31.basil-0073",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4002,7 +3709,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0084",
+      "id": "stripe-2025-03-31.basil-0074",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4120,7 +3827,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0085",
+      "id": "stripe-2025-03-31.basil-0075",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4238,7 +3945,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0086",
+      "id": "stripe-2025-03-31.basil-0076",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4356,7 +4063,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0087",
+      "id": "stripe-2025-03-31.basil-0077",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4474,7 +4181,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0088",
+      "id": "stripe-2025-03-31.basil-0078",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4592,7 +4299,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0089",
+      "id": "stripe-2025-03-31.basil-0079",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4710,7 +4417,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0090",
+      "id": "stripe-2025-03-31.basil-0080",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4828,7 +4535,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0091",
+      "id": "stripe-2025-03-31.basil-0081",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -4912,143 +4619,20 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0092",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "payment_link",
-      "field": "payment_method_types",
-      "fromType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "toType": "array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>",
-      "note": "Response field \"payment_link.payment_method_types\" changed from array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)> to array<enum(affirm|afterpay_clearpay|alipay|alma|au_becs_debit|bacs_debit|bancontact|billie|blik|boleto|card|cashapp|eps|fpx|giropay|grabpay|ideal|klarna|konbini|link|mobilepay|multibanco|oxxo|p24|pay_by_bank|paynow|paypal|pix|promptpay|satispay|sepa_debit|sofort|swish|twint|us_bank_account|wechat_pay|zip)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].payment_link.payment_method_types",
-        "payment_link.payment_method_types",
-        "customer_balance_transaction.checkout_session.payment_link.payment_method_types",
-        "data[].checkout_session.payment_link.payment_method_types",
-        "checkout_session.payment_link.payment_method_types",
-        "data[].payment_method_types",
-        "payment_method_types"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/checkout/sessions"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions"
-        },
-        {
-          "method": "get",
-          "path": "/v1/checkout/sessions/{session}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions/{session}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions/{session}/expire"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes/preview"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes/{id}/void"
-        },
-        {
-          "method": "get",
-          "path": "/v1/customers/{customer}/balance_transactions"
-        },
-        {
-          "method": "post",
-          "path": "/v1/customers/{customer}/balance_transactions"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "checkout.sessions",
-          "method": "list"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "create"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "update"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "expire"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "create"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "preview"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "update"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "voidCreditNote"
-        },
-        {
-          "namespace": "customers",
-          "method": "listBalanceTransactions"
-        },
-        {
-          "namespace": "customers",
-          "method": "createBalanceTransaction"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0093",
-      "kind": "typeChanged",
+      "id": "stripe-2025-03-31.basil-0082",
+      "kind": "removed",
       "severity": "breaking",
       "location": "response",
       "resource": "payment_pages_checkout_session_collected_information",
-      "field": "shipping_details",
-      "fromType": "object(shipping)",
-      "toType": "object(payment_pages_checkout_session_checkout_address_details)",
-      "note": "Response field \"payment_pages_checkout_session_collected_information.shipping_details\" changed from object(shipping) to object(payment_pages_checkout_session_checkout_address_details).",
+      "field": "shipping_details.carrier",
+      "note": "Response field \"payment_pages_checkout_session_collected_information.shipping_details.carrier\" was removed.",
       "docsUrl": "https://docs.stripe.com/upgrades",
       "fieldPaths": [
-        "data[].collected_information.shipping_details",
-        "collected_information.shipping_details",
-        "customer_balance_transaction.checkout_session.collected_information.shipping_details",
-        "data[].checkout_session.collected_information.shipping_details",
-        "checkout_session.collected_information.shipping_details"
+        "data[].collected_information.shipping_details.carrier",
+        "collected_information.shipping_details.carrier",
+        "customer_balance_transaction.checkout_session.collected_information.shipping_details.carrier",
+        "data[].checkout_session.collected_information.shipping_details.carrier",
+        "checkout_session.collected_information.shipping_details.carrier"
       ],
       "endpoints": [
         {
@@ -5152,7 +4736,241 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0094",
+      "id": "stripe-2025-03-31.basil-0083",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_pages_checkout_session_collected_information",
+      "field": "shipping_details.phone",
+      "note": "Response field \"payment_pages_checkout_session_collected_information.shipping_details.phone\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].collected_information.shipping_details.phone",
+        "collected_information.shipping_details.phone",
+        "customer_balance_transaction.checkout_session.collected_information.shipping_details.phone",
+        "data[].checkout_session.collected_information.shipping_details.phone",
+        "checkout_session.collected_information.shipping_details.phone"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}/void"
+        },
+        {
+          "method": "get",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "update"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "voidCreditNote"
+        },
+        {
+          "namespace": "customers",
+          "method": "listBalanceTransactions"
+        },
+        {
+          "namespace": "customers",
+          "method": "createBalanceTransaction"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0084",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "payment_pages_checkout_session_collected_information",
+      "field": "shipping_details.tracking_number",
+      "note": "Response field \"payment_pages_checkout_session_collected_information.shipping_details.tracking_number\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].collected_information.shipping_details.tracking_number",
+        "collected_information.shipping_details.tracking_number",
+        "customer_balance_transaction.checkout_session.collected_information.shipping_details.tracking_number",
+        "data[].checkout_session.collected_information.shipping_details.tracking_number",
+        "checkout_session.collected_information.shipping_details.tracking_number"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/checkout/sessions/{session}/expire"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/preview"
+        },
+        {
+          "method": "get",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/credit_notes/{id}/void"
+        },
+        {
+          "method": "get",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        },
+        {
+          "method": "post",
+          "path": "/v1/customers/{customer}/balance_transactions"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "list"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "update"
+        },
+        {
+          "namespace": "checkout.sessions",
+          "method": "expire"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "create"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "preview"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "update"
+        },
+        {
+          "namespace": "creditNotes",
+          "method": "voidCreditNote"
+        },
+        {
+          "namespace": "customers",
+          "method": "listBalanceTransactions"
+        },
+        {
+          "namespace": "customers",
+          "method": "createBalanceTransaction"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2025-03-31.basil-0085",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5271,7 +5089,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0095",
+      "id": "stripe-2025-03-31.basil-0086",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5390,7 +5208,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0096",
+      "id": "stripe-2025-03-31.basil-0087",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5509,7 +5327,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0097",
+      "id": "stripe-2025-03-31.basil-0088",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5628,7 +5446,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0098",
+      "id": "stripe-2025-03-31.basil-0089",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5747,7 +5565,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0099",
+      "id": "stripe-2025-03-31.basil-0090",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5866,7 +5684,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0100",
+      "id": "stripe-2025-03-31.basil-0091",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -5980,7 +5798,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0101",
+      "id": "stripe-2025-03-31.basil-0092",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -6096,7 +5914,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0102",
+      "id": "stripe-2025-03-31.basil-0093",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -6215,7 +6033,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0103",
+      "id": "stripe-2025-03-31.basil-0094",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -6334,7 +6152,7 @@
       ]
     },
     {
-      "id": "stripe-2025-03-31.basil-0104",
+      "id": "stripe-2025-03-31.basil-0095",
       "kind": "removed",
       "severity": "breaking",
       "location": "response",
@@ -6449,541 +6267,6 @@
         {
           "namespace": "invoices",
           "method": "markUncollectible"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0105",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "subscriptions_resource_payment_settings",
-      "field": "payment_method_types",
-      "fromType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
-      "toType": "array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>",
-      "note": "Response field \"subscriptions_resource_payment_settings.payment_method_types\" changed from array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|konbini|kr_card|link|multibanco|naver_pay|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)> to array<enum(ach_credit_transfer|ach_debit|acss_debit|amazon_pay|au_becs_debit|bacs_debit|bancontact|boleto|card|cashapp|customer_balance|eps|fpx|giropay|grabpay|ideal|jp_credit_transfer|kakao_pay|klarna|konbini|kr_card|link|multibanco|naver_pay|nz_bank_account|p24|payco|paynow|paypal|promptpay|revolut_pay|sepa_credit_transfer|sepa_debit|sofort|swish|us_bank_account|wechat_pay)>.",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].subscription.payment_settings.payment_method_types",
-        "invoice.subscription.payment_settings.payment_method_types",
-        "subscription.payment_settings.payment_method_types",
-        "subscriptions.data[].payment_settings.payment_method_types",
-        "checkout_session.subscription.payment_settings.payment_method_types"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/checkout/sessions"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions"
-        },
-        {
-          "method": "get",
-          "path": "/v1/checkout/sessions/{session}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions/{session}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/checkout/sessions/{session}/expire"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes/preview"
-        },
-        {
-          "method": "get",
-          "path": "/v1/credit_notes/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/credit_notes/{id}/void"
-        },
-        {
-          "method": "post",
-          "path": "/v1/customers"
-        },
-        {
-          "method": "get",
-          "path": "/v1/customers/{customer}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "checkout.sessions",
-          "method": "list"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "create"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "update"
-        },
-        {
-          "namespace": "checkout.sessions",
-          "method": "expire"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "create"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "preview"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "update"
-        },
-        {
-          "namespace": "creditNotes",
-          "method": "voidCreditNote"
-        },
-        {
-          "namespace": "customers",
-          "method": "create"
-        },
-        {
-          "namespace": "customers",
-          "method": "retrieve"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0106",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "ae",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.ae\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.ae",
-        "country_options.ae"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0107",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "au",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.au\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.au",
-        "country_options.au"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0108",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "ch",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.ch\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.ch",
-        "country_options.ch"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0109",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "gb",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.gb\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.gb",
-        "country_options.gb"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0110",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "jp",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.jp\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.jp",
-        "country_options.jp"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0111",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "no",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.no\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.no",
-        "country_options.no"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0112",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "nz",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.nz\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.nz",
-        "country_options.nz"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
-        }
-      ]
-    },
-    {
-      "id": "stripe-2025-03-31.basil-0113",
-      "kind": "typeChanged",
-      "severity": "breaking",
-      "location": "response",
-      "resource": "tax_product_registrations_resource_country_options",
-      "field": "sg",
-      "fromType": "object(tax_product_registrations_resource_country_options_default)",
-      "toType": "object(tax_product_registrations_resource_country_options_default_inbound_goods)",
-      "note": "Response field \"tax_product_registrations_resource_country_options.sg\" changed from object(tax_product_registrations_resource_country_options_default) to object(tax_product_registrations_resource_country_options_default_inbound_goods).",
-      "docsUrl": "https://docs.stripe.com/upgrades",
-      "fieldPaths": [
-        "data[].country_options.sg",
-        "country_options.sg"
-      ],
-      "endpoints": [
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations"
-        },
-        {
-          "method": "get",
-          "path": "/v1/tax/registrations/{id}"
-        },
-        {
-          "method": "post",
-          "path": "/v1/tax/registrations/{id}"
-        }
-      ],
-      "sdkMethods": [
-        {
-          "namespace": "tax.registrations",
-          "method": "list"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "create"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "retrieve"
-        },
-        {
-          "namespace": "tax.registrations",
-          "method": "update"
         }
       ]
     }

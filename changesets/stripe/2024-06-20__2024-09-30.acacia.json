@@ -3,7 +3,7 @@
   "api": "stripe",
   "from": "2024-06-20",
   "to": "2024-09-30.acacia",
-  "generatedAt": "2026-09-14T02:02:32.892Z",
+  "generatedAt": "2026-09-14T02:13:10.048Z",
   "source": {
     "repo": "stripe/openapi",
     "fromRef": "d86b6cc8bf110e4339ac1e319f995a9f97526092",
