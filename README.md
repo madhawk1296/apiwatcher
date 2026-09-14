@@ -25,6 +25,10 @@ gets a check on each pull request, an updated tracking issue on each push to
 your default branch, and a scan against every new Stripe API version the day it
 ships. Nothing to configure, no workflow file.
 
+**Or sign in.** [The dashboard](https://165-227-126-50.sslip.io/app) shows every tracked repository you
+can access, its latest findings linked to the line on GitHub, scan history, and where to be told
+when Stripe ships a version.
+
 **Or run the CLI.** No account, no API key, no network call:
 
 ```bash
@@ -146,6 +150,7 @@ Run `apiwatcher --help` for flags.
 ```
 packages/apiwatcher/   the scanner, differ, and CLI — published as apiwatcher-cli
 packages/server/       the backend: webhooks, index, scan queue, posting
+packages/web/          Next.js: landing, Stripe changelog, sign-in, dashboard
 changesets/stripe/     published changesets + index.json
 deploy/                systemd unit, Caddyfile, setup script for a fresh box
 .github/workflows/     CI and the spec watcher cron

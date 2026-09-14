@@ -1,8 +1,11 @@
 # The server
 
-One Node process on one box. It receives the GitHub App's webhooks, keeps the
-index of which repos use Stripe, clones and scans them, and posts the results.
-There is no other backend.
+Two Node processes on one box. The **server** receives the GitHub App's
+webhooks, keeps the index of which repos use Stripe, clones and scans them, and
+posts the results. The **web app** (`packages/web`, Next.js) serves the landing
+page, the public Stripe changelog, sign-in, and the dashboard, reading the same
+SQLite file. Caddy routes `/webhooks/*`, `/admin/*` and `/health` to the server
+and everything else to the web app.
 
 ## What it does
 
@@ -111,6 +114,10 @@ sudo bash /opt/apiwatcher/deploy/update.sh
 | `REPORT_RETENTION_DAYS` | no | 30 | Stored report bodies older than this are dropped |
 | `APP_SLUG` | no | `apiwatcher-app` | For links in issues |
 | `CHANGESET_INDEX_URL` | no | this repo's `index.json` | Where changesets are published |
+| `AUTH_SECRET` | web | | Signs session cookies; `openssl rand -hex 32` |
+| `AUTH_GITHUB_ID` / `AUTH_GITHUB_SECRET` | web | | The GitHub App's own OAuth client credentials — not a separate OAuth App |
+| `AUTH_URL` | web | | Public origin; the App's callback URL is `<AUTH_URL>/api/auth/callback/github` |
+| `SERVER_URL` | web | `http://127.0.0.1:8787` | How the web app reaches the server for "scan now" |
 
 ### GitHub App permissions
 
