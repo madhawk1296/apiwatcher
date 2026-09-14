@@ -376,13 +376,18 @@ function diffFields(
     });
   }
 
+  const addedSet = new Set(added);
+
   for (const key of added) {
     const field = after.get(key);
     if (!field || renamedTargets.has(key)) continue;
 
     // A newly required request field breaks existing calls — but only those that
-    // reach it. A required field inside an optional object binds conditionally.
-    if (field.required && direction === 'request') {
+    // reach it. A required field inside an optional object binds conditionally,
+    // and one inside a parent that is *itself* new cannot break anyone: nobody
+    // was sending a parameter that did not exist. That is a new feature, not a
+    // new obligation.
+    if (field.required && direction === 'request' && !hasRemovedAncestor(key, addedSet)) {
       out.push({
         id: ids.next(),
         kind: 'required',
@@ -550,7 +555,11 @@ function requiredNote(
     : `${label} "${display}" ${verb} whenever "${parent}" is provided.`;
 }
 
-/** True when some ancestor of `path` is also in the removed set. */
+/**
+ * True when some ancestor of `path` is in the set. Used both for removals (a
+ * removed parent makes its children's removal redundant) and additions (an added
+ * parent makes its children's required-ness additive).
+ */
 function hasRemovedAncestor(path: string, removed: ReadonlySet<string>): boolean {
   let cursor = path;
   for (;;) {

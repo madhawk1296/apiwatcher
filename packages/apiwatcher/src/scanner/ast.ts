@@ -468,6 +468,15 @@ export function scanFile(input: FileScanInput, parsed?: ts.SourceFile): FileScan
         if (ts.isPropertyAssignment(prop)) {
           const value = unwrap(prop.initializer);
           if (ts.isObjectLiteralExpression(value)) walkObject(value, fieldPath, depth + 1);
+          // `phases: [{ invoice_settings: {...} }]` — Stripe's request shapes are
+          // full of arrays of objects. Not looking inside them meant the report
+          // could never rule out that a nested field was passed, and had to warn.
+          if (ts.isArrayLiteralExpression(value)) {
+            for (const element of value.elements) {
+              const item = unwrap(element);
+              if (ts.isObjectLiteralExpression(item)) walkObject(item, `${fieldPath}[]`, depth + 1);
+            }
+          }
         }
       }
     };

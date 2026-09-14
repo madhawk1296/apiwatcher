@@ -7,6 +7,7 @@ import {
   exitCodeFor,
   latestKnownVersion,
   loadConfig as loadRepoConfig,
+  oldestCoveredVersion,
   loadEventCatalog,
   loadMethodMap,
   scanRepo,
@@ -121,6 +122,7 @@ export async function runScan(deps: ScanJobDeps, request: ScanRequest): Promise<
       changes,
       targetVersion: target,
       minConfidence,
+      oldestCovered: oldestCoveredVersion(sets),
       ...(repoConfig.ignoreChanges ? { ignoreIds: repoConfig.ignoreChanges } : {}),
     });
     if (current === null) {

@@ -62,7 +62,11 @@ export function renderTerminal(report: ImpactReport, options: { color?: boolean 
   out.push('');
 
   if (report.findings.length === 0) {
-    out.push(paint('✓ Nothing in this repo is affected by changes in that range.', 'green', 'bold'));
+    const range = `${report.coveredFrom ?? 'the oldest known version'} → ${report.targetVersion}`;
+    out.push(paint(`✓ Nothing in this repo is affected by changes between ${range}.`, 'green', 'bold'));
+    if (report.coverageGap) {
+      out.push(paint(`⚠ Changes before ${report.coveredFrom} were not examined — see notes.`, 'yellow', 'bold'));
+    }
     if (report.unaffectedChanges > 0) {
       out.push(paint(`  (${report.unaffectedChanges} change(s) in range touch code you do not use)`, 'grey'));
     }
@@ -145,7 +149,11 @@ export function renderMarkdown(report: ImpactReport): string {
   out.push('');
 
   if (report.findings.length === 0) {
-    out.push('Nothing in this repo is affected by changes in that range.');
+    out.push(`Nothing in this repo is affected by changes between ${report.coveredFrom ?? 'the oldest known version'} and ${report.targetVersion}.`);
+    if (report.coverageGap) {
+      out.push('');
+      out.push(`> **Coverage gap.** Changes before ${report.coveredFrom} were not examined; this is a lower bound.`);
+    }
     if (report.unaffectedChanges > 0) {
       out.push('');
       out.push(`${report.unaffectedChanges} change(s) in range touch code this repo does not use.`);

@@ -161,3 +161,12 @@ test('the generated method map covers well-known Stripe calls', async () => {
   // Three-level namespace, to prove nested containers are walked.
   assert.ok(map.byCall['testHelpers.issuing.authorizations.capture']);
 });
+
+test('the scanner looks inside arrays of objects in request params', async () => {
+  const scan = await scanRepo(FIXTURE, { methodMap: MAP });
+  const fields = find(scan.usages, 'requestParam', (u) => u.namespace === 'checkout.sessions').map((u) => u.field);
+  // `line_items: [{ price, quantity }]` — without this, a change to a nested
+  // line-item field could never be ruled out and had to be reported.
+  assert.ok(fields.includes('line_items[].price'), JSON.stringify(fields));
+  assert.ok(fields.includes('line_items[].quantity'));
+});

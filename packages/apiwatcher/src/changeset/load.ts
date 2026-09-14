@@ -106,6 +106,21 @@ export function changesBetween(sets: Changeset[], from: string, to: string): Spe
   return out;
 }
 
+/**
+ * The oldest version any changeset starts from — the edge of what we can see.
+ *
+ * A repo pinned before this has changes between its version and here that no
+ * changeset covers. Reporting "nothing affected" for it would be a lie of
+ * omission, so callers surface this as the report's coverage floor.
+ */
+export function oldestCoveredVersion(sets: Changeset[]): string | null {
+  let oldest: string | null = null;
+  for (const cs of sets) {
+    if (oldest === null || compareApiVersions(cs.from, oldest) < 0) oldest = cs.from;
+  }
+  return oldest;
+}
+
 /** The newest `to` version across all known changesets — i.e. "latest we know about". */
 export function latestKnownVersion(sets: Changeset[]): string | null {
   let latest: string | null = null;

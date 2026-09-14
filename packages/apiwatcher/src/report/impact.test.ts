@@ -279,3 +279,28 @@ test('markdown output lists findings with their evidence', () => {
   assert.match(md, /Field gone was removed\./);
   assert.match(md, /src\/a\.ts:/);
 });
+
+test('a pin older than any changeset is flagged as a coverage gap, not a clean bill', () => {
+  const report = buildReport({
+    scan: scanOf([], '2022-11-15'),
+    changes: [],
+    targetVersion: '2026-08-26.dahlia',
+    oldestCovered: '2025-09-30.clover',
+  });
+  assert.equal(report.coverageGap, true);
+  assert.equal(report.coveredFrom, '2025-09-30.clover');
+  assert.match(report.warnings[0] ?? '', /Coverage gap/);
+  assert.match(renderTerminal(report, { color: false }), /not examined/);
+  assert.match(renderMarkdown(report), /Coverage gap/);
+});
+
+test('a pin inside the covered range has no gap', () => {
+  const report = buildReport({
+    scan: scanOf([], '2026-02-25.clover'),
+    changes: [],
+    targetVersion: '2026-08-26.dahlia',
+    oldestCovered: '2025-09-30.clover',
+  });
+  assert.equal(report.coverageGap, false);
+  assert.equal(report.coveredFrom, '2026-02-25.clover');
+});

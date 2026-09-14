@@ -1,4 +1,5 @@
 import type { Severity, SpecChange } from '../changeset/types.js';
+import { compareApiVersions } from '../changeset/version.js';
 import { normalizePath } from '../specdiff/methodmap.js';
 import type { ScanResult, Usage } from '../scanner/types.js';
 
@@ -19,6 +20,14 @@ export interface ImpactReport {
   currentVersion: string | null;
   currentVersionSource: 'pinned' | 'sdkDefault' | 'unknown';
   targetVersion: string;
+  /**
+   * The version the comparison actually starts from. Equal to `currentVersion`
+   * when changesets cover it; otherwise the oldest version any changeset knows,
+   * meaning everything between the repo's pin and here is unexamined.
+   */
+  coveredFrom: string | null;
+  /** True when the repo's pin predates all changesets — findings are a lower bound. */
+  coverageGap: boolean;
   scannedAt: string;
   root: string;
   filesScanned: number;
@@ -37,6 +46,8 @@ export interface BuildReportInput {
   ignoreIds?: readonly string[];
   /** Drop findings whose best site is below this confidence. */
   minConfidence?: number;
+  /** Oldest version any loaded changeset starts from. */
+  oldestCovered?: string | null;
 }
 
 export function buildReport(input: BuildReportInput): ImpactReport {
@@ -89,18 +100,34 @@ export function buildReport(input: BuildReportInput): ImpactReport {
       ? ('sdkDefault' as const)
       : ('unknown' as const);
 
+  // Where the comparison really starts. A pin older than any changeset means
+  // the report is a lower bound, and must say so rather than show a clean ✓.
+  const oldest = input.oldestCovered ?? null;
+  const coverageGap =
+    currentVersion !== null && oldest !== null && compareApiVersions(currentVersion, oldest) < 0;
+  const coveredFrom = coverageGap ? oldest : (currentVersion ?? oldest);
+  const warnings = [...scan.warnings];
+  if (coverageGap) {
+    warnings.unshift(
+      `Coverage gap: this repo pins ${currentVersion}, but changesets only go back to ${oldest}. ` +
+        `Changes between those two versions were not examined; treat this report as a lower bound.`,
+    );
+  }
+
   return {
     api: 'stripe',
     currentVersion,
     currentVersionSource,
     targetVersion,
+    coveredFrom,
+    coverageGap,
     scannedAt: new Date().toISOString(),
     root: scan.root,
     filesScanned: scan.filesScanned,
     findings,
     unaffectedChanges,
     totals,
-    warnings: scan.warnings,
+    warnings,
   };
 }
 

@@ -304,3 +304,28 @@ test('identical signatures are not a change', () => {
   assert.equal(classifyTypeChange('enum(a|b)', 'enum(b|a)', 'request').changed, false);
   assert.equal(classifyTypeChange('string', 'string', 'response').changed, false);
 });
+
+test('a required field inside a newly added parent is a new feature, not a break', () => {
+  const before = spec('2025-01-01', {
+    paths: { '/v1/x': { post: { requestBody: formBody({ existing: { type: 'string' } }) } } },
+  });
+  const after = spec('2025-06-01', {
+    paths: {
+      '/v1/x': {
+        post: {
+          requestBody: formBody({
+            existing: { type: 'string' },
+            // Whole object is new; nobody could have been sending it.
+            custom_fields: {
+              type: 'array',
+              items: { type: 'object', required: ['name', 'value'], properties: { name: { type: 'string' }, value: { type: 'string' } } },
+            },
+          }),
+        },
+      },
+    },
+  });
+
+  const breaking = diffSpecs(before, after).changes.filter((c) => c.severity === 'breaking');
+  assert.deepEqual(breaking, [], `expected no breaking changes, got ${JSON.stringify(breaking.map((c) => c.field))}`);
+});

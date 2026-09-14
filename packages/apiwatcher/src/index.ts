@@ -5,6 +5,7 @@ export {
   loadChangesets,
   changesBetween,
   latestKnownVersion,
+  oldestCoveredVersion,
   validateChangeset,
   defaultChangesetDir,
 } from './changeset/load.js';

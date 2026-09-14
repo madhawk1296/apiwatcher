@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import { appendFile, writeFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 import { flagBool, flagList, flagNumber, flagString, parseArgs } from './args.js';
-import { changesBetween, latestKnownVersion, loadChangesets } from '../changeset/load.js';
+import { changesBetween, latestKnownVersion, loadChangesets, oldestCoveredVersion } from '../changeset/load.js';
 import { buildIndex, writeIndex } from '../changeset/index-file.js';
 import { compareApiVersions, isApiVersion } from '../changeset/version.js';
 import type { Severity } from '../changeset/types.js';
@@ -18,6 +19,7 @@ import {
   changesetFilename,
   fetchSpecAt,
   listSpecCommits,
+  listSpecCommitsSince,
   readSpecFile,
   resolveSpecCommit,
   STRIPE_SPEC_REPO,
@@ -33,6 +35,7 @@ Usage
   apiwatcher list-changesets               Show known changesets
   apiwatcher index-changesets              Regenerate changesets/stripe/index.json
   apiwatcher watch                         Diff Stripe's current spec forward (cron entry point)
+  apiwatcher backfill --since <date>       Build one changeset per Stripe version from spec history
 
 scan options
   --target <version|latest>   Version to check against         (default: latest known)
@@ -87,6 +90,8 @@ async function main(argv: readonly string[]): Promise<number> {
       return runIndexChangesets(args);
     case 'watch':
       return runWatch(args);
+    case 'backfill':
+      return runBackfill(args);
     default:
       process.stderr.write(`Unknown command: ${args.command}\n\n${USAGE}`);
       return 1;
@@ -162,6 +167,7 @@ async function runScan(args: ReturnType<typeof parseArgs>): Promise<number> {
     changes,
     targetVersion: target,
     minConfidence,
+    oldestCovered: oldestCoveredVersion(changesets),
     ...(config.ignoreChanges ? { ignoreIds: config.ignoreChanges } : {}),
   });
   if (configFile) report.warnings.push(`Using config from ${configFile}`);
@@ -419,6 +425,115 @@ async function runWatch(args: ReturnType<typeof parseArgs>): Promise<number> {
       'utf8',
     );
   }
+  return 0;
+}
+
+/**
+ * Build the changeset history: one changeset per consecutive Stripe version.
+ *
+ * Stripe commits to the spec many times per version, so the history is sampled
+ * — the last commit of each month — and each sample's `info.version` read. The
+ * last commit seen for each version becomes that version's spec, and consecutive
+ * versions are diffed. Versions that lived less than a month can be missed; the
+ * log lists what was found so a gap is visible.
+ *
+ * Network-heavy (one ~10MB spec per month sampled), so it is a one-off, not a
+ * cron. Pairs that already have a changeset are skipped, so it is re-runnable.
+ */
+async function runBackfill(args: ReturnType<typeof parseArgs>): Promise<number> {
+  const since = flagString(args, 'since') ?? '2024-06-01';
+  const outDir = resolve(flagString(args, 'out-dir') ?? 'changesets/stripe');
+  await mkdir(outDir, { recursive: true });
+
+  process.stderr.write(`Listing spec commits since ${since}…\n`);
+  const commits = await listSpecCommitsSince(since);
+  if (commits.length === 0) {
+    process.stderr.write('No spec commits found.\n');
+    return 2;
+  }
+
+  // Last commit of each calendar month, oldest first, plus the newest overall.
+  const byMonth = new Map<string, { sha: string; date: string }>();
+  for (const c of commits) {
+    const month = c.date.slice(0, 7);
+    const existing = byMonth.get(month);
+    if (!existing || c.date > existing.date) byMonth.set(month, c);
+  }
+  const samples = [...byMonth.values()].sort((a, b) => a.date.localeCompare(b.date));
+  const newest = commits.reduce((a, b) => (a.date > b.date ? a : b));
+  if (samples[samples.length - 1]?.sha !== newest.sha) samples.push(newest);
+  process.stderr.write(`${commits.length} commits, sampling ${samples.length} (one per month)\n`);
+
+  const methodMap = await loadMethodMap();
+  const maxDepth = flagNumber(args, 'max-depth') ?? 3;
+
+  // Walk oldest -> newest keeping the last spec of the previous version.
+  let prev: { version: string; sha: string; spec: Awaited<ReturnType<typeof fetchSpecAt>> } | null = null;
+  const versionsSeen: string[] = [];
+  let written = 0;
+
+  for (const sample of samples) {
+    const spec = await fetchSpecAt(sample.sha);
+    const version = spec.info?.version;
+    if (!version || !isApiVersion(version)) {
+      process.stderr.write(`  ${sample.sha.slice(0, 8)} ${sample.date.slice(0, 10)}: no usable info.version, skipping\n`);
+      continue;
+    }
+
+    if (prev === null) {
+      prev = { version, sha: sample.sha, spec };
+      versionsSeen.push(version);
+      process.stderr.write(`  ${sample.date.slice(0, 10)} ${version} (start)\n`);
+      continue;
+    }
+
+    if (compareApiVersions(version, prev.version) === 0) {
+      // Same version, later commit: this is now the best spec for that version.
+      prev = { version, sha: sample.sha, spec };
+      continue;
+    }
+
+    versionsSeen.push(version);
+    const file = resolve(outDir, changesetFilename(prev.version, version));
+    if (existsSync(file)) {
+      process.stderr.write(`  ${prev.version} -> ${version}: exists, skipping\n`);
+    } else {
+      const changeset = diffSpecs(prev.spec, spec, {
+        methodMap,
+        maxDepth,
+        source: { repo: STRIPE_SPEC_REPO, fromRef: prev.sha, toRef: sample.sha },
+      });
+      await writeFile(file, `${JSON.stringify(changeset, null, 2)}\n`, 'utf8');
+      const breaking = changeset.changes.filter((c) => c.severity === 'breaking').length;
+      process.stderr.write(`  ${prev.version} -> ${version}: ${changeset.changes.length} change(s), ${breaking} breaking\n`);
+      written += 1;
+    }
+    prev = { version, sha: sample.sha, spec };
+  }
+
+  if (prev) {
+    const catalogFile = resolve(
+      flagString(args, 'events-out') ?? 'packages/apiwatcher/data/stripe/events.json',
+    );
+    await mkdir(dirname(catalogFile), { recursive: true });
+    await writeFile(
+      catalogFile,
+      `${JSON.stringify(
+        { apiVersion: prev.version, generatedAt: new Date().toISOString(), events: [...eventTypes(prev.spec).keys()].sort() },
+        null,
+        2,
+      )}\n`,
+      'utf8',
+    );
+  }
+
+  const refreshed = await loadChangesets(flagString(args, 'out-dir') ? dirname(outDir) : undefined);
+  await writeIndex(
+    buildIndex(refreshed.map((cs) => ({ changeset: cs, file: changesetFilename(cs.from, cs.to) }))),
+    outDir,
+  );
+
+  process.stdout.write(`Versions: ${versionsSeen.join(' -> ')}\nWrote ${written} new changeset(s); ${refreshed.length} total.\n`);
   return 0;
 }
 

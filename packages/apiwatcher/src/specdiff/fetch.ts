@@ -47,6 +47,25 @@ export async function listSpecCommits(options: { perPage?: number; until?: strin
   return commits.map((c) => ({ sha: c.sha, date: c.commit.committer.date }));
 }
 
+/** Every commit touching the spec since a date, oldest first. Paginates. */
+export async function listSpecCommitsSince(since: string, maxPages = 10): Promise<SpecCommit[]> {
+  const out: SpecCommit[] = [];
+  for (let page = 1; page <= maxPages; page++) {
+    const params = new URLSearchParams({
+      path: STRIPE_SPEC_PATH,
+      per_page: '100',
+      page: String(page),
+      since: `${since}T00:00:00Z`,
+    });
+    const batch = await ghJson<Array<{ sha: string; commit: { committer: { date: string } } }>>(
+      `https://api.github.com/repos/${STRIPE_SPEC_REPO}/commits?${params.toString()}`,
+    );
+    out.push(...batch.map((c) => ({ sha: c.sha, date: c.commit.committer.date })));
+    if (batch.length < 100) break;
+  }
+  return out.sort((a, b) => a.date.localeCompare(b.date));
+}
+
 /**
  * Resolve a ref to the commit that last touched the spec.
  *
