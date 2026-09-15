@@ -25,6 +25,10 @@ export default async function Home() {
         <h1 className="mx-auto max-w-3xl text-center text-5xl font-semibold leading-tight tracking-tight">
           Get notified the moment an API you use changes.
         </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-neutral-600">
+          APIWatcher scans the APIs you depend on for changes and alerts you immediately, so you know what to fix
+          before anything breaks.
+        </p>
       </main>
 
       <FontPicker options={FONT_OPTIONS} initial={{ heading: fonts.heading.id, body: fonts.body.id, brand: fonts.brand.id }} />
