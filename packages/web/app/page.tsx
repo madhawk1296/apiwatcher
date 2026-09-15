@@ -26,8 +26,7 @@ export default async function Home() {
           Get notified the moment an API you use changes.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-neutral-600">
-          APIWatcher scans the APIs you depend on for changes and alerts you immediately, so you know what to fix
-          before anything breaks.
+          APIWatcher scans the APIs you depend on for changes and alerts you immediately before anything breaks.
         </p>
       </main>
 
