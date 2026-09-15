@@ -21,12 +21,27 @@ export default async function Home() {
         </Link>
       </header>
 
-      <main className="px-16 pt-28">
+      <main className="px-16 pt-28 pb-24">
         <h1 className="mx-auto max-w-3xl text-center text-5xl font-semibold leading-tight tracking-tight">
           Get notified the moment an API you use changes.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-neutral-600">
           APIWatcher scans the APIs you depend on for changes and alerts you immediately before anything breaks.
+        </p>
+
+        <div className="mt-10 flex items-center justify-center gap-4">
+          <Link
+            href="/login"
+            className="rounded-md bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700"
+          >
+            Get started
+          </Link>
+          <a href="#how-it-works" className="px-2 py-3 text-base font-medium text-neutral-700 hover:text-neutral-900">
+            How it works →
+          </a>
+        </div>
+        <p className="mt-5 text-center text-sm text-neutral-500">
+          Free to start. Set up in one click — nothing to configure, nothing to maintain.
         </p>
       </main>
 

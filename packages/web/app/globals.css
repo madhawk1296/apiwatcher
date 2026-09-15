@@ -75,8 +75,7 @@ code, pre, .mono {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--paper);
+  background: #dbeafe;
 }
 
 /* Ledger lines: rows separated by hairlines, never boxes. */
