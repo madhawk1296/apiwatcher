@@ -50,7 +50,7 @@ export const FONT_OPTIONS: FontOption[] = [
   { id: "fraunces", label: "Fraunces", kind: "serif", variable: "--font-fraunces" },
 ];
 
-export const DEFAULT_FONTS = { heading: "geist", body: "geist", brand: "geist" };
+export const DEFAULT_FONTS = { heading: "sora", body: "sora", brand: "sora" };
 
 /** Class names that define every family's CSS variable on <html>. */
 export const fontClassNames = [
