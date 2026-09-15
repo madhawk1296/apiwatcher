@@ -16,22 +16,26 @@ export function FontPicker({
   initial,
 }: {
   options: FontOption[];
-  initial: { heading: string; body: string };
+  initial: { heading: string; body: string; brand: string };
 }) {
   const [open, setOpen] = useState(false);
   const [heading, setHeading] = useState(initial.heading);
   const [body, setBody] = useState(initial.body);
+  const [brand, setBrand] = useState(initial.brand);
 
-  function apply(nextHeading: string, nextBody: string) {
+  function apply(nextHeading: string, nextBody: string, nextBrand: string) {
     const h = options.find((o) => o.id === nextHeading);
     const b = options.find((o) => o.id === nextBody);
-    if (!h || !b) return;
+    const br = options.find((o) => o.id === nextBrand);
+    if (!h || !b || !br) return;
     const root = document.documentElement.style;
     root.setProperty("--font-heading", `var(${h.variable})`);
     root.setProperty("--font-body", `var(${b.variable})`);
-    document.cookie = `aw_fonts=${nextHeading}:${nextBody}; Path=/; Max-Age=31536000; SameSite=Lax`;
+    root.setProperty("--font-brand", `var(${br.variable})`);
+    document.cookie = `aw_fonts=${nextHeading}:${nextBody}:${nextBrand}; Path=/; Max-Age=31536000; SameSite=Lax`;
     setHeading(nextHeading);
     setBody(nextBody);
+    setBrand(nextBrand);
   }
 
   const select = "mt-1 w-full rounded-md border border-neutral-300 bg-white px-2 py-1.5 text-sm";
@@ -48,8 +52,19 @@ export function FontPicker({
           </div>
 
           <label className="mt-3 block text-xs text-neutral-500">
+            Brand (the APIWatcher wordmark)
+            <select value={brand} onChange={(e) => apply(heading, body, e.target.value)} className={select}>
+              {options.map((o) => (
+                <option key={o.id} value={o.id}>
+                  {o.label} · {o.kind}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="mt-3 block text-xs text-neutral-500">
             Headline
-            <select value={heading} onChange={(e) => apply(e.target.value, body)} className={select}>
+            <select value={heading} onChange={(e) => apply(e.target.value, body, brand)} className={select}>
               {options.map((o) => (
                 <option key={o.id} value={o.id}>
                   {o.label} · {o.kind}
@@ -60,7 +75,7 @@ export function FontPicker({
 
           <label className="mt-3 block text-xs text-neutral-500">
             Body
-            <select value={body} onChange={(e) => apply(heading, e.target.value)} className={select}>
+            <select value={body} onChange={(e) => apply(heading, e.target.value, brand)} className={select}>
               {options
                 .filter((o) => o.kind === "sans")
                 .map((o) => (

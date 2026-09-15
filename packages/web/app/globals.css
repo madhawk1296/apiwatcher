@@ -46,6 +46,7 @@
   --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
+  --font-brand: var(--font-brand), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {

@@ -24,6 +24,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         {
           "--font-heading": `var(${fonts.heading.variable})`,
           "--font-body": `var(${fonts.body.variable})`,
+          "--font-brand": `var(${fonts.brand.variable})`,
         } as React.CSSProperties
       }
     >

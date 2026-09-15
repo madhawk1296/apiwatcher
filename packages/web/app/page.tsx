@@ -10,7 +10,7 @@ export default async function Home() {
     <>
       <style>{`html, body { background: #fff !important; background-image: none !important; }`}</style>
       <header className="flex items-center justify-between px-16 py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
+        <Link href="/" className="text-lg font-semibold tracking-tight" style={{ fontFamily: "var(--font-brand)" }}>
           APIWatcher
         </Link>
         <Link
@@ -27,7 +27,7 @@ export default async function Home() {
         </h1>
       </main>
 
-      <FontPicker options={FONT_OPTIONS} initial={{ heading: fonts.heading.id, body: fonts.body.id }} />
+      <FontPicker options={FONT_OPTIONS} initial={{ heading: fonts.heading.id, body: fonts.body.id, brand: fonts.brand.id }} />
     </>
   );
 }

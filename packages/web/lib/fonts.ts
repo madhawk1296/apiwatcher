@@ -50,7 +50,7 @@ export const FONT_OPTIONS: FontOption[] = [
   { id: "fraunces", label: "Fraunces", kind: "serif", variable: "--font-fraunces" },
 ];
 
-export const DEFAULT_FONTS = { heading: "geist", body: "geist" };
+export const DEFAULT_FONTS = { heading: "geist", body: "geist", brand: "geist" };
 
 /** Class names that define every family's CSS variable on <html>. */
 export const fontClassNames = [
@@ -75,11 +75,12 @@ export function optionById(id: string | undefined): FontOption | undefined {
   return FONT_OPTIONS.find((o) => o.id === id);
 }
 
-/** Parse the cookie value `heading:body`, falling back per slot. */
-export function parseFontCookie(value: string | undefined): { heading: FontOption; body: FontOption } {
-  const [h, b] = (value ?? "").split(":");
+/** Parse the cookie value `heading:body:brand`, falling back per slot. */
+export function parseFontCookie(value: string | undefined): { heading: FontOption; body: FontOption; brand: FontOption } {
+  const [h, b, br] = (value ?? "").split(":");
   return {
     heading: optionById(h) ?? (optionById(DEFAULT_FONTS.heading) as FontOption),
     body: optionById(b) ?? (optionById(DEFAULT_FONTS.body) as FontOption),
+    brand: optionById(br) ?? (optionById(DEFAULT_FONTS.brand) as FontOption),
   };
 }
