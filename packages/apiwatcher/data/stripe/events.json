@@ -1,6 +1,6 @@
 {
-  "apiVersion": "2026-08-26.dahlia",
-  "generatedAt": "2026-09-14T02:13:13.869Z",
+  "apiVersion": "2026-09-30.endive",
+  "generatedAt": "2026-09-24T10:31:09.120Z",
   "events": [
     "account.application.authorized",
     "account.application.deauthorized",
@@ -11,6 +11,9 @@
     "application_fee.created",
     "application_fee.refund.updated",
     "application_fee.refunded",
+    "apps.install.created",
+    "apps.install.deleted",
+    "apps.install.updated",
     "balance.available",
     "balance_settings.updated",
     "billing.alert.triggered",

@@ -1,0 +1,863 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2026-08-26.dahlia",
+  "to": "2026-09-30.endive",
+  "generatedAt": "2026-09-24T10:31:09.120Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "30d3391cc09a0f67ad29bee002f570811b19e1da",
+    "toRef": "c8faccbde66b784ea916d3c28f5790d7a9c9aee2"
+  },
+  "changes": [
+    {
+      "id": "stripe-2026-09-30.endive-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/accounts/{account}/reject",
+      "method": "post",
+      "field": "reason",
+      "fromType": "string",
+      "toType": "enum(credit|fraud_no_intent_to_fulfill|fraud_other|fraud_payment_method_casher|fraud_payment_method_tester|other|terms_of_service)",
+      "note": "Request parameter \"reason\" now restricted to enum(credit|fraud_no_intent_to_fulfill|fraud_other|fraud_payment_method_casher|fraud_payment_method_tester|other|terms_of_service).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "accounts",
+          "method": "reject"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0002",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/checkout/sessions",
+      "method": "post",
+      "field": "payment_method_types",
+      "note": "Request parameter \"payment_method_types\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "checkout.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0003",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/financial_connections/sessions",
+      "method": "post",
+      "field": "filters.countries",
+      "note": "Request parameter \"filters.countries\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "financialConnections.sessions",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0005",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoices/create_preview",
+      "method": "post",
+      "field": "subscription_details.billing_cycle_anchor",
+      "fromType": "union(enum(now|unchanged)|integer:unix-time)",
+      "toType": "object",
+      "note": "Request parameter \"subscription_details.billing_cycle_anchor\" changed from union(enum(now|unchanged)|integer:unix-time) to object.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoices",
+          "method": "createPreview"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0004",
+      "kind": "required",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/invoices/create_preview",
+      "method": "post",
+      "field": "subscription_details.billing_cycle_anchor.type",
+      "note": "Request parameter \"subscription_details.billing_cycle_anchor.type\" is new and required whenever \"subscription_details.billing_cycle_anchor\" is provided.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "invoices",
+          "method": "createPreview"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0006",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents",
+      "method": "post",
+      "field": "payment_method_types",
+      "note": "Request parameter \"payment_method_types\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0007",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents/{intent}",
+      "method": "post",
+      "field": "payment_method_types",
+      "note": "Request parameter \"payment_method_types\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0008",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_intents/{intent}/confirm",
+      "method": "post",
+      "field": "payment_method_types",
+      "note": "Request parameter \"payment_method_types\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentIntents",
+          "method": "confirm"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0009",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/payment_methods/{payment_method}",
+      "method": "post",
+      "field": "payto",
+      "note": "Request parameter \"payto\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "paymentMethods",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0010",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/setup_intents",
+      "method": "post",
+      "field": "payment_method_types",
+      "note": "Request parameter \"payment_method_types\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "setupIntents",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0011",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/setup_intents/{intent}",
+      "method": "post",
+      "field": "payment_method_types",
+      "note": "Request parameter \"payment_method_types\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "setupIntents",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0013",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
+      "method": "post",
+      "field": "billing_cycle_anchor",
+      "fromType": "enum(now|unchanged)",
+      "toType": "object",
+      "note": "Request parameter \"billing_cycle_anchor\" changed from enum(now|unchanged) to object.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0012",
+      "kind": "required",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions/{subscription_exposed_id}",
+      "method": "post",
+      "field": "billing_cycle_anchor.type",
+      "note": "Request parameter \"billing_cycle_anchor.type\" is new and required whenever \"billing_cycle_anchor\" is provided.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0015",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions/{subscription}/resume",
+      "method": "post",
+      "field": "billing_cycle_anchor",
+      "fromType": "enum(now|unchanged)",
+      "toType": "object",
+      "note": "Request parameter \"billing_cycle_anchor\" changed from enum(now|unchanged) to object.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "resume"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0014",
+      "kind": "required",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/subscriptions/{subscription}/resume",
+      "method": "post",
+      "field": "billing_cycle_anchor.type",
+      "note": "Request parameter \"billing_cycle_anchor.type\" is new and required whenever \"billing_cycle_anchor\" is provided.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "subscriptions",
+          "method": "resume"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0016",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.at.igic",
+      "note": "Request parameter \"country_options.at.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0017",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.be.igic",
+      "note": "Request parameter \"country_options.be.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0018",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.bg.igic",
+      "note": "Request parameter \"country_options.bg.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0019",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.cy.igic",
+      "note": "Request parameter \"country_options.cy.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0020",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.cz.igic",
+      "note": "Request parameter \"country_options.cz.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0021",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.de.igic",
+      "note": "Request parameter \"country_options.de.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0022",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.dk.igic",
+      "note": "Request parameter \"country_options.dk.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0023",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.ee.igic",
+      "note": "Request parameter \"country_options.ee.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0024",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.es.igic",
+      "note": "Request parameter \"country_options.es.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0025",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.fi.igic",
+      "note": "Request parameter \"country_options.fi.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0026",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.fr.igic",
+      "note": "Request parameter \"country_options.fr.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0027",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.gr.igic",
+      "note": "Request parameter \"country_options.gr.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0028",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.hr.igic",
+      "note": "Request parameter \"country_options.hr.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0029",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.hu.igic",
+      "note": "Request parameter \"country_options.hu.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0030",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.ie.igic",
+      "note": "Request parameter \"country_options.ie.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0031",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.it.igic",
+      "note": "Request parameter \"country_options.it.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0032",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.lt.igic",
+      "note": "Request parameter \"country_options.lt.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0033",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.lu.igic",
+      "note": "Request parameter \"country_options.lu.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0034",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.lv.igic",
+      "note": "Request parameter \"country_options.lv.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0035",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.mt.igic",
+      "note": "Request parameter \"country_options.mt.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0036",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.nl.igic",
+      "note": "Request parameter \"country_options.nl.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0037",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.pl.igic",
+      "note": "Request parameter \"country_options.pl.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0038",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.pt.igic",
+      "note": "Request parameter \"country_options.pt.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0039",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.ro.igic",
+      "note": "Request parameter \"country_options.ro.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0040",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.se.igic",
+      "note": "Request parameter \"country_options.se.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0041",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.si.igic",
+      "note": "Request parameter \"country_options.si.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0042",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "requestBody",
+      "path": "/v1/tax/registrations",
+      "method": "post",
+      "field": "country_options.sk.igic",
+      "note": "Request parameter \"country_options.sk.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0043",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "bank_connections_resource_link_account_session_filters",
+      "field": "countries",
+      "note": "Response field \"bank_connections_resource_link_account_session_filters.countries\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "filters.countries"
+      ],
+      "endpoints": [
+        {
+          "method": "post",
+          "path": "/v1/financial_connections/sessions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/financial_connections/sessions/{session}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "financialConnections.sessions",
+          "method": "create"
+        },
+        {
+          "namespace": "financialConnections.sessions",
+          "method": "retrieve"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0044",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "tax_product_registrations_resource_country_options",
+      "field": "es.igic",
+      "note": "Response field \"tax_product_registrations_resource_country_options.es.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].country_options.es.igic",
+        "country_options.es.igic"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/tax/registrations"
+        },
+        {
+          "method": "post",
+          "path": "/v1/tax/registrations"
+        },
+        {
+          "method": "get",
+          "path": "/v1/tax/registrations/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/tax/registrations/{id}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "list"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "update"
+        }
+      ]
+    },
+    {
+      "id": "stripe-2026-09-30.endive-0045",
+      "kind": "removed",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "tax_product_registrations_resource_country_options_europe",
+      "field": "igic",
+      "note": "Response field \"tax_product_registrations_resource_country_options_europe.igic\" was removed.",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].country_options.at.igic",
+        "data[].country_options.be.igic",
+        "data[].country_options.bg.igic",
+        "data[].country_options.cy.igic",
+        "data[].country_options.cz.igic",
+        "data[].country_options.de.igic",
+        "data[].country_options.dk.igic",
+        "data[].country_options.ee.igic",
+        "data[].country_options.fi.igic",
+        "data[].country_options.fr.igic",
+        "data[].country_options.gr.igic",
+        "data[].country_options.hr.igic"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/tax/registrations"
+        },
+        {
+          "method": "post",
+          "path": "/v1/tax/registrations"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "tax.registrations",
+          "method": "list"
+        },
+        {
+          "namespace": "tax.registrations",
+          "method": "create"
+        }
+      ]
+    }
+  ]
+}
