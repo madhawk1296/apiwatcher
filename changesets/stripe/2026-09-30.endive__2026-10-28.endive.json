@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2026-09-30.endive",
+  "to": "2026-10-28.endive",
+  "generatedAt": "2026-10-27T10:59:53.154Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "c8faccbde66b784ea916d3c28f5790d7a9c9aee2",
+    "toRef": "a6cd9878ad3d86f46a4b81ec4368e76f690a1e09"
+  },
+  "changes": [
+    {
+      "id": "stripe-2026-10-28.endive-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "charge_outcome",
+      "field": "rule",
+      "fromType": "union(object(rule)|string)",
+      "toType": "union(object(radar.rule)|string)",
+      "note": "Response field \"charge_outcome.rule\" changed from object(rule) to object(radar.rule).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "data[].charge.outcome.rule",
+        "data[].originating_transaction.outcome.rule",
+        "balance_transaction.source.outcome.rule",
+        "fee.charge.outcome.rule",
+        "fee.originating_transaction.outcome.rule",
+        "charge.outcome.rule",
+        "originating_transaction.outcome.rule",
+        "data[].source.outcome.rule",
+        "source.charge.outcome.rule",
+        "source.originating_transaction.outcome.rule",
+        "source.outcome.rule",
+        "source.destination_payment.outcome.rule"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/application_fees"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{fee}/refunds/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/application_fees/{id}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/application_fees/{id}/refunds"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions"
+        },
+        {
+          "method": "get",
+          "path": "/v1/balance_transactions/{id}"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/search"
+        },
+        {
+          "method": "get",
+          "path": "/v1/charges/{charge}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/charges/{charge}"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "applicationFees",
+          "method": "list"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieveRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "updateRefund"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "applicationFees",
+          "method": "createRefund"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "list"
+        },
+        {
+          "namespace": "balanceTransactions",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "list"
+        },
+        {
+          "namespace": "charges",
+          "method": "create"
+        },
+        {
+          "namespace": "charges",
+          "method": "search"
+        },
+        {
+          "namespace": "charges",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "charges",
+          "method": "update"
+        }
+      ]
+    }
+  ]
+}

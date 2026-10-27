@@ -1,7 +1,7 @@
 {
   "api": "stripe",
-  "latest": "2026-09-30.endive",
-  "generatedAt": "2026-09-24T10:31:09.144Z",
+  "latest": "2026-10-28.endive",
+  "generatedAt": "2026-10-27T10:59:53.160Z",
   "entries": [
     {
       "from": "2024-06-20",
@@ -252,6 +252,16 @@
       "additive": 0,
       "generatedAt": "2026-09-24T10:31:09.120Z",
       "toRef": "c8faccbde66b784ea916d3c28f5790d7a9c9aee2"
+    },
+    {
+      "from": "2026-09-30.endive",
+      "to": "2026-10-28.endive",
+      "file": "2026-09-30.endive__2026-10-28.endive.json",
+      "breaking": 1,
+      "deprecating": 0,
+      "additive": 0,
+      "generatedAt": "2026-10-27T10:59:53.154Z",
+      "toRef": "a6cd9878ad3d86f46a4b81ec4368e76f690a1e09"
     }
   ]
 }
