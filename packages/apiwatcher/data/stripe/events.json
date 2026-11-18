@@ -1,6 +1,6 @@
 {
-  "apiVersion": "2026-10-28.endive",
-  "generatedAt": "2026-10-27T10:59:53.154Z",
+  "apiVersion": "2026-11-18.endive",
+  "generatedAt": "2026-11-18T14:34:41.716Z",
   "events": [
     "account.application.authorized",
     "account.application.deauthorized",

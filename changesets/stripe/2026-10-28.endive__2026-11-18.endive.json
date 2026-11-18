@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "api": "stripe",
+  "from": "2026-10-28.endive",
+  "to": "2026-11-18.endive",
+  "generatedAt": "2026-11-18T14:34:41.716Z",
+  "source": {
+    "repo": "stripe/openapi",
+    "fromRef": "a6cd9878ad3d86f46a4b81ec4368e76f690a1e09",
+    "toRef": "ed463ff0873e207ec317de52bf483aa94929144e"
+  },
+  "changes": [
+    {
+      "id": "stripe-2026-11-18.endive-0001",
+      "kind": "typeChanged",
+      "severity": "breaking",
+      "location": "response",
+      "resource": "confirmation_tokens_resource_payment_method_preview",
+      "field": "card.wallet.link",
+      "fromType": "object(payment_method_card_wallet_link)",
+      "toType": "object(confirmation_token_payment_method_preview_card_wallet_link)",
+      "note": "Response field \"confirmation_tokens_resource_payment_method_preview.card.wallet.link\" changed from object(payment_method_card_wallet_link) to object(confirmation_token_payment_method_preview_card_wallet_link).",
+      "docsUrl": "https://docs.stripe.com/upgrades",
+      "fieldPaths": [
+        "payment_method_preview.card.wallet.link"
+      ],
+      "endpoints": [
+        {
+          "method": "get",
+          "path": "/v1/confirmation_tokens/{confirmation_token}"
+        },
+        {
+          "method": "post",
+          "path": "/v1/test_helpers/confirmation_tokens"
+        }
+      ],
+      "sdkMethods": [
+        {
+          "namespace": "confirmationTokens",
+          "method": "retrieve"
+        },
+        {
+          "namespace": "testHelpers.confirmationTokens",
+          "method": "create"
+        }
+      ]
+    }
+  ]
+}
